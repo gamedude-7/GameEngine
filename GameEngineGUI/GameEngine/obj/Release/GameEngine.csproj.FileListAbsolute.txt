@@ -1,0 +1,11 @@
+C:\jly\GameEngine_v2.0\GameEngine\obj\Release\ResolveAssemblyReference.cache
+C:\jly\GameEngine_v2.0\GameEngine\obj\Release\GameEngine.Form1.resources
+C:\jly\GameEngine_v2.0\GameEngine\obj\Release\GameEngine.Properties.Resources.resources
+C:\jly\GameEngine_v2.0\GameEngine\obj\Release\ResGen.read.1.tlog
+C:\jly\GameEngine_v2.0\GameEngine\obj\Release\ResGen.write.1.tlog
+C:\jly\GameEngine_v2.0\GameEngine\bin\Release\GameEngine.exe
+C:\jly\GameEngine_v2.0\GameEngine\bin\Release\GameEngine.pdb
+C:\jly\GameEngine_v2.0\GameEngine\bin\Release\TreeViewMS.dll
+C:\jly\GameEngine_v2.0\GameEngine\bin\Release\TreeViewMS.pdb
+C:\jly\GameEngine_v2.0\GameEngine\obj\Release\GameEngine.exe
+C:\jly\GameEngine_v2.0\GameEngine\obj\Release\GameEngine.pdb

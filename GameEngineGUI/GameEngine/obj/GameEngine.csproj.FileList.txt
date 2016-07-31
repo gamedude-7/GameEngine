@@ -1,0 +1,8 @@
+bin\Debug\GameEngine.exe
+bin\Debug\GameEngine.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\GameEngine.Form1.resources
+obj\Debug\GameEngine.Properties.Resources.resources
+obj\Debug\GameEngine.csproj.GenerateResource.Cache
+obj\Debug\GameEngine.exe
+obj\Debug\GameEngine.pdb
