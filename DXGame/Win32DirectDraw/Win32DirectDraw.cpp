@@ -309,7 +309,7 @@ int Game_Main()
 			}
 			else
 			{
-				continue;
+			//	continue;
 			}
 
 			if (pts[objIterator->plist[poly].vert[1]].getX() > 0 && pts[objIterator->plist[poly].vert[1]].getX() < SCREEN_WIDTH &&
@@ -322,7 +322,7 @@ int Game_Main()
 			}	
 			else
 			{
-				continue;
+				//continue;
 			}
 
 			if (pts[objIterator->plist[poly].vert[2]].getX() > 0 && pts[objIterator->plist[poly].vert[2]].getX() < SCREEN_WIDTH &&
@@ -334,7 +334,7 @@ int Game_Main()
 			}
 			else
 			{
-				continue;
+				//continue;
 			}
         }
 	}

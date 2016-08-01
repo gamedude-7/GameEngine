@@ -18,7 +18,7 @@ Level::Level(string filename)
 	
 	// Step 2: open the file for reading
 	fileStream.open(filename, ios_base::in);
-	vector< Cube > listOfObjects;
+	//vector< Cube > listOfObjects;
 	
 	if (fileStream.is_open() && fileStream.good())
 	{
@@ -39,36 +39,74 @@ Level::Level(string filename)
 				double x = -cube.width / 2;
                 double y = cube.height / 2;
                 double z = -cube.length / 2;
-				cube.AddLocalVertex(Point(x,y,z));								
+				cube.AddLocalVertex(Point(x,y,z));	// 0 							
                 x = cube.width / 2;
                 y = cube.height / 2;
                 z = -cube.length / 2;
-                cube.AddLocalVertex(Point(x,y,z));
+                cube.AddLocalVertex(Point(x,y,z)); // 1
 				x = cube.width / 2;
                 y = -cube.height / 2;
                 z = -cube.length / 2;
-				cube.AddLocalVertex(Point(x,y,z));
+				cube.AddLocalVertex(Point(x,y,z)); //2
                 x = -cube.width / 2;
                 y = -cube.height / 2;
                 z = -cube.length / 2;
-				cube.AddLocalVertex(Point(x,y,z));
+				cube.AddLocalVertex(Point(x,y,z)); //3
                 x = -cube.width / 2;
                 y = cube.height / 2;
                 z = cube.length;
-				cube.AddLocalVertex(Point(x,y,z));
+				cube.AddLocalVertex(Point(x,y,z)); //4
                 x = cube.width / 2;
                 y = cube.height / 2;
                 z = cube.length;
-				cube.AddLocalVertex(Point(x,y,z));
+				cube.AddLocalVertex(Point(x,y,z)); //5
                 x = cube.width / 2;
                 y = -cube.height / 2;
                 z = cube.length;
-				cube.AddLocalVertex(Point(x,y,z));
+				cube.AddLocalVertex(Point(x,y,z)); //6
                 x = -cube.width / 2;
                 y = -cube.height / 2;
                 z = cube.length;
-				cube.AddLocalVertex(Point(x,y,z));
-				listOfObjects.push_back(cube);
+				cube.AddLocalVertex(Point(x,y,z));//7
+				cube.num_vertices=8;
+				Poly poly;
+				poly.vert[0] = 0;
+				poly.vert[1] = 1;
+				poly.vert[2] = 2;				
+				cube.plist.push_back(poly);
+				poly.vert[0] = 0;
+				poly.vert[1] = 2;
+				poly.vert[2] = 3;
+				cube.plist.push_back(poly);
+				poly.vert[0] = 4;
+				poly.vert[1] = 5;
+				poly.vert[2] = 6;
+				cube.plist.push_back(poly);
+				poly.vert[0] = 4;
+				poly.vert[1] = 6;
+				poly.vert[2] = 7;
+				cube.plist.push_back(poly);
+				poly.vert[0] = 0;
+				poly.vert[1] = 1;
+				poly.vert[2] = 5;
+				cube.plist.push_back(poly);
+				poly.vert[0] = 0;
+				poly.vert[1] = 4;
+				poly.vert[2] = 5;
+				cube.plist.push_back(poly);
+				poly.vert[0] = 2;
+				poly.vert[1] = 3;
+				poly.vert[2] = 7;
+				cube.plist.push_back(poly);
+				poly.vert[0] = 2;
+				poly.vert[1] = 6;
+				poly.vert[2] = 7;
+				cube.plist.push_back(poly);
+				cube.num_polys = 8;
+				objectList.push_back(cube);
+				
+				
+
 			}
 			else if (type == "object")
 			{
