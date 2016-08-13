@@ -1,0 +1,491 @@
+﻿Build started 8/13/2016 5:16:24 PM.
+     1>Project "C:\Users\Iron man\Documents\Visual Studio 2010\Projects\GameEngine\game_engineGL\TextureBasics2\TextureBasics\TextureBasics.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\TextureBasics.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt CGfxOpenGL.cpp CTargaImage.cpp t3dlib1.cpp t3dlib2.cpp t3dlib4.cpp t3dlib5.cpp t3dlib6.cpp winmain.cpp
+         CGfxOpenGL.cpp
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+     1>c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\T3DLIB5.h(177): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\T3DLIB5.h(204): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\CGfxOpenGL.h(7): warning C4005: 'PI' : macro redefinition
+                 c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\T3DLIB1.h(79) : see previous definition of 'PI'
+     1>CGfxOpenGL.cpp(191): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>CGfxOpenGL.cpp(198): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>CGfxOpenGL.cpp(200): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(202): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(204): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(207): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(209): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(211): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(214): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(216): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(218): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(221): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(252): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>CGfxOpenGL.cpp(254): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(256): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(258): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(263): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>CGfxOpenGL.cpp(268): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(270): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(272): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(276): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>CGfxOpenGL.cpp(280): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(282): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(284): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>CGfxOpenGL.cpp(182): warning C4101: 'vertex' : unreferenced local variable
+     1>CGfxOpenGL.cpp(181): warning C4101: 'y' : unreferenced local variable
+     1>CGfxOpenGL.cpp(181): warning C4101: 'x' : unreferenced local variable
+     1>CGfxOpenGL.cpp(185): warning C4101: 'pt' : unreferenced local variable
+     1>CGfxOpenGL.cpp(183): warning C4101: 'num' : unreferenced local variable
+     1>CGfxOpenGL.cpp(183): warning C4101: 'vertices' : unreferenced local variable
+     1>CGfxOpenGL.cpp(181): warning C4101: 'z' : unreferenced local variable
+     1>CGfxOpenGL.cpp(396): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>CGfxOpenGL.cpp(397): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>CGfxOpenGL.cpp(401): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>CGfxOpenGL.cpp(403): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>CGfxOpenGL.cpp(406): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>CGfxOpenGL.cpp(408): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>CGfxOpenGL.cpp(505): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+         CTargaImage.cpp
+     1>CTargaImage.cpp(49): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+         t3dlib1.cpp
+     1>t3dlib1.cpp(210): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(211): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(364): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(365): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(366): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(367): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(404): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(405): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(406): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(407): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(445): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(446): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(447): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(448): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(485): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(486): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(487): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(488): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>t3dlib1.cpp(763): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(766): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(770): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(773): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(838): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(839): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(895): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(896): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(952): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(953): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(955): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(956): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(1497): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1502): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1508): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1514): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1522): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1529): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1538): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1545): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1554): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1560): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1569): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1575): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1618): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1625): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1634): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1641): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1650): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1656): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1665): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(1671): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>t3dlib1.cpp(2048): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>t3dlib1.cpp(2058): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(253) : see declaration of 'fscanf'
+     1>t3dlib1.cpp(2077): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>t3dlib1.cpp(2373): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>t3dlib1.cpp(2382): warning C4996: '_ftime64': This function or variable may be unsafe. Consider using _ftime64_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\sys/timeb.h(124) : see declaration of '_ftime64'
+     1>t3dlib1.cpp(2383): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(86) : see declaration of 'ctime'
+     1>t3dlib1.cpp(2385): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>t3dlib1.cpp(2395): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>t3dlib1.cpp(2447): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'vsprintf'
+     1>t3dlib1.cpp(3301): warning C4101: 'work_color' : unreferenced local variable
+     1>t3dlib1.cpp(3874): warning C4018: '<' : signed/unsigned mismatch
+     1>t3dlib1.cpp(3924): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(4040): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(4163): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(4287): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(4924): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(4925): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(4926): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5011): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5020): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5028): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5029): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5030): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5031): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5037): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5038): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5044): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5045): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5381): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5382): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5394): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5395): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5438): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5447): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5455): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5456): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5457): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5458): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5464): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5465): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5471): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5472): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5808): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5809): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5821): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5822): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5951): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5951): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5951): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5951): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5962): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5962): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5962): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5962): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5991): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5991): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5991): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(5991): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(6002): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(6002): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(6002): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(6002): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(6034): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(6034): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(6037): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(6037): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>t3dlib1.cpp(6044): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib1.cpp(6045): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+         t3dlib2.cpp
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+     1>t3dlib2.cpp(71): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+         t3dlib4.cpp
+     1>t3dlib4.cpp(52): warning C4101: 'fp_prod' : unreferenced local variable
+     1>t3dlib4.cpp(178): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(195): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(238): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(256): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(291): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(324): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(345): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(370): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(371): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(372): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(374): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(375): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(376): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(397): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(743): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib4.cpp(743): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib4.cpp(1020): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(1251): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(1277): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(1367): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib4.cpp(1533): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+         t3dlib5.cpp
+     1>c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\T3DLIB5.H(177): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\T3DLIB5.H(204): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib5.cpp(170): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>t3dlib5.cpp(186): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>t3dlib5.cpp(201): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>t3dlib5.cpp(247): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>t3dlib5.cpp(253): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>t3dlib5.cpp(691): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(692): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(720): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(721): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(744): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(745): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(807): warning C4101: 'presult' : unreferenced local variable
+     1>t3dlib5.cpp(977): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(997): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(1225): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(1226): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(1278): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(1279): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(1664): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(1665): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(1725): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(1726): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(2012): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2012): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2012): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2012): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2017): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2017): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2017): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2017): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2022): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2022): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2022): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2022): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2065): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2065): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2065): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2065): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2072): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2072): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2072): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2072): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2079): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2079): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2079): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2079): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2124): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2124): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2124): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2124): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2129): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2129): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2129): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2129): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2134): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2134): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2134): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2134): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2178): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2178): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2178): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2178): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2185): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2185): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2185): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2185): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2192): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2192): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2192): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2192): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib5.cpp(2344): warning C4101: 'mtmp' : unreferenced local variable
+     1>t3dlib5.cpp(2464): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(2468): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(2470): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(2512): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(2518): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(2522): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib5.cpp(2526): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         t3dlib6.cpp
+     1>c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\T3DLIB5.H(177): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\T3DLIB5.H(204): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(92): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(92): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(92): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(92): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(92): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(92): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(126): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(126): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(126): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(126): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(126): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(126): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(167): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(167): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(167): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(167): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(167): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(167): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(201): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(201): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(201): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(201): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(201): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(201): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>t3dlib6.cpp(253): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(271): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>t3dlib6.cpp(422): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(459): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(475): warning C4018: '>=' : signed/unsigned mismatch
+     1>t3dlib6.cpp(495): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(518): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(590): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(616): warning C4018: '>=' : signed/unsigned mismatch
+     1>t3dlib6.cpp(640): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(663): warning C4018: '>=' : signed/unsigned mismatch
+     1>t3dlib6.cpp(684): warning C4018: '>=' : signed/unsigned mismatch
+     1>t3dlib6.cpp(691): warning C4018: '<' : signed/unsigned mismatch
+     1>t3dlib6.cpp(785): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(812): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(829): warning C4018: '>' : signed/unsigned mismatch
+     1>t3dlib6.cpp(832): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(849): warning C4018: '<' : signed/unsigned mismatch
+     1>t3dlib6.cpp(852): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(915): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(993): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(1118): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>t3dlib6.cpp(1300): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(1301): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(1302): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>t3dlib6.cpp(1305): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>t3dlib6.cpp(1308): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(1481): warning C4101: 'tmp_string' : unreferenced local variable
+     1>t3dlib6.cpp(1699): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(2350): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>t3dlib6.cpp(1636): warning C4101: 'token' : unreferenced local variable
+     1>t3dlib6.cpp(1635): warning C4101: 'token_buffer' : unreferenced local variable
+     1>t3dlib6.cpp(1638): warning C4101: 'b' : unreferenced local variable
+     1>t3dlib6.cpp(1638): warning C4101: 'g' : unreferenced local variable
+     1>t3dlib6.cpp(1638): warning C4101: 'r' : unreferenced local variable
+     1>t3dlib6.cpp(1634): warning C4101: 'seps' : unreferenced local variable
+     1>t3dlib6.cpp(3220): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3221): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3222): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3276): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3277): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3278): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3336): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3337): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3338): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3409): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3410): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3411): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3357): warning C4101: 'd' : unreferenced local variable
+     1>t3dlib6.cpp(3583): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3584): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3585): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3639): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3640): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3641): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3699): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3700): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3701): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3772): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3773): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3774): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3720): warning C4101: 'd' : unreferenced local variable
+     1>t3dlib6.cpp(3947): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3948): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3949): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4003): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4004): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4005): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4063): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4064): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4065): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4136): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4137): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4138): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(3836): warning C4101: 'shaded_color' : unreferenced local variable
+     1>t3dlib6.cpp(4084): warning C4101: 'd' : unreferenced local variable
+     1>t3dlib6.cpp(4298): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4299): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4300): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4354): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4355): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4356): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4414): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4415): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4416): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4487): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4488): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4489): warning C4244: '+=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>t3dlib6.cpp(4201): warning C4101: 'shaded_color' : unreferenced local variable
+     1>t3dlib6.cpp(4435): warning C4101: 'd' : unreferenced local variable
+         winmain.cpp
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+     1>c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\T3DLIB5.h(177): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\T3DLIB5.h(204): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\CGfxOpenGL.h(7): warning C4005: 'PI' : macro redefinition
+                 c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\T3DLIB1.h(79) : see previous definition of 'PI'
+         Generating Code...
+     1>c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\t3dlib6.cpp(2533): warning C4700: uninitialized local variable 'curr_material' used
+     1>c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\t3dlib4.cpp(1757): warning C4700: uninitialized local variable 'row' used
+     1>c:\users\iron man\documents\visual studio 2010\projects\gameengine\game_enginegl\texturebasics2\texturebasics\t3dlib1.cpp(6227): warning C4700: uninitialized local variable 'index' used
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Release\TextureBasics.exe" /INCREMENTAL:NO /NOLOGO opengl32.lib glu32.lib winmm.lib dxguid.lib d3d10.lib d3dx10.lib dinput8.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\TextureBasics.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Iron man\Documents\Visual Studio 2010\Projects\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Release\TextureBasics.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Release\TextureBasics.lib" /MACHINE:X86 Release\CGfxOpenGL.obj
+         Release\CTargaImage.obj
+         Release\t3dlib1.obj
+         Release\t3dlib2.obj
+         Release\t3dlib4.obj
+         Release\t3dlib5.obj
+         Release\t3dlib6.obj
+         Release\winmain.obj
+         TextureBasics.vcxproj -> C:\Users\Iron man\Documents\Visual Studio 2010\Projects\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Release\TextureBasics.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"Release\TextureBasics.exe;#1" /manifest Release\TextureBasics.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\TextureBasics.unsuccessfulbuild".
+         Touching "Release\TextureBasics.lastbuildstate".
+     1>Done Building Project "C:\Users\Iron man\Documents\Visual Studio 2010\Projects\GameEngine\game_engineGL\TextureBasics2\TextureBasics\TextureBasics.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:13.01
