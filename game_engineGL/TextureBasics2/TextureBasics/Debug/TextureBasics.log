@@ -1,0 +1,18 @@
+﻿Build started 3/5/2016 1:44:41 PM.
+     1>Project "C:\Users\Iron man\Documents\Visual Studio 2010\Projects\game_engineGL\TextureBasics2\TextureBasics\TextureBasics.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\TextureBasics.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt CGfxOpenGL.cpp t3dlib3.cpp winmain.cpp
+         winmain.cpp
+     1>c:\users\iron man\documents\visual studio 2010\projects\game_enginegl\texturebasics2\texturebasics\winmain.cpp(36): fatal error C1083: Cannot open include file: 'dmusici.h': No such file or directory
+         t3dlib3.cpp
+     1>c:\users\iron man\documents\visual studio 2010\projects\game_enginegl\texturebasics2\texturebasics\t3dlib3.cpp(28): fatal error C1083: Cannot open include file: 'dmusici.h': No such file or directory
+         CGfxOpenGL.cpp
+     1>c:\users\iron man\documents\visual studio 2010\projects\game_enginegl\texturebasics2\texturebasics\cgfxopengl.cpp(33): fatal error C1083: Cannot open include file: 'dmusici.h': No such file or directory
+         Generating Code...
+     1>Done Building Project "C:\Users\Iron man\Documents\Visual Studio 2010\Projects\game_engineGL\TextureBasics2\TextureBasics\TextureBasics.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:03.97
