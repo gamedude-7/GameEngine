@@ -62,7 +62,9 @@ unsigned int ExtractGreen(unsigned int nSourceColor);
 unsigned short ConvertRGB888toRGB565(unsigned int nSourceColor);
 int Draw_Pixel16(int x, int y,int color,UCHAR *video_buffer, int lpitch);
 int Draw_Line16(int xo, int yo, int x1,int y1, int color,UCHAR *vb_start,int lpitch);
-
+int Draw_Clip_Line(int x0,int y0, int x1, int y1, int color, 
+                    UCHAR *dest_buffer, int lpitch);
+int Clip_Line(int &x1,int &y1,int &x2, int &y2);
 // this builds a 16 bit color value in 5.6.5 format (green dominate mode)
 #define _RGB16BIT565(r,g,b) ((b & 31) + ((g & 63) << 5) + ((r & 31) << 11))
 
@@ -84,3 +86,8 @@ typedef HRESULT ( WINAPI* LPDIRECTDRAWCREATE )( GUID FAR *lpGUID, LPDIRECTDRAW F
 int Load_Bitmap_File(BITMAP_FILE_PTR bitmap, char *filename);
 int Flip_Bitmap(unsigned int *image, int bytes_per_line, int height);
 
+// these defined the general clipping rectangle
+int min_clip_x = 0,                             // clipping rectangle 
+    max_clip_x = (SCREEN_WIDTH-1),
+    min_clip_y = 0,
+    max_clip_y = (SCREEN_HEIGHT-1);
