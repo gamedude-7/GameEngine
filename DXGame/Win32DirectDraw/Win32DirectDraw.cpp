@@ -294,7 +294,7 @@ int Game_Main()
         {                 				
 			for (int i=0; i<3; i++)
 			{
-				Vector vec( eye.x-vertices[objIterator->plist[poly].vert[i]].getX(), 0,  eye.z - vertices[objIterator->plist[poly].vert[i]].getZ() );
+				Vector vec(vertices[objIterator->plist[poly].vert[i]].getX() - eye.x, 0,  vertices[objIterator->plist[poly].vert[i]].getZ() - eye.z  );
 				Vector lookat(at.x,0,at.z);
 				eyeToVertex = vec;
 				vec.Normalize();

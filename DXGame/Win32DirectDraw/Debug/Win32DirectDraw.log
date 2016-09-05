@@ -1,4 +1,4 @@
-﻿Build started 05/09/2016 10:45:23 AM.
+﻿Build started 05/09/2016 10:56:43 AM.
      1>Project "C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Win32DirectDraw.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Win32DirectDraw.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -92,4 +92,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.68
+Time Elapsed 00:00:01.92
