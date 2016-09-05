@@ -93,6 +93,14 @@ bool Vector::operator!=(Vector &vec)
 	return (x != vec.x || y != vec.y && z != vec.z && w != vec.w);
 }
 
+void Vector::operator=(Vector &vec)
+{
+	x = vec.x;
+	y = vec.y;
+	z = vec.z;
+	w = vec.w;
+}
+
 double Vector::dot(Vector v)
 {
 	double ret = this->getX()*v.getX() + this->getZ()*v.getZ();

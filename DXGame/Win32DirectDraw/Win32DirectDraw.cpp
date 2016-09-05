@@ -98,6 +98,9 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			at.x += 1;
 		}
 
+		if (KEY_DOWN( VK_PAUSE))
+			eyeToVertex.z = eyeToVertex.z;
+
 		HRESULT hr = input->lpdimouse->GetDeviceState(sizeof(DIMOUSESTATE),(LPVOID)&mousestate);
 		if (FAILED(hr))
 		{
@@ -260,12 +263,18 @@ int Game_Main()
 		}
 
 		vector<Point> pts;
+		vector<Point> vertices;
 		for (int i = 0; i < obj.size(); i++)
 		{
-			Point obj_per, pt;
+			Point obj_per, pt, vertex;
 				
 			obj_per.x = obj[i]._11/obj[i]._13;
 			obj_per.y = obj[i]._12/obj[i]._13;
+
+			vertex.x = obj[i]._11;
+			vertex.y = obj[i]._12;
+			vertex.z = obj[i]._13;
+			vertices.push_back(vertex);
 				
 			pt.x = SCREEN_WIDTH/2 + obj_per.x * (SCREEN_WIDTH/2);
 			pt.y = SCREEN_HEIGHT - (SCREEN_HEIGHT/2 + obj_per.y * (SCREEN_HEIGHT/2));
@@ -285,13 +294,17 @@ int Game_Main()
         {                 				
 			for (int i=0; i<3; i++)
 			{
-				Vector vec( eye.x-pts[objIterator->plist[poly].vert[i]].getX(), 0,  eye.z -pts[objIterator->plist[poly].vert[i]].getZ() );
+				Vector vec( eye.x-vertices[objIterator->plist[poly].vert[i]].getX(), 0,  eye.z - vertices[objIterator->plist[poly].vert[i]].getZ() );
 				Vector lookat(at.x,0,at.z);
+				eyeToVertex = vec;
 				vec.Normalize();
 				ang = vec.dot(lookat);
 				
 				if (ang < 0 )
 					skip = true;
+
+				if ( vec.z < -100)
+					skip = skip;
 			}
 
 			if (skip)
@@ -300,32 +313,9 @@ int Game_Main()
 				continue;
 			}
 
-			/*if (pts[objIterator->plist[poly].vert[0]].getX() > 0 && pts[objIterator->plist[poly].vert[0]].getX() < SCREEN_WIDTH &&
-				pts[objIterator->plist[poly].vert[1]].getX() > 0 && pts[objIterator->plist[poly].vert[1]].getX() < SCREEN_WIDTH &&				
-				pts[objIterator->plist[poly].vert[0]].getY() > 0 && pts[objIterator->plist[poly].vert[0]].getY() < SCREEN_HEIGHT &&
-				pts[objIterator->plist[poly].vert[1]].getY() > 0 && pts[objIterator->plist[poly].vert[1]].getY() < SCREEN_HEIGHT )									
-			{*/				
-			
-				Draw_Clip_Line( pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), RGB16Bit565(255,0,0), back_buffer, ddsd.lPitch);				
-			//}
-			
-
-			/*if (pts[objIterator->plist[poly].vert[1]].getX() > 0 && pts[objIterator->plist[poly].vert[1]].getX() < SCREEN_WIDTH &&
-				pts[objIterator->plist[poly].vert[1]].getY() > 0 && pts[objIterator->plist[poly].vert[1]].getY() < SCREEN_HEIGHT &&
-				pts[objIterator->plist[poly].vert[2]].getX() > 0 && pts[objIterator->plist[poly].vert[2]].getX() < SCREEN_WIDTH &&
-				pts[objIterator->plist[poly].vert[2]].getY() > 0 && pts[objIterator->plist[poly].vert[2]].getY() < SCREEN_HEIGHT 		
-				) 
-			{*/
-				Draw_Clip_Line( pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), RGB16Bit565(0,255,0), back_buffer, ddsd.lPitch);
-				
-			
-
-			/*if (pts[objIterator->plist[poly].vert[2]].getX() > 0 && pts[objIterator->plist[poly].vert[2]].getX() < SCREEN_WIDTH &&
-				pts[objIterator->plist[poly].vert[2]].getY() > 0 && pts[objIterator->plist[poly].vert[2]].getY() < SCREEN_HEIGHT &&
-				pts[objIterator->plist[poly].vert[0]].getX() > 0 && pts[objIterator->plist[poly].vert[0]].getX() < SCREEN_WIDTH &&
-				pts[objIterator->plist[poly].vert[0]].getY() > 0 && pts[objIterator->plist[poly].vert[0]].getY() < SCREEN_HEIGHT)
-			{*/
-				Draw_Clip_Line( pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), RGB16Bit565(0,0,255), back_buffer, ddsd.lPitch);
+			Draw_Clip_Line( pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), RGB16Bit565(255,0,0), back_buffer, ddsd.lPitch);				
+			Draw_Clip_Line( pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), RGB16Bit565(0,255,0), back_buffer, ddsd.lPitch);
+			Draw_Clip_Line( pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), RGB16Bit565(0,0,255), back_buffer, ddsd.lPitch);
 			
         }
 	}
@@ -540,11 +530,16 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		//TCHAR buf[80];
 		
 		wchar_t buf[100];
-		swprintf(buf, L"%f", ang);
-
-
+		swprintf(buf, L"Angle: %f", ang);
 
 		TextOut(hdc,10,10, buf, wcslen(buf));
+
+		swprintf(buf, L"Eye: %f", eye.z);
+		TextOut(hdc,10,30, buf, wcslen(buf));
+
+		/*swprintf(buf, L"Eye: %f", level.objectList[0].plist[0].vert[0]);
+		TextOut(hdc,10,50, buf, wcslen(buf));*/
+		
 		//EndPaint(hWnd, &ps);
 		break;
 	case WM_DESTROY:

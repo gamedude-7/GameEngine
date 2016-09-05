@@ -30,6 +30,7 @@ typedef class Vector
 		Vector& operator-=(Vector &vec);
 		Vector& operator*=(double scalar);
 		Vector& operator/=(double scalar);
+		void operator=(Vector &vec);
 		double operator*(Vector &vec);
 		bool operator==(Vector &vec);
 		bool operator!=(Vector &vec);

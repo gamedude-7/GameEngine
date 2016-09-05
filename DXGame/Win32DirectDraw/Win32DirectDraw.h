@@ -75,6 +75,7 @@ D3DXMATRIX m_MatWorld;
 Object obj;
 D3DXVECTOR3 eye(0.0f,50.0f,-100.0f);
 D3DXVECTOR3 at(0.0f,50.0f,100.0f);
+Vector eyeToVertex(0.0f,0.0f,0.0f);
 InputClass *input;
 DIMOUSESTATE mousestate;
 double angle = 3.14/2;
