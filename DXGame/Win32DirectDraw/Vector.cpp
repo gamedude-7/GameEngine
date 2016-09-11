@@ -103,7 +103,7 @@ void Vector::operator=(Vector &vec)
 
 double Vector::dot(Vector v)
 {
-	double ret = this->getX()*v.getX() + this->getZ()*v.getZ();
+	double ret = this->getX()*v.getX() + this->getY() * v.getY() + this->getZ()*v.getZ();
 	//double val = (this->getX()*v.getX() + this->getY() * v.getY() + this->getZ()*v.getZ())/(this->Length() * v.Length());
 	//double angle = acosf(val);
 	return ret;

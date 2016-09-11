@@ -1,4 +1,4 @@
-﻿Build started 05/09/2016 10:56:43 AM.
+﻿Build started 10/09/2016 8:52:47 PM.
      1>Project "C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Win32DirectDraw.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Win32DirectDraw.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -40,29 +40,31 @@
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\swprintf.inl(85) : see declaration of 'swprintf'
      1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(537): warning C4996: 'swprintf': swprintf has been changed to conform with the ISO C standard, adding an extra character count parameter. To use traditional Microsoft swprintf, set _CRT_NON_CONFORMING_SWPRINTFS.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\swprintf.inl(85) : see declaration of 'swprintf'
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(540): warning C4996: 'swprintf': swprintf has been changed to conform with the ISO C standard, adding an extra character count parameter. To use traditional Microsoft swprintf, set _CRT_NON_CONFORMING_SWPRINTFS.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\swprintf.inl(85) : see declaration of 'swprintf'
      1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(503): warning C4101: 'ps' : unreferenced local variable
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(731): warning C4101: 'file_data' : unreferenced local variable
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(726): warning C4101: 'index' : unreferenced local variable
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1082): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1087): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1093): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1099): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1107): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1114): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1123): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1130): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1139): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1145): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1154): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1160): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1203): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1210): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1219): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1226): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1235): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1241): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1250): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1256): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(735): warning C4101: 'file_data' : unreferenced local variable
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(730): warning C4101: 'index' : unreferenced local variable
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1086): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1091): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1097): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1103): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1111): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1118): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1127): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1134): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1143): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1149): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1158): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1164): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1207): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1214): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1223): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1230): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1239): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1245): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1254): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\jason\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1260): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
        ResourceCompile:
          All outputs are up-to-date.
        ManifestResourceCompile:
@@ -92,4 +94,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.92
+Time Elapsed 00:00:01.97

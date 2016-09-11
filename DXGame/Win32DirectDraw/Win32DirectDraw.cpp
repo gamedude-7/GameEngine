@@ -109,7 +109,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 		//D3DVECTOR v;
 		//v = at - eye;
-		Vector vec(0,50.0f,100.0f);
+		Vector vec(0,0.0f,100.0f);
 		
 		if (mousestate.lX > 0)
 			angle -= (3.14/180.0);
@@ -125,26 +125,26 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		if (angle < (3.14/2)) // 1st quadrant
 		{
 			theta = angle;
-			at.x = eye.x + (vec.Length() * cos(theta));
-			at.z = eye.z + (vec.Length() * sin(theta));
+			at.x =  (vec.Length() * cos(theta));
+			at.z = (vec.Length() * sin(theta));
 		}
 		else if (angle > (3.14/2) && angle < 3.14) // 2nd quadrant
 		{
 			theta = angle - 3.14/2;
-			at.x = eye.x - (vec.Length() * sin(theta));
-			at.z = eye.z + (vec.Length() * cos(theta));									
+			at.x =  -(vec.Length() * sin(theta));
+			at.z = (vec.Length() * cos(theta));									
 		}		
 		else if (angle > 3.14 && angle < (3.14+3.14/2)) // 3rd quadrant
 		{
 			theta = angle - 3.14;
-			at.x = eye.x - (vec.Length() * sin(theta));
-			at.z = eye.z - (vec.Length() * cos(theta));	
+			at.x =  -(vec.Length() * sin(theta));
+			at.z = -(vec.Length() * cos(theta));	
 		}
 		else if (angle < 3.14*2 && angle > (3.14+3.14/2)) // 4th quadrant
 		{
 			theta = angle -(3.14+3.14/2);
-			at.x = eye.x + (vec.Length() * sin(theta));
-			at.z = eye.z - (vec.Length() * cos(theta));	
+			at.x = (vec.Length() * sin(theta));
+			at.z = -(vec.Length() * cos(theta));	
 		}
 		//double costheta = cos(theta);
 		//double sintheta = sin(theta);
@@ -295,16 +295,16 @@ int Game_Main()
 			for (int i=0; i<3; i++)
 			{
 				Vector vec(vertices[objIterator->plist[poly].vert[i]].getX() - eye.x, 0,  vertices[objIterator->plist[poly].vert[i]].getZ() - eye.z  );
-				Vector lookat(at.x,0,at.z);
+				Vector lookat(at.x,at.y,at.z);
 				eyeToVertex = vec;
 				vec.Normalize();
-				ang = vec.dot(lookat);
+				dot = vec.dot(lookat);
 				
-				if (ang < 0 )
+				if (dot < 0 )
 					skip = true;
 
-				if ( vec.z < -100)
-					skip = skip;
+			//	if ( vec.z < 0)
+				//	skip = true;
 			}
 
 			if (skip)
@@ -530,12 +530,16 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		//TCHAR buf[80];
 		
 		wchar_t buf[100];
-		swprintf(buf, L"Angle: %f", ang);
+		swprintf(buf, L"dot product: %f", dot);
 
 		TextOut(hdc,10,10, buf, wcslen(buf));
 
 		swprintf(buf, L"Eye: %f", eye.z);
 		TextOut(hdc,10,30, buf, wcslen(buf));
+	
+		swprintf(buf, L"at: %f %f %f", at.x, at.y, at.z);
+		TextOut(hdc,10,50, buf, wcslen(buf));
+
 
 		/*swprintf(buf, L"Eye: %f", level.objectList[0].plist[0].vert[0]);
 		TextOut(hdc,10,50, buf, wcslen(buf));*/
