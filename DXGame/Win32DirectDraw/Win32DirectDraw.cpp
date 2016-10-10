@@ -112,38 +112,74 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		Vector vec(0,0.0f,100.0f);
 		
 		if (mousestate.lX > 0)
-			angle -= (3.14/180.0);
+			yaw -= (3.14/180.0);
 		else if (mousestate.lX < 0)
-			angle += (3.14/180.0);
+			yaw += (3.14/180.0);
 
-		while (angle > (3.14*2))
-			angle-=(2*3.14);
-		while (angle < 0)
-			angle+=(2*3.14);
+		if (mousestate.lY > 0)
+			pitch -= (3.14/180.0);
+		else if (mousestate.lY < 0)
+			pitch += (3.14/180.0);
+
+		while (yaw > (3.14*2))
+			yaw-=(2*3.14);
+		while (yaw < 0)
+			yaw+=(2*3.14);
+
+		while (pitch > (3.14*2))
+			pitch-=(2*3.14);
+		while (pitch < 0)
+			pitch+=(2*3.14);
+
 		double length = vec.Length();
 		double theta = 3.14/2;
-		if (angle < (3.14/2)) // 1st quadrant
+		if (yaw < (3.14/2)) // 1st quadrant
 		{
-			theta = angle;
+			theta = yaw;
 			at.x =  (vec.Length() * cos(theta));
 			at.z = (vec.Length() * sin(theta));
 		}
-		else if (angle > (3.14/2) && angle < 3.14) // 2nd quadrant
+		else if (yaw > (3.14/2) && yaw < 3.14) // 2nd quadrant
 		{
-			theta = angle - 3.14/2;
+			theta = yaw - 3.14/2;
 			at.x =  -(vec.Length() * sin(theta));
 			at.z = (vec.Length() * cos(theta));									
 		}		
-		else if (angle > 3.14 && angle < (3.14+3.14/2)) // 3rd quadrant
+		else if (yaw > 3.14 && yaw < (3.14+3.14/2)) // 3rd quadrant
 		{
-			theta = angle - 3.14;
+			theta = yaw - 3.14;
 			at.x =  -(vec.Length() * sin(theta));
 			at.z = -(vec.Length() * cos(theta));	
 		}
-		else if (angle < 3.14*2 && angle > (3.14+3.14/2)) // 4th quadrant
+		else if (yaw < 3.14*2 && yaw > (3.14+3.14/2)) // 4th quadrant
 		{
-			theta = angle -(3.14+3.14/2);
+			theta = yaw -(3.14+3.14/2);
 			at.x = (vec.Length() * sin(theta));
+			at.z = -(vec.Length() * cos(theta));	
+		}
+
+		if (pitch < (3.14/2)) // 1st quadrant
+		{
+			theta = pitch;
+			at.y =  (vec.Length() * cos(theta));
+			at.z = (vec.Length() * sin(theta));
+		}
+		else if (pitch > (3.14/2) && pitch < 3.14) // 2nd quadrant
+		{
+			theta = pitch - 3.14/2;
+			at.y =  -(vec.Length() * sin(theta));
+			at.z = (vec.Length() * cos(theta));									
+		}		
+		else if (pitch > 3.14 && pitch < (3.14+3.14/2)) // 3rd quadrant
+		{
+			theta = pitch - 3.14;
+			at.y =  -(vec.Length() * sin(theta));
+			at.z = -(vec.Length() * cos(theta));	
+		}
+		else if (pitch < 3.14*2 && pitch > (3.14+3.14/2)) // 4th quadrant
+		{
+			theta = pitch -(3.14+3.14/2);
+			at.y = (vec.Length() * sin(theta));
 			at.z = -(vec.Length() * cos(theta));	
 		}
 		//double costheta = cos(theta);
@@ -286,8 +322,8 @@ int Game_Main()
 		/*while (angle > (3.14*2))
 			angle-=(2*3.14);
 		while (angle < 0)
-			angle+=(2*3.14);*/
-		Vector right(cos(angle-(3.14/2)), 0.0, sin(angle-(3.14/2)) );
+			angle+=(2*3.14);
+		Vector right(cos(angle-(3.14/2)), 0.0, sin(angle-(3.14/2)) );*/
 			
 		bool skip = false;
 		for (int poly = 0; poly < objIterator->num_polys; poly++)
