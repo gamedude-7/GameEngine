@@ -132,7 +132,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			pitch+=(2*3.14);
 
 		double length = vec.Length();
-		double theta = 3.14/2;
+		/*double theta = 3.14/2;
 		if (yaw < (3.14/2)) // 1st quadrant
 		{
 			theta = yaw;
@@ -181,10 +181,13 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			theta = pitch -(3.14+3.14/2);
 			at.y = (vec.Length() * sin(theta));
 			at.z = -(vec.Length() * cos(theta));	
-		}
+		}*/
 		//double costheta = cos(theta);
 		//double sintheta = sin(theta);
-		
+		at.y = radius * sin(pitch);
+		newHradius = radius *cos(pitch);
+		at.x = newHradius * cos(yaw);
+		at.z = newHradius * sin(yaw);
 	}
 
 	Game_Shutdown();

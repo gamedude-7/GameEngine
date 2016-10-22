@@ -80,6 +80,8 @@ InputClass *input;
 DIMOUSESTATE mousestate;
 double yaw = 3.14/2;
 double pitch = 0;
+double radius = 100;
+double newHradius;
 double dot = 0;
 int Game_Init();
 int Game_Main();
