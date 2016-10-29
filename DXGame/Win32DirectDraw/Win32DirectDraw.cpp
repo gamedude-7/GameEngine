@@ -188,6 +188,10 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		newHradius = radius *cos(pitch);
 		at.x = newHradius * cos(yaw);
 		at.z = newHradius * sin(yaw);
+
+		up.x = eye.x - at.x;
+		up.z = eye.z - at.z;
+		up.y = eye.y + radius * sin(pitch+ 3.14/2);
 	}
 
 	Game_Shutdown();
@@ -258,7 +262,8 @@ int Game_Main()
 	D3DXMATRIX out;
 	
 	
-	D3DXVECTOR3 up(0.0f,1.0f,0.0f);	
+	
+	
 	D3DXMATRIX *view = D3DXMatrixLookAtLH(&out, &eye, &at, &up);
 
 	//for (int i=0; i < level.objectList.size(); i++)
