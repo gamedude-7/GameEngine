@@ -83,19 +83,25 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			break;
 		
 		if (KEY_DOWN( VK_UP ))
-			eye.z+=1;
+			MoveCamera(1);
+			//eye.z+=1;
 		else if (KEY_DOWN( VK_DOWN))
-			eye.z-=1;
+			MoveCamera(-1);
+			//eye.z-=1;
+			//SlideCamera(-1,0);	
+		
 
 		if (KEY_DOWN( VK_LEFT ))
 		{
-			eye.x -= 1;
-			at.x -= 1;
+			SlideCamera(-1,0);
+		//	eye.x -= 1;
+		//	at.x -= 1;
 		}
 		else if (KEY_DOWN( VK_RIGHT))
 		{
-			eye.x += 1;
-			at.x += 1;
+			SlideCamera(1,0);
+			//eye.x += 1;
+			//at.x += 1;
 		}
 
 		if (KEY_DOWN( VK_PAUSE))
@@ -132,30 +138,30 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			pitch+=(2*3.14);
 
 		double length = vec.Length();
-		/*double theta = 3.14/2;
-		if (yaw < (3.14/2)) // 1st quadrant
+		double theta = 3.14/2;
+	/*	if (yaw < (3.14/2)) // 1st quadrant
 		{
 			theta = yaw;
-			at.x =  (vec.Length() * cos(theta));
-			at.z = (vec.Length() * sin(theta));
+			at.x = eye.x + (vec.Length() * cos(theta));
+			at.z = eye.z + (vec.Length() * sin(theta));
 		}
 		else if (yaw > (3.14/2) && yaw < 3.14) // 2nd quadrant
 		{
 			theta = yaw - 3.14/2;
-			at.x =  -(vec.Length() * sin(theta));
-			at.z = (vec.Length() * cos(theta));									
+			at.x = eye.x -(vec.Length() * sin(theta));
+			at.z = eye.z + (vec.Length() * cos(theta));									
 		}		
 		else if (yaw > 3.14 && yaw < (3.14+3.14/2)) // 3rd quadrant
 		{
 			theta = yaw - 3.14;
-			at.x =  -(vec.Length() * sin(theta));
-			at.z = -(vec.Length() * cos(theta));	
+			at.x = eye.x - (vec.Length() * sin(theta));
+			at.z = eye.z - (vec.Length() * cos(theta));	
 		}
 		else if (yaw < 3.14*2 && yaw > (3.14+3.14/2)) // 4th quadrant
 		{
 			theta = yaw -(3.14+3.14/2);
-			at.x = (vec.Length() * sin(theta));
-			at.z = -(vec.Length() * cos(theta));	
+			at.x = eye.x + (vec.Length() * sin(theta));
+			at.z = eye.z -(vec.Length() * cos(theta));	
 		}
 
 		if (pitch < (3.14/2)) // 1st quadrant
@@ -184,10 +190,10 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		}*/
 		//double costheta = cos(theta);
 		//double sintheta = sin(theta);
-		at.y = radius * sin(pitch);
+		at.y = eye.y + radius * sin(pitch);
 		newHradius = radius *cos(pitch);
-		at.x = newHradius * cos(yaw);
-		at.z = newHradius * sin(yaw);
+		at.x = eye.x + newHradius * cos(yaw);
+		at.z = eye.z + newHradius * sin(yaw);
 
 		up.x = eye.x - at.x;
 		up.z = eye.z - at.z;
@@ -323,7 +329,10 @@ int Game_Main()
 			pt.x = SCREEN_WIDTH/2 + obj_per.x * (SCREEN_WIDTH/2);
 			pt.y = SCREEN_HEIGHT - (SCREEN_HEIGHT/2 + obj_per.y * (SCREEN_HEIGHT/2));
 			if (pt.x > 0 && pt.x < SCREEN_WIDTH && pt.y > 0 && pt.y < SCREEN_HEIGHT && pt.z < 0)
-				Draw_Pixel16(pt.x,pt.y, RGB16Bit565(255,255,255), back_buffer, ddsd.lPitch);
+			{
+				if (back_buffer != NULL)
+					Draw_Pixel16(pt.x,pt.y, RGB16Bit565(255,255,255), back_buffer, ddsd.lPitch);
+			}
 			pts.push_back(pt);
 		}
 
@@ -357,10 +366,11 @@ int Game_Main()
 				continue;
 			}
 
-			Draw_Clip_Line( pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), RGB16Bit565(255,0,0), back_buffer, ddsd.lPitch);				
-			Draw_Clip_Line( pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), RGB16Bit565(0,255,0), back_buffer, ddsd.lPitch);
-			Draw_Clip_Line( pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), RGB16Bit565(0,0,255), back_buffer, ddsd.lPitch);
-			
+			if (back_buffer!=NULL) {
+				Draw_Clip_Line( pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), RGB16Bit565(255,0,0), back_buffer, ddsd.lPitch);				
+				Draw_Clip_Line( pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), RGB16Bit565(0,255,0), back_buffer, ddsd.lPitch);
+				Draw_Clip_Line( pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), RGB16Bit565(0,0,255), back_buffer, ddsd.lPitch);
+			}
         }
 	}
 
@@ -578,7 +588,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 		TextOut(hdc,10,10, buf, wcslen(buf));
 
-		swprintf(buf, L"Eye: %f", eye.z);
+		swprintf(buf, L"Eye: %f %f %f", eye.x, eye.y, eye.z);
 		TextOut(hdc,10,30, buf, wcslen(buf));
 	
 		swprintf(buf, L"at: %f %f %f", at.x, at.y, at.z);
