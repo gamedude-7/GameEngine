@@ -1,10 +1,10 @@
-﻿Build started 22/11/2016 11:21:09 PM.
+﻿Build started 22/11/2016 11:43:07 PM.
      1>Project "C:\Users\User\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Win32DirectDraw.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Win32DirectDraw.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Win32DirectDraw.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt C3DModel.cpp Cube.cpp Level.cpp Object.cpp Poly.cpp Vector.cpp Win32DirectDraw.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Win32DirectDraw.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Win32DirectDraw.cpp
          Win32DirectDraw.cpp
      1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\vector.h(105): warning C4522: 'Vector' : multiple assignment operators specified
          c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
@@ -66,39 +66,6 @@
      1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1311): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1320): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\win32directdraw.cpp(1326): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-         Vector.cpp
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\vector.h(105): warning C4522: 'Vector' : multiple assignment operators specified
-         Poly.cpp
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\vector.h(105): warning C4522: 'Vector' : multiple assignment operators specified
-         Object.cpp
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\vector.h(105): warning C4522: 'Vector' : multiple assignment operators specified
-         Level.cpp
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\vector.h(105): warning C4522: 'Vector' : multiple assignment operators specified
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\level.cpp(136): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\level.cpp(137): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\level.cpp(138): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\level.cpp(15): warning C4101: 'color' : unreferenced local variable
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\level.cpp(165): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(197) : see declaration of 'strtok'
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\level.cpp(166): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(197) : see declaration of 'strtok'
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\level.cpp(167): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(197) : see declaration of 'strtok'
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\level.cpp(168): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(197) : see declaration of 'strtok'
-         Cube.cpp
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\vector.h(105): warning C4522: 'Vector' : multiple assignment operators specified
-         C3DModel.cpp
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\vector.h(105): warning C4522: 'Vector' : multiple assignment operators specified
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\c3dmodel.cpp(6): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\c3dmodel.cpp(6): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\c3dmodel.cpp(6): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\c3dmodel.cpp(7): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\c3dmodel.cpp(7): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\c3dmodel.cpp(7): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\c3dmodel.cpp(63): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\user\documents\visual studio 2010\projects\gameengine\dxgame\win32directdraw\c3dmodel.cpp(64): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-         Generating Code...
        ResourceCompile:
          All outputs are up-to-date.
        ManifestResourceCompile:
@@ -128,4 +95,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.80
+Time Elapsed 00:00:01.77

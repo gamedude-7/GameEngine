@@ -363,8 +363,8 @@ int Game_Main()
 			//	if ( vec.z < 0)
 				//	skip = true;
 			}
-			Vector v01 = v[1] - v[0];
-			Vector v02 = v[2] - v[0];
+			Vector v01 = v[0] - v[1];
+			Vector v02 = v[2] - v[1];
 			Vector norm = v01.cross(v02);
 			Vector lookat(at.x,at.y,at.z);
 			Vector view = lookat - v[0];
@@ -372,13 +372,13 @@ int Game_Main()
 			//if ()
 				//	skip = true;
 
-			if (dot < 0 )
+			/*if (dot < 0 )
 			{
 			//	skip = false;
 				continue;
-			}
+			}*/
 
-			if (back_buffer!=NULL) {
+			if (back_buffer!=NULL && dot > 0) {
 				Draw_Clip_Line( pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), RGB16Bit565(255,0,0), back_buffer, ddsd.lPitch);				
 				Draw_Clip_Line( pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), RGB16Bit565(0,255,0), back_buffer, ddsd.lPitch);
 				Draw_Clip_Line( pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), RGB16Bit565(0,0,255), back_buffer, ddsd.lPitch);
