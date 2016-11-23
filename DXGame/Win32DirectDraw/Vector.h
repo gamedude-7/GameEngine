@@ -26,6 +26,7 @@ typedef class Vector
 		Vector operator-(Vector &vec);
 		Vector operator*(double scalar);
 		Vector operator/(double scalar);
+	 
 		Vector& operator+=(Vector &vec);
 		Vector& operator-=(Vector &vec);
 		Vector& operator*=(double scalar);
@@ -35,6 +36,7 @@ typedef class Vector
 		bool operator==(Vector &vec);
 		bool operator!=(Vector &vec);
 		double dot(Vector vec);
+		Vector cross(Vector vec);
 		
 		/*Vector Perp()
 		{

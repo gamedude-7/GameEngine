@@ -93,13 +93,13 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 		if (KEY_DOWN( VK_LEFT ))
 		{
-			SlideCamera(-1,0);
+			SlideCamera(1,0);
 		//	eye.x -= 1;
 		//	at.x -= 1;
 		}
 		else if (KEY_DOWN( VK_RIGHT))
 		{
-			SlideCamera(1,0);
+			SlideCamera(-1,0);
 			//eye.x += 1;
 			//at.x += 1;
 		}
@@ -276,7 +276,7 @@ int Game_Main()
 	for (vector< Object >::const_iterator objIterator = level.objectList.begin(); objIterator !=  level.objectList.end(); objIterator++)
 	{
 		C3DModel model(&m_MatWorld, objIterator->world_pos, objIterator->dir);
-		D3DXMATRIX projectionMatrix = model.ProjectionMatrix( 1.00f, 1000.0f, 1.57f, 1.57f);	
+		D3DXMATRIX projectionMatrix = model.ProjectionMatrix( 10.00f, 10000.0f, 1.57f, 1.57f);	
 		D3DXMATRIX cameraCoordinates, screenCoordinates, projCoordinates; 
 		level.models.push_back(model);
 		D3DXMatrixMultiply(&cameraCoordinates,&m_MatWorld,view);
@@ -344,25 +344,37 @@ int Game_Main()
 			
 		bool skip = false;
 		for (int poly = 0; poly < objIterator->num_polys; poly++)
-        {                 				
+        {       
+			Vector v[3];
 			for (int i=0; i<3; i++)
 			{
-				Vector vec(vertices[objIterator->plist[poly].vert[i]].getX() - eye.x, 0,  vertices[objIterator->plist[poly].vert[i]].getZ() - eye.z  );
+				//need to take cross product of 2 edges of the triangle
+				v[i] = Vector(vertices[objIterator->plist[poly].vert[i]].getX(),vertices[objIterator->plist[poly].vert[i]].getY(),vertices[objIterator->plist[poly].vert[i]].getZ());
+			/*	Vector normal = vertices[objIterator->plist[poly].vert[i]]
+				Vector vec(vertices[objIterator->plist[poly].vert[i]].getX() - eye.x, vertices[objIterator->plist[poly].vert[i]].getY() - eye.y,  vertices[objIterator->plist[poly].vert[i]].getZ() - eye.z  );
 				Vector lookat(at.x,at.y,at.z);
 				eyeToVertex = vec;
 				vec.Normalize();
 				dot = vec.dot(lookat);
 				
 				if (dot < 0 )
-					skip = true;
+					skip = true;*/
 
 			//	if ( vec.z < 0)
 				//	skip = true;
 			}
+			Vector v01 = v[1] - v[0];
+			Vector v02 = v[2] - v[0];
+			Vector norm = v01.cross(v02);
+			Vector lookat(at.x,at.y,at.z);
+			Vector view = lookat - v[0];
+			dot = norm.dot(view);
+			//if ()
+				//	skip = true;
 
-			if (skip)
+			if (dot < 0 )
 			{
-				skip = false;
+			//	skip = false;
 				continue;
 			}
 
