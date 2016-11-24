@@ -273,25 +273,28 @@ int Game_Main()
 	D3DXMATRIX *view = D3DXMatrixLookAtLH(&out, &eye, &at, &up);
 
 	//for (int i=0; i < level.objectList.size(); i++)
-	for (vector< Object >::const_iterator objIterator = level.objectList.begin(); objIterator !=  level.objectList.end(); objIterator++)
+	for (vector< Object >::iterator objIterator = level.objectList.begin(); objIterator !=  level.objectList.end(); objIterator++)
 	{
+
 		C3DModel model(&m_MatWorld, objIterator->world_pos, objIterator->dir);
-		D3DXMATRIX projectionMatrix = model.ProjectionMatrix( 10.00f, 10000.0f, 1.57f, 1.57f);	
+		D3DXMATRIX projectionMatrix = model.ProjectionMatrix( 10.00f, 10000.0f, 0.785f, 0.785f);	
 		D3DXMATRIX cameraCoordinates, screenCoordinates, projCoordinates; 
 		level.models.push_back(model);
 		D3DXMatrixMultiply(&cameraCoordinates,&m_MatWorld,view);
 		D3DXMatrixMultiply(&projCoordinates,&cameraCoordinates, &projectionMatrix);
 			
+		
 		vector<D3DXMATRIX> obj_world;
 			
 		vector<D3DXMATRIX> obj;
+	
 		for (int i = 0; i < objIterator->num_vertices; i++)
 		{
 				
 			D3DXMATRIX matrixWorld;
-			matrixWorld.m[0][0] = objIterator->vlist_local[i].getX();// + obj_rotate[i].m[0][0];
-			matrixWorld.m[0][1] = objIterator->vlist_local[i].getY();// + obj_rotate[i].m[0][1];
-			matrixWorld.m[0][2] = objIterator->vlist_local[i].getZ();// + obj_rotate[i].m[0][2];
+			float x = matrixWorld.m[0][0] = objIterator->vlist_local[i].getX();// + obj_rotate[i].m[0][0];
+			float y = matrixWorld.m[0][1] = objIterator->vlist_local[i].getY();// + obj_rotate[i].m[0][1];
+			float z = matrixWorld.m[0][2] = objIterator->vlist_local[i].getZ();// + obj_rotate[i].m[0][2];
 			matrixWorld.m[0][3] = 1;
 			for (int j = 1; j < 4; j++)
 			{
@@ -300,8 +303,13 @@ int Game_Main()
 				matrixWorld.m[j][2] = 0;
 				matrixWorld.m[j][3] = 0;
 			}
+
 			obj_world.push_back(matrixWorld);
-				
+			float curr_radius =  x*x + y*y + z*z;
+			if (curr_radius > objIterator->max_radius)
+			{
+				objIterator->setMaxRadius( curr_radius);
+			}
 		}
 
 		for (int i = 0; i < obj_world.size(); i++)
@@ -311,6 +319,13 @@ int Game_Main()
 			D3DXMatrixMultiply(&matrixObj,&obj_world[i],&projCoordinates);
 			obj.push_back(matrixObj);				
 		}
+
+		float x = objIterator->world_pos.getX() - eye.x;
+		float y = objIterator->world_pos.getY() - eye.y;
+		float z = objIterator->world_pos.getZ() - eye.z;
+		if (z >  10000 || z <  100 ||
+			fabs(x) > z || fabs(y) > z )
+					continue;
 
 		vector<Point> pts;
 		vector<Point> vertices;
@@ -369,8 +384,8 @@ int Game_Main()
 			Vector lookat(at.x,at.y,at.z);
 			Vector view = lookat - v[0];
 			dot = norm.dot(view);
-			//if ()
-				//	skip = true;
+			
+			
 
 			/*if (dot < 0 )
 			{
@@ -378,10 +393,11 @@ int Game_Main()
 				continue;
 			}*/
 
-			if (back_buffer!=NULL && dot > 0) {
+			if (back_buffer!=NULL && dot > 0 ) {
 				Draw_Clip_Line( pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), RGB16Bit565(255,0,0), back_buffer, ddsd.lPitch);				
 				Draw_Clip_Line( pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), RGB16Bit565(0,255,0), back_buffer, ddsd.lPitch);
 				Draw_Clip_Line( pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), RGB16Bit565(0,0,255), back_buffer, ddsd.lPitch);
+				//skip = false;
 			}
         }
 	}
