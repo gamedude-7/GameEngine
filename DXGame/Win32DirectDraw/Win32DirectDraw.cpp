@@ -277,7 +277,7 @@ int Game_Main()
 	{
 
 		C3DModel model(&m_MatWorld, objIterator->world_pos, objIterator->dir);
-		D3DXMATRIX projectionMatrix = model.ProjectionMatrix( 10.00f, 10000.0f, 0.785f, 0.785f);	
+		D3DXMATRIX projectionMatrix = model.ProjectionMatrix( 100.00f, 10000.0f, 0.785f, 0.785f);	
 		D3DXMATRIX cameraCoordinates, screenCoordinates, projCoordinates; 
 		level.models.push_back(model);
 		D3DXMatrixMultiply(&cameraCoordinates,&m_MatWorld,view);
@@ -320,11 +320,13 @@ int Game_Main()
 			obj.push_back(matrixObj);				
 		}
 
-		float x = objIterator->world_pos.getX() - eye.x;
-		float y = objIterator->world_pos.getY() - eye.y;
-		float z = objIterator->world_pos.getZ() - eye.z;
-		if (z >  10000 || z <  100 ||
-			fabs(x) > z || fabs(y) > z )
+		float x = objIterator->world_pos.getX() * cameraCoordinates.m[0][0];
+		float y = objIterator->world_pos.getY() * cameraCoordinates.m[1][1];
+		float z = objIterator->world_pos.getZ();
+		if ( z > eye.z + 10000 || z < eye.z + 100 )
+			continue;
+		z = objIterator->world_pos.getZ() * cameraCoordinates.m[2][2] + objIterator->world_pos.getZ() * cameraCoordinates.m[2][3];
+		if (fabs(x) > z || fabs(y) > z )
 					continue;
 
 		vector<Point> pts;
