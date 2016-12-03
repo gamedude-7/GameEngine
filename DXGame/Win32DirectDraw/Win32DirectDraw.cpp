@@ -83,20 +83,36 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			break;
 		
 		if (KEY_DOWN( VK_UP ))
+		{
+			d = 1;
 			eye.z+=1;
+		}
 		else if (KEY_DOWN( VK_DOWN))
+		{
+			d = -1;
 			eye.z-=1;
+		}
+		
 
 		if (KEY_DOWN( VK_LEFT ))
 		{
+			/*h = -1;
+			eye.x += h * moveDist * cos(yaw+3.14/2);
+			eye.z += h * moveDist * sin(yaw+3.14/2);*/
 			eye.x -= 1;
-			at.x -= 1;
+			//at.x -= 1;
 		}
 		else if (KEY_DOWN( VK_RIGHT))
 		{
+			/*h = 1;
+			double angle = yaw+3.14/2;
+			double sinAng = sin(angle);
+			eye.x += h * moveDist * cos(angle);
+			eye.z += h * moveDist * sinAng;*/
 			eye.x += 1;
-			at.x += 1;
+		//	at.x += 1;
 		}
+		
 
 		if (KEY_DOWN( VK_PAUSE))
 			eyeToVertex.z = eyeToVertex.z;
@@ -184,6 +200,8 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		}*/
 		//double costheta = cos(theta);
 		//double sintheta = sin(theta);
+		
+
 		at.y = radius * sin(pitch);
 		newHradius = radius *cos(pitch);
 		at.x = newHradius * cos(yaw);

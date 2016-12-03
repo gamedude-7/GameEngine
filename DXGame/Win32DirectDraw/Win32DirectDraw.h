@@ -83,6 +83,8 @@ double yaw = 3.14/2;
 double pitch = 0;
 double radius = 100;
 double newHradius;
+double moveDist = 10;
+int h = 0,d =0;
 double dot = 0;
 int Game_Init();
 int Game_Main();
