@@ -27,6 +27,9 @@ public:
 	int num_polys;   // number of polygons in object mesh
 	void AddLocalVertex(Point);
 	void AddTransformedVertex(Point);
+	float max_radius;//maximum radius of object
+
+	void setMaxRadius(float);
 protected:
 
 	
@@ -38,8 +41,7 @@ private:
     int attr;              // attributes of object
        
     float avg_radius; // average radius of object used for collision detection
-    float max_radius;//maximum radius of object
-
+	
    
          
     Vector ux,uy,uz;  //local axes to track full orientation

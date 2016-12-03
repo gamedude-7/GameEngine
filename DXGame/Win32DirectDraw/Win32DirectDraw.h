@@ -86,6 +86,7 @@ double newHradius;
 double moveDist = 10;
 int h = 0,d =0;
 double dot = 0;
+double moveDist = 1;
 int Game_Init();
 int Game_Main();
 void Game_Shutdown();
@@ -98,3 +99,17 @@ int min_clip_x = 0,                             // clipping rectangle
     max_clip_x = (SCREEN_WIDTH-1),
     min_clip_y = 0,
     max_clip_y = (SCREEN_HEIGHT-1);
+
+static void SlideCamera(float h, float v)
+{
+	double ang = yaw+3.14/2;
+	eye.x += h*moveDist*cos(ang); //(h is either a 1 or 0 to indicate)
+	eye.z += h*moveDist*sin(ang); //(movement in this plane or not)
+}
+
+static void MoveCamera(float d)
+{
+	eye.y += d*moveDist*sin(pitch);
+	eye.x += d*moveDist*cos(pitch)*cos(yaw);
+	eye.z += d*moveDist*cos(pitch)*sin(yaw);
+}

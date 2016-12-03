@@ -83,6 +83,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			break;
 		
 		if (KEY_DOWN( VK_UP ))
+<<<<<<< HEAD
 		{
 			d = 1;
 			eye.z+=1;
@@ -92,10 +93,19 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			d = -1;
 			eye.z-=1;
 		}
+=======
+			MoveCamera(1);
+			//eye.z+=1;
+		else if (KEY_DOWN( VK_DOWN))
+			MoveCamera(-1);
+			//eye.z-=1;
+			//SlideCamera(-1,0);	
+>>>>>>> d0235d9b165d8784611bca4aac1d81dfd83c4533
 		
 
 		if (KEY_DOWN( VK_LEFT ))
 		{
+<<<<<<< HEAD
 			/*h = -1;
 			eye.x += h * moveDist * cos(yaw+3.14/2);
 			eye.z += h * moveDist * sin(yaw+3.14/2);*/
@@ -111,6 +121,17 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			eye.z += h * moveDist * sinAng;*/
 			eye.x += 1;
 		//	at.x += 1;
+=======
+			SlideCamera(1,0);
+		//	eye.x -= 1;
+		//	at.x -= 1;
+		}
+		else if (KEY_DOWN( VK_RIGHT))
+		{
+			SlideCamera(-1,0);
+			//eye.x += 1;
+			//at.x += 1;
+>>>>>>> d0235d9b165d8784611bca4aac1d81dfd83c4533
 		}
 		
 
@@ -148,30 +169,30 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			pitch+=(2*3.14);
 
 		double length = vec.Length();
-		/*double theta = 3.14/2;
-		if (yaw < (3.14/2)) // 1st quadrant
+		double theta = 3.14/2;
+	/*	if (yaw < (3.14/2)) // 1st quadrant
 		{
 			theta = yaw;
-			at.x =  (vec.Length() * cos(theta));
-			at.z = (vec.Length() * sin(theta));
+			at.x = eye.x + (vec.Length() * cos(theta));
+			at.z = eye.z + (vec.Length() * sin(theta));
 		}
 		else if (yaw > (3.14/2) && yaw < 3.14) // 2nd quadrant
 		{
 			theta = yaw - 3.14/2;
-			at.x =  -(vec.Length() * sin(theta));
-			at.z = (vec.Length() * cos(theta));									
+			at.x = eye.x -(vec.Length() * sin(theta));
+			at.z = eye.z + (vec.Length() * cos(theta));									
 		}		
 		else if (yaw > 3.14 && yaw < (3.14+3.14/2)) // 3rd quadrant
 		{
 			theta = yaw - 3.14;
-			at.x =  -(vec.Length() * sin(theta));
-			at.z = -(vec.Length() * cos(theta));	
+			at.x = eye.x - (vec.Length() * sin(theta));
+			at.z = eye.z - (vec.Length() * cos(theta));	
 		}
 		else if (yaw < 3.14*2 && yaw > (3.14+3.14/2)) // 4th quadrant
 		{
 			theta = yaw -(3.14+3.14/2);
-			at.x = (vec.Length() * sin(theta));
-			at.z = -(vec.Length() * cos(theta));	
+			at.x = eye.x + (vec.Length() * sin(theta));
+			at.z = eye.z -(vec.Length() * cos(theta));	
 		}
 
 		if (pitch < (3.14/2)) // 1st quadrant
@@ -200,12 +221,16 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		}*/
 		//double costheta = cos(theta);
 		//double sintheta = sin(theta);
+<<<<<<< HEAD
 		
 
 		at.y = radius * sin(pitch);
+=======
+		at.y = eye.y + radius * sin(pitch);
+>>>>>>> d0235d9b165d8784611bca4aac1d81dfd83c4533
 		newHradius = radius *cos(pitch);
-		at.x = newHradius * cos(yaw);
-		at.z = newHradius * sin(yaw);
+		at.x = eye.x + newHradius * cos(yaw);
+		at.z = eye.z + newHradius * sin(yaw);
 
 		up.x = eye.x - at.x;
 		up.z = eye.z - at.z;
@@ -285,25 +310,28 @@ int Game_Main()
 	D3DXMATRIX *view = D3DXMatrixLookAtLH(&out, &eye, &at, &up);
 
 	//for (int i=0; i < level.objectList.size(); i++)
-	for (vector< Object >::const_iterator objIterator = level.objectList.begin(); objIterator !=  level.objectList.end(); objIterator++)
+	for (vector< Object >::iterator objIterator = level.objectList.begin(); objIterator !=  level.objectList.end(); objIterator++)
 	{
+
 		C3DModel model(&m_MatWorld, objIterator->world_pos, objIterator->dir);
-		D3DXMATRIX projectionMatrix = model.ProjectionMatrix( 1.00f, 1000.0f, 1.57f, 1.57f);	
+		D3DXMATRIX projectionMatrix = model.ProjectionMatrix( 100.00f, 10000.0f, 0.785f, 0.785f);	
 		D3DXMATRIX cameraCoordinates, screenCoordinates, projCoordinates; 
 		level.models.push_back(model);
 		D3DXMatrixMultiply(&cameraCoordinates,&m_MatWorld,view);
 		D3DXMatrixMultiply(&projCoordinates,&cameraCoordinates, &projectionMatrix);
 			
+		
 		vector<D3DXMATRIX> obj_world;
 			
 		vector<D3DXMATRIX> obj;
+	
 		for (int i = 0; i < objIterator->num_vertices; i++)
 		{
 				
 			D3DXMATRIX matrixWorld;
-			matrixWorld.m[0][0] = objIterator->vlist_local[i].getX();// + obj_rotate[i].m[0][0];
-			matrixWorld.m[0][1] = objIterator->vlist_local[i].getY();// + obj_rotate[i].m[0][1];
-			matrixWorld.m[0][2] = objIterator->vlist_local[i].getZ();// + obj_rotate[i].m[0][2];
+			float x = matrixWorld.m[0][0] = objIterator->vlist_local[i].getX();// + obj_rotate[i].m[0][0];
+			float y = matrixWorld.m[0][1] = objIterator->vlist_local[i].getY();// + obj_rotate[i].m[0][1];
+			float z = matrixWorld.m[0][2] = objIterator->vlist_local[i].getZ();// + obj_rotate[i].m[0][2];
 			matrixWorld.m[0][3] = 1;
 			for (int j = 1; j < 4; j++)
 			{
@@ -312,8 +340,13 @@ int Game_Main()
 				matrixWorld.m[j][2] = 0;
 				matrixWorld.m[j][3] = 0;
 			}
+
 			obj_world.push_back(matrixWorld);
-				
+			float curr_radius =  x*x + y*y + z*z;
+			if (curr_radius > objIterator->max_radius)
+			{
+				objIterator->setMaxRadius( curr_radius);
+			}
 		}
 
 		for (int i = 0; i < obj_world.size(); i++)
@@ -323,6 +356,15 @@ int Game_Main()
 			D3DXMatrixMultiply(&matrixObj,&obj_world[i],&projCoordinates);
 			obj.push_back(matrixObj);				
 		}
+
+		float x = objIterator->world_pos.getX() * cameraCoordinates.m[0][0];
+		float y = objIterator->world_pos.getY() * cameraCoordinates.m[1][1];
+		float z = objIterator->world_pos.getZ();
+		if ( z > eye.z + 10000 || z < eye.z + 100 )
+			continue;
+		z = objIterator->world_pos.getZ() * cameraCoordinates.m[2][2] + objIterator->world_pos.getZ() * cameraCoordinates.m[2][3];
+		if (fabs(x) > z || fabs(y) > z )
+					continue;
 
 		vector<Point> pts;
 		vector<Point> vertices;
@@ -341,7 +383,10 @@ int Game_Main()
 			pt.x = SCREEN_WIDTH/2 + obj_per.x * (SCREEN_WIDTH/2);
 			pt.y = SCREEN_HEIGHT - (SCREEN_HEIGHT/2 + obj_per.y * (SCREEN_HEIGHT/2));
 			if (pt.x > 0 && pt.x < SCREEN_WIDTH && pt.y > 0 && pt.y < SCREEN_HEIGHT && pt.z < 0)
-				Draw_Pixel16(pt.x,pt.y, RGB16Bit565(255,255,255), back_buffer, ddsd.lPitch);
+			{
+				if (back_buffer != NULL)
+					Draw_Pixel16(pt.x,pt.y, RGB16Bit565(255,255,255), back_buffer, ddsd.lPitch);
+			}
 			pts.push_back(pt);
 		}
 
@@ -353,32 +398,46 @@ int Game_Main()
 			
 		bool skip = false;
 		for (int poly = 0; poly < objIterator->num_polys; poly++)
-        {                 				
+        {       
+			Vector v[3];
 			for (int i=0; i<3; i++)
 			{
-				Vector vec(vertices[objIterator->plist[poly].vert[i]].getX() - eye.x, 0,  vertices[objIterator->plist[poly].vert[i]].getZ() - eye.z  );
+				//need to take cross product of 2 edges of the triangle
+				v[i] = Vector(vertices[objIterator->plist[poly].vert[i]].getX(),vertices[objIterator->plist[poly].vert[i]].getY(),vertices[objIterator->plist[poly].vert[i]].getZ());
+			/*	Vector normal = vertices[objIterator->plist[poly].vert[i]]
+				Vector vec(vertices[objIterator->plist[poly].vert[i]].getX() - eye.x, vertices[objIterator->plist[poly].vert[i]].getY() - eye.y,  vertices[objIterator->plist[poly].vert[i]].getZ() - eye.z  );
 				Vector lookat(at.x,at.y,at.z);
 				eyeToVertex = vec;
 				vec.Normalize();
 				dot = vec.dot(lookat);
 				
 				if (dot < 0 )
-					skip = true;
+					skip = true;*/
 
 			//	if ( vec.z < 0)
 				//	skip = true;
 			}
-
-			if (skip)
-			{
-				skip = false;
-				continue;
-			}
-
-			Draw_Clip_Line( pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), RGB16Bit565(255,0,0), back_buffer, ddsd.lPitch);				
-			Draw_Clip_Line( pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), RGB16Bit565(0,255,0), back_buffer, ddsd.lPitch);
-			Draw_Clip_Line( pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), RGB16Bit565(0,0,255), back_buffer, ddsd.lPitch);
+			Vector v01 = v[0] - v[1];
+			Vector v02 = v[2] - v[1];
+			Vector norm = v01.cross(v02);
+			Vector lookat(at.x,at.y,at.z);
+			Vector view = lookat - v[0];
+			dot = norm.dot(view);
 			
+			
+
+			/*if (dot < 0 )
+			{
+			//	skip = false;
+				continue;
+			}*/
+
+			if (back_buffer!=NULL && dot > 0 ) {
+				Draw_Clip_Line( pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), RGB16Bit565(255,0,0), back_buffer, ddsd.lPitch);				
+				Draw_Clip_Line( pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), RGB16Bit565(0,255,0), back_buffer, ddsd.lPitch);
+				Draw_Clip_Line( pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), RGB16Bit565(0,0,255), back_buffer, ddsd.lPitch);
+				//skip = false;
+			}
         }
 	}
 
@@ -596,7 +655,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 		TextOut(hdc,10,10, buf, wcslen(buf));
 
-		swprintf(buf, L"Eye: %f", eye.z);
+		swprintf(buf, L"Eye: %f %f %f", eye.x, eye.y, eye.z);
 		TextOut(hdc,10,30, buf, wcslen(buf));
 	
 		swprintf(buf, L"at: %f %f %f", at.x, at.y, at.z);

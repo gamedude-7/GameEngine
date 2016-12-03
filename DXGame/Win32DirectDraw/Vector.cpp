@@ -108,3 +108,12 @@ double Vector::dot(Vector v)
 	//double angle = acosf(val);
 	return ret;
 }
+
+Vector Vector::cross(Vector v)
+{
+	Vector ret;
+	ret.x = this->getX() * v.getZ() - this->getZ() * v.getY();
+	ret.y = this->getZ() * v.getX() - this->getX() * v.getZ();
+	ret.z = this->getX() * v.getY() - this->getY() * v.getX();
+	return ret;
+}
