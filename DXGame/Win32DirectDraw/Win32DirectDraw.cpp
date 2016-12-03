@@ -83,45 +83,16 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			break;
 		
 		if (KEY_DOWN( VK_UP ))
-<<<<<<< HEAD
-		{
-			d = 1;
-			eye.z+=1;
-		}
-		else if (KEY_DOWN( VK_DOWN))
-		{
-			d = -1;
-			eye.z-=1;
-		}
-=======
 			MoveCamera(1);
 			//eye.z+=1;
 		else if (KEY_DOWN( VK_DOWN))
 			MoveCamera(-1);
 			//eye.z-=1;
 			//SlideCamera(-1,0);	
->>>>>>> d0235d9b165d8784611bca4aac1d81dfd83c4533
 		
 
 		if (KEY_DOWN( VK_LEFT ))
 		{
-<<<<<<< HEAD
-			/*h = -1;
-			eye.x += h * moveDist * cos(yaw+3.14/2);
-			eye.z += h * moveDist * sin(yaw+3.14/2);*/
-			eye.x -= 1;
-			//at.x -= 1;
-		}
-		else if (KEY_DOWN( VK_RIGHT))
-		{
-			/*h = 1;
-			double angle = yaw+3.14/2;
-			double sinAng = sin(angle);
-			eye.x += h * moveDist * cos(angle);
-			eye.z += h * moveDist * sinAng;*/
-			eye.x += 1;
-		//	at.x += 1;
-=======
 			SlideCamera(1,0);
 		//	eye.x -= 1;
 		//	at.x -= 1;
@@ -131,9 +102,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			SlideCamera(-1,0);
 			//eye.x += 1;
 			//at.x += 1;
->>>>>>> d0235d9b165d8784611bca4aac1d81dfd83c4533
 		}
-		
 
 		if (KEY_DOWN( VK_PAUSE))
 			eyeToVertex.z = eyeToVertex.z;
@@ -221,13 +190,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		}*/
 		//double costheta = cos(theta);
 		//double sintheta = sin(theta);
-<<<<<<< HEAD
-		
-
-		at.y = radius * sin(pitch);
-=======
 		at.y = eye.y + radius * sin(pitch);
->>>>>>> d0235d9b165d8784611bca4aac1d81dfd83c4533
 		newHradius = radius *cos(pitch);
 		at.x = eye.x + newHradius * cos(yaw);
 		at.z = eye.z + newHradius * sin(yaw);
