@@ -343,14 +343,17 @@ namespace GameEngine
                             cube.world_pos.Y = float.Parse(token[1]);
                             cube.world_pos.Z = float.Parse(token[2]);
                             str = rdr.ReadLine();
+                            token = str.Split(new Char[] { ' ' });
                             cube.width = float.Parse(token[0]);
                             cube.height = float.Parse(token[1]);
                             cube.length = float.Parse(token[2]);
                             str = rdr.ReadLine();
+                            token = str.Split(new Char[] { ' ' });
                             cube.dir.X = float.Parse(token[0]);
                             cube.dir.Y = float.Parse(token[1]);
                             cube.dir.Z = float.Parse(token[2]);
                             str = rdr.ReadLine();
+                            token = str.Split(new Char[] { ' ' });
                             cube.scale.X = float.Parse(token[0]);
                             cube.scale.Y = float.Parse(token[1]);
                             cube.scale.Z = float.Parse(token[2]);
