@@ -320,14 +320,15 @@ int Game_Main()
 			obj.push_back(matrixObj);				
 		}
 
-		float x = objIterator->world_pos.getX() * cameraCoordinates.m[0][0];
+		/*float x = objIterator->world_pos.getX() * cameraCoordinates.m[0][0];
 		float y = objIterator->world_pos.getY() * cameraCoordinates.m[1][1];
 		float z = objIterator->world_pos.getZ();
 		if ( z > eye.z + 10000 || z < eye.z + 100 )
 			continue;
-		z = objIterator->world_pos.getZ() * cameraCoordinates.m[2][2] + objIterator->world_pos.getZ() * cameraCoordinates.m[2][3];
+		z = objIterator->world_pos.getZ() * cameraCoordinates.m[2][2];// + objIterator->world_pos.getZ() * cameraCoordinates.m[2][3];
+
 		if (fabs(x) > z || fabs(y) > z )
-					continue;
+					continue;*/
 
 		vector<Point> pts;
 		vector<Point> vertices;

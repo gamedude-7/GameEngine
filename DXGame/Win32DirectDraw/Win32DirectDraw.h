@@ -111,3 +111,4 @@ static void MoveCamera(float d)
 	eye.x += d*moveDist*cos(pitch)*cos(yaw);
 	eye.z += d*moveDist*cos(pitch)*sin(yaw);
 }
+
