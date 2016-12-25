@@ -266,10 +266,7 @@ int Game_Main()
 	UCHAR *back_buffer = (UCHAR *)ddsd.lpSurface;    
 
 	D3DXMATRIX out;
-	
-	
-	
-	
+
 	D3DXMATRIX *view = D3DXMatrixLookAtLH(&out, &eye, &at, &up);
 
 	//for (int i=0; i < level.objectList.size(); i++)
@@ -282,8 +279,7 @@ int Game_Main()
 		level.models.push_back(model);
 		D3DXMatrixMultiply(&cameraCoordinates,&m_MatWorld,view);
 		D3DXMatrixMultiply(&projCoordinates,&cameraCoordinates, &projectionMatrix);
-			
-		
+
 		vector<D3DXMATRIX> obj_world;
 			
 		vector<D3DXMATRIX> obj;
@@ -320,15 +316,16 @@ int Game_Main()
 			obj.push_back(matrixObj);				
 		}
 
-		/*float x = objIterator->world_pos.getX() * cameraCoordinates.m[0][0];
-		float y = objIterator->world_pos.getY() * cameraCoordinates.m[1][1];
-		float z = objIterator->world_pos.getZ();
-		if ( z > eye.z + 10000 || z < eye.z + 100 )
+		float x =  cameraCoordinates.m[3][0];
+		float y = cameraCoordinates.m[3][1];
+		//float z = objIterator->world_pos.getZ() ;
+		float z =cameraCoordinates.m[3][2];// + objIterator->world_pos.getZ() * cameraCoordinates.m[3][2];
+		if ( z > (eye.z + 10000) || z < (eye.z + 100) )
 			continue;
-		z = objIterator->world_pos.getZ() * cameraCoordinates.m[2][2];// + objIterator->world_pos.getZ() * cameraCoordinates.m[2][3];
+		
 
 		if (fabs(x) > z || fabs(y) > z )
-					continue;*/
+					continue;
 
 		vector<Point> pts;
 		vector<Point> vertices;
