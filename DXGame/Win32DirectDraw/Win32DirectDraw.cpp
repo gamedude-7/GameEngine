@@ -1,6 +1,6 @@
 // Win32DirectDraw.cpp : Defines the entry point for the application.
 //
-
+#include "ScriptTrans.h"
 #include "stdafx.h"
 #include <iostream>
 #include "Win32DirectDraw.h"
@@ -82,30 +82,9 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		if (KEY_DOWN( VK_ESCAPE))
 			break;
 		
-		if (KEY_DOWN( VK_UP ))
-			MoveCamera(1);
-			//eye.z+=1;
-		else if (KEY_DOWN( VK_DOWN))
-			MoveCamera(-1);
-			//eye.z-=1;
-			//SlideCamera(-1,0);	
+
+		#include "camera.scr"
 		
-
-		if (KEY_DOWN( VK_LEFT ))
-		{
-			SlideCamera(1,0);
-		//	eye.x -= 1;
-		//	at.x -= 1;
-		}
-		else if (KEY_DOWN( VK_RIGHT))
-		{
-			SlideCamera(-1,0);
-			//eye.x += 1;
-			//at.x += 1;
-		}
-
-		if (KEY_DOWN( VK_PAUSE))
-			eyeToVertex.z = eyeToVertex.z;
 
 		HRESULT hr = input->lpdimouse->GetDeviceState(sizeof(DIMOUSESTATE),(LPVOID)&mousestate);
 		if (FAILED(hr))

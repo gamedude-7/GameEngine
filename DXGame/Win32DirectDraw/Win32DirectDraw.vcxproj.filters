@@ -22,6 +22,9 @@
     <None Include="Win32DirectDraw.ico">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="script1.scr">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -61,6 +64,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="InputClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptTrans.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

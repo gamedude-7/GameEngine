@@ -2220,6 +2220,19 @@ namespace GameEngine
             }
             wtr.Close();
         }
+
+        private void OpenScriptButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad.exe", NameTextBox.Text);
+        }        
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            NameTextBox.Text = treeView1.SelectedNode.Text;
+            FileStream fs = new FileStream(NameTextBox.Text, FileMode.Create);
+        }
+
+        
         
     }
 }

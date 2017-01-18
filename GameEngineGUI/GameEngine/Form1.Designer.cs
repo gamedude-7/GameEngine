@@ -70,6 +70,9 @@ namespace GameEngine
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.OpenScriptButton = new System.Windows.Forms.Button();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
             this.containerControl1.SuspendLayout();
             this.mainSplitContainer.Panel1.SuspendLayout();
             this.mainSplitContainer.Panel2.SuspendLayout();
@@ -368,6 +371,8 @@ namespace GameEngine
             this.treeView1.SelectedNodes = ((System.Collections.ArrayList)(resources.GetObject("treeView1.SelectedNodes")));
             this.treeView1.Size = new System.Drawing.Size(216, 801);
             this.treeView1.TabIndex = 11;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+
             // 
             // label1
             // 
@@ -405,11 +410,40 @@ namespace GameEngine
             this.label4.TabIndex = 15;
             this.label4.Text = "Perspective";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1103, 71);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Name";
+            // 
+            // OpenScriptButton
+            // 
+            this.OpenScriptButton.Location = new System.Drawing.Point(1106, 113);
+            this.OpenScriptButton.Name = "OpenScriptButton";
+            this.OpenScriptButton.Size = new System.Drawing.Size(75, 23);
+            this.OpenScriptButton.TabIndex = 17;
+            this.OpenScriptButton.Text = "Open Script";
+            this.OpenScriptButton.UseVisualStyleBackColor = true;
+            this.OpenScriptButton.Click += new System.EventHandler(this.OpenScriptButton_Click);
+            // 
+            // NameTextBox
+            // 
+            this.NameTextBox.Location = new System.Drawing.Point(1106, 87);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.NameTextBox.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1220, 926);
+            this.Controls.Add(this.NameTextBox);
+            this.Controls.Add(this.OpenScriptButton);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -474,6 +508,9 @@ namespace GameEngine
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button OpenScriptButton;
+        private System.Windows.Forms.TextBox NameTextBox;
 
         
     }
