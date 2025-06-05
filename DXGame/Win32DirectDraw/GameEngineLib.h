@@ -9,6 +9,12 @@
 #define OBJECT4DV1_MAX_VERTICES           1024  // 64
 #define OBJECT4DV1_MAX_POLYS              1024 // 128
 
+#define SCREEN_WIDTH	800
+#define SCREEN_HEIGHT	600
+#define WINDOW_WIDTH	800
+#define WINDOW_HEIGHT	600
+#define SCREEN_BPP		16
+
 typedef struct VECTOR4D_TYP
 {
 union
@@ -73,6 +79,8 @@ POINT4D vlist_local[OBJECT4DV1_MAX_VERTICES]; // array of local vertices
 POINT4D vlist_trans[OBJECT4DV1_MAX_VERTICES]; // array of transformed vertices
 
 int num_polys;        // number of polygons in object mesh
+
+
 POLY4DV1 plist[OBJECT4DV1_MAX_POLYS];  // array of polygons
 
 } OBJECT4DV1, *OBJECT4DV1_PTR;
@@ -86,8 +94,26 @@ OBJECT4DV1_PTR obj_ptrs[MAX_OBJECTS];
 int num_objs; // number of polys in render list
 } OBJECTLIST4DV1, *OBJECTLIST4DV1_PTR;
 
+// container structure for bitmaps .BMP file
+typedef struct BITMAP_FILE_TAG
+{
+    BITMAPFILEHEADER bitmapfileheader;  // this contains the bitmapfile header
+    BITMAPINFOHEADER bitmapinfoheader;  // this is all the info including the palette
+    PALETTEENTRY     palette[256];      // we will store the palette here
+    UCHAR* buffer;           // this is a pointer to the data
 
+} BITMAP_FILE, * BITMAP_FILE_PTR;
 
 int LoadLevel_LVL(VECTOR4D_PTR scale, OBJECTLIST4DV1_PTR obj_list, RGBAV1_PTR color);
 
+unsigned int ExtractGreen(unsigned int nSourceColor);
+unsigned short ConvertRGB888toRGB565(unsigned int nSourceColor);
+int Draw_Pixel16(int x, int y, int color, UCHAR* video_buffer, int lpitch);
+int Draw_Line16(int xo, int yo, int x1, int y1, int color, UCHAR* vb_start, int lpitch);
+int Draw_Clip_Line(int x0, int y0, int x1, int y1, int color,
+    UCHAR* dest_buffer, int lpitch);
+int Clip_Line(int& x1, int& y1, int& x2, int& y2);
+
+int Load_Bitmap_File(BITMAP_FILE_PTR bitmap, char* filename);
+int Flip_Bitmap(unsigned int* image, int bytes_per_line, int height);
 #endif

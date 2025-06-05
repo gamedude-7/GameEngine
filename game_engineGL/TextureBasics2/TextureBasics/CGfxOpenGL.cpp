@@ -27,19 +27,20 @@
 #include <fcntl.h>
 
 
-#include <ddraw.h>  // directX includes
+//#include <ddraw.h>  // directX includes
 /*#include <dsound.h>
 #include <dmksctrl.h>
 #include <dmusici.h>
 #include <dmusicc.h>
 #include <dmusicf.h>*/
 #include <dinput.h>
-#include "T3DLIB1.h" // game library includes
-/*#include "T3DLIB2.h"
-#include "T3DLIB3.h"*/
-#include "T3DLIB4.h"
-#include "T3DLIB5.h"
-
+//#include "T3DLIB1.h" // game library includes
+///*#include "T3DLIB2.h"
+//#include "T3DLIB3.h"*/
+//#include "T3DLIB4.h"
+//#include "T3DLIB5.h"
+#include "Object.h"
+#include "Camera.h"
 #include "glext.h"
 #include "CGfxOpenGL.h"
 
@@ -53,9 +54,9 @@ CGfxOpenGL::~CGfxOpenGL()
 {
 }
 
-bool CGfxOpenGL::Init(CAM4DV1 *camera)
+bool CGfxOpenGL::Init(Camera *camera, FILE *fp_override)
 {	
-
+	fp_error = fp_override;
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 
 	// enable 2D texturing
@@ -96,6 +97,165 @@ bool CGfxOpenGL::Init(CAM4DV1 *camera)
 	m_zMoveNegative = true;
 	cam = camera;
 	cam->pos.z = 0.0f;
+
+	FILE* stream;
+	char line[100];
+	char* token, * stopstring;
+	float scale = 1.0f, width, height, length;
+	float x, y, z;
+	Vertex vertex[8];
+	int num, vertices;
+	char seps[] = " ,\t\n";
+	POINT4D pt;
+	if (linked_list.empty())
+	{
+		int result = fopen_s(&stream, "world.lvl", "r+");
+		if (result == 0)
+		{
+			fgets(line, 100, stream);
+			int cnt = strtod(line, &stopstring);
+			for (int i = 0; i < cnt; i++)
+			{
+				fgets(line, 100, stream);
+				if (strncmp(line, "cube", 4) == 0)
+				{
+					obj = new Object();
+					obj->type = "cube";
+					fgets(line, 100, stream);
+					obj->name = line;
+					obj->name.pop_back(); // remove last character
+					fgets(line, 100, stream);
+					obj->scriptName = line;
+					obj->scriptName.pop_back();
+					fgets(line, 100, stream);
+					token = strtok(line, seps);
+					obj->world_pos.x = ((float)strtod(token, &stopstring)) * scale;
+					token = strtok(NULL, " ");
+					obj->world_pos.y = ((float)strtod(token, &stopstring)) * scale;
+					token = strtok(NULL, " ");
+					obj->world_pos.z = ((float)strtod(token, &stopstring)) * scale;
+					fgets(line, 100, stream);
+					token = strtok(line, " ");
+					width = ((float)strtod(token, &stopstring)) * scale;
+					token = strtok(NULL, " ");
+					height = ((float)strtod(token, &stopstring)) * scale;
+					token = strtok(NULL, " ");
+					length = ((float)strtod(token, &stopstring)) * scale;
+					fgets(line, 100, stream);
+					token = strtok(line, " ");
+					obj->dir.x = ((float)strtod(token, &stopstring)) * scale;
+					token = strtok(NULL, " ");
+					obj->dir.y = ((float)strtod(token, &stopstring)) * scale;
+					token = strtok(NULL, " ");
+					obj->dir.z = ((float)strtod(token, &stopstring)) * scale;
+					fgets(line, 100, stream);	  // read scale
+					token = strtok(line, " ");
+					obj->num_vertices = 8;
+					//obj->vlist_local = vector<Point>();
+					obj->vlist_local.resize(8);
+					obj->vlist_local[0].x = -width / 2;
+					obj->vlist_local[0].y = height / 2;
+					obj->vlist_local[0].z = -length / 2;
+					obj->vlist_local[1].x = width / 2;
+					obj->vlist_local[1].y = height / 2;
+					obj->vlist_local[1].z = -length / 2;
+					obj->vlist_local[2].x = width / 2;
+					obj->vlist_local[2].y = -height / 2;
+					obj->vlist_local[2].z = -length / 2;
+					obj->vlist_local[3].x = -width / 2;
+					obj->vlist_local[3].y = -height / 2;
+					obj->vlist_local[3].z = -length / 2;
+					obj->vlist_local[4].x = -width / 2;
+					obj->vlist_local[4].y = height / 2;
+					obj->vlist_local[4].z = length / 2;
+					obj->vlist_local[5].x = width / 2;
+					obj->vlist_local[5].y = height / 2;
+					obj->vlist_local[5].z = length / 2;
+					obj->vlist_local[6].x = width / 2;
+					obj->vlist_local[6].y = -height / 2;
+					obj->vlist_local[6].z = length / 2;
+					obj->vlist_local[7].x = -width / 2;
+					obj->vlist_local[7].y = -height / 2;
+					obj->vlist_local[7].z = length / 2;
+
+
+				}
+				else if (strncmp(line, "object", 6) == 0)
+				{
+					obj = new Object();
+					fgets(line, 100, stream);
+					obj->name = line;
+					obj->type = "object";
+					obj->name.pop_back(); // remove last character \n
+					fgets(line, 100, stream);
+					obj->scriptName = line;
+					obj->scriptName.pop_back();
+					fgets(line, 100, stream);
+					token = strtok(line, seps);
+					obj->world_pos.x = ((float)strtod(token, &stopstring)); //*scale;
+					token = strtok(NULL, " ");
+					obj->world_pos.y = ((float)strtod(token, &stopstring)); //*scale;
+					token = strtok(NULL, " ");
+					obj->world_pos.z = ((float)strtod(token, &stopstring));// *scale;
+					if (obj->name == "camera")
+					{
+						cam->pos.x = -obj->world_pos.x;
+						cam->pos.y = -obj->world_pos.y;
+						cam->pos.z = -obj->world_pos.z;
+					}
+					fgets(line, 100, stream);	  // read direction			
+					token = strtok(line, seps);
+					obj->dir.x = ((float)strtod(token, &stopstring));
+					token = strtok(NULL, " ");
+					obj->dir.y = ((float)strtod(token, &stopstring));
+					token = strtok(NULL, " ");
+					obj->dir.z = ((float)strtod(token, &stopstring));
+					if (obj->name == "camera")
+					{
+						cam->dir.x = obj->dir.x;
+						cam->dir.y = obj->dir.y;
+						cam->dir.z = obj->dir.z;
+					}
+
+					fgets(line, 100, stream);	  // read scale								
+					fgets(line, 100, stream);  // read # of vertices	  
+					//char* ptr;
+
+					char* token2 = strtok(line, seps);
+					int num = strtol(token2, &stopstring, 10);//strtod(token2, &stopstring);
+					obj->num_vertices = num;// strtod(line, &ptr);
+					obj->vlist_local.resize(num);
+					for (int v = 0; v < obj->num_vertices; v++)
+					{
+						//obj->vlist_local[obj->num_vertices];
+						fgets(line, 100, stream);
+						token = strtok(line, " ");
+						obj->vlist_local[v].x = ((float)strtod(token, &stopstring)) * scale;
+						token = strtok(NULL, " ");
+						obj->vlist_local[v].y = ((float)strtod(token, &stopstring)) * scale;
+						token = strtok(NULL, " ");
+						obj->vlist_local[v].z = ((float)strtod(token, &stopstring)) * scale;
+					}
+					fgets(line, 100, stream);  // read # of polys	  
+					obj->num_polys = strtod(line, &stopstring);
+					obj->plist.resize(obj->num_polys);
+					for (int w = 0; w < obj->num_polys; w++)
+					{
+						fgets(line, 100, stream);
+						token = strtok(line, " ");
+						obj->plist[w].vert[0] = atoi(token);
+						token = strtok(NULL, " ");
+						obj->plist[w].vert[1] = atoi(token);
+						token = strtok(NULL, " ");
+						obj->plist[w].vert[2] = atoi(token);
+					}
+				}// end if
+				if (obj->name!="camera")
+					linked_list.push_back(*obj);
+			} // end for		 
+			fclose(stream);
+		} // end if	        		
+	} // end if
 	
 	return true;
 }
@@ -153,7 +313,7 @@ void CGfxOpenGL::Prepare(float dt)
 */	
 }
 
-void CGfxOpenGL::DrawPlane()
+void CGfxOpenGL::DrawObjects()
 {
 /*	//file handle
 	HANDLE hFile;
@@ -174,133 +334,19 @@ bTest=CloseHandle(hFile);
 /* bTest will be TRUE if the read is successful.
  If false, take a look at GetLastError */
 
-   FILE *stream;
-   char line[100];
-   char *token, *stopstring;
-   float scale = 0.1f,width,height,length;
-   float x,y,z;
-   Vertex vertex[8];
-   int num, vertices;
-   char seps[]   = " ,\t\n";
-   POINT4D pt;
-   if (linked_list.empty())
-   {
-	   if( fopen_s(&stream, "world.lvl", "r+" ) == 0 )
-	   {
-			fgets( line, 100, stream );
-			int cnt = strtod(line,&stopstring);
-			for (int i = 0; i < cnt; i++)
-			{
-				fgets( line, 100, stream );
-				if (strncmp(line,"cube",4)==0)
-				{	
-					obj = new OBJECT4DV1;
-					strcpy(obj->name, "cube\n");
-					fgets( line, 100, stream );	  
-					token = strtok(line, seps);						
-					obj->world_pos.x = ((float) strtod(token,&stopstring))*scale;
-					token = strtok(NULL, " ");
-					obj->world_pos.y = ((float) strtod(token,&stopstring))*scale;
-					token = strtok(NULL, " ");
-					obj->world_pos.z = ((float) strtod(token,&stopstring))*scale;								
-					fgets( line, 100, stream );	  
-					token = strtok(line, " ");			    
-					width = ((float) strtod(token,&stopstring))*scale;
-					token = strtok(NULL, " ");
-					height = ((float) strtod(token,&stopstring))*scale;
-					token = strtok(NULL, " ");
-					length = ((float) strtod(token,&stopstring))*scale;
-					fgets( line, 100, stream );	  
-					token = strtok(line, " ");			    
-					obj->dir.x = ((float) strtod(token,&stopstring))*scale;
-					token = strtok(NULL, " ");
-					obj->dir.y = ((float) strtod(token,&stopstring))*scale;
-					token = strtok(NULL, " ");
-					obj->dir.z = ((float) strtod(token,&stopstring))*scale;
-					fgets( line, 100, stream );	  // read scale
-					token = strtok(line, " ");			    			
-					obj->vlist_local[0].x=-width/2;
-					obj->vlist_local[0].y=height/2;
-					obj->vlist_local[0].z=-length/2;
-					obj->vlist_local[1].x=width/2;
-					obj->vlist_local[1].y=height/2;
-					obj->vlist_local[1].z=-length/2;
-					obj->vlist_local[2].x=width/2;
-					obj->vlist_local[2].y=-height/2;
-					obj->vlist_local[2].z=-length/2;
-					obj->vlist_local[3].x=-width/2;
-					obj->vlist_local[3].y=-height/2;
-					obj->vlist_local[3].z=-length/2;
-					obj->vlist_local[4].x=-width/2;
-					obj->vlist_local[4].y=height/2;
-					obj->vlist_local[4].z=length/2;
-					obj->vlist_local[5].x=width/2;
-					obj->vlist_local[5].y=height/2;
-					obj->vlist_local[5].z=length/2;
-					obj->vlist_local[6].x=width/2;
-					obj->vlist_local[6].y=-height/2;
-					obj->vlist_local[6].z=length/2;
-					obj->vlist_local[7].x=-width/2;
-					obj->vlist_local[7].y=-height/2;
-					obj->vlist_local[7].z=length/2;
-					
-												
-				}
-				else if (strncmp(line,"object",6)==0)
-				{
-					obj = new OBJECT4DV1;
-					strcpy(obj->name, "object");
-					fgets( line, 100, stream );	  
-					token = strtok(line, seps);						
-					obj->world_pos.x = ((float) strtod(token,&stopstring))*scale;
-					token = strtok(NULL, " ");
-					obj->world_pos.y = ((float) strtod(token,&stopstring))*scale;
-					token = strtok(NULL, " ");
-					obj->world_pos.z = ((float) strtod(token,&stopstring))*scale;								
-					fgets( line, 100, stream );	  // read direction					
-					fgets( line, 100, stream );	  // read scale					
-					fgets( line, 100, stream );  // read # of vertices	  					
-					obj->num_vertices = strtod(line,&stopstring);					
-					for (int v=0; v<obj->num_vertices; v++)
-					{
-						obj->vlist_local[obj->num_vertices];
-						fgets( line, 100, stream );
-						token = strtok(line, " ");	
-						obj->vlist_local[v].x = ((float) strtod(token,&stopstring))*scale;						
-						token = strtok(NULL, " ");
-						obj->vlist_local[v].y = ((float) strtod(token,&stopstring))*scale;
-						token = strtok(NULL, " ");
-						obj->vlist_local[v].z = ((float) strtod(token,&stopstring))*scale;								
-					}
-					fgets( line, 100, stream );  // read # of polys	  
-					obj->num_polys = strtod(line,&stopstring);					
-					for (int w=0; w<obj->num_polys; w++)
-					{						
-						fgets( line, 100, stream );
-						token = strtok(line, " ");							
-						obj->plist[w].vert[0] = atoi(token);						
-						token = strtok(NULL, " ");
-						obj->plist[w].vert[1] = atoi(token);
-						token = strtok(NULL, " ");
-						obj->plist[w].vert[2] = atoi(token);								
-					}
-				}// end if
-				linked_list.push_back(*obj);
-			} // end for		 
-			fclose( stream );
-	   } // end if	        		
-   } // end if
-	 list<OBJECT4DV1>::iterator it;
-	 for(it=linked_list.begin(); it != linked_list.end(); ++it)
+  
+	 list<Object>::iterator it;
+	 for(it=linked_list.begin(); it != linked_list.end();it++)
 	 {
-		*obj = (OBJECT4DV1_TYP)*it;
-		for (int j=0;j<8;j++)
+		*obj = (Object)*it;
+		obj->vlist_trans.resize(obj->num_vertices);
+		for (int j=0;j< obj->num_vertices;j++)
 		{
 			obj->vlist_trans[j].x=obj->world_pos.x + obj->vlist_local[j].x;
 			obj->vlist_trans[j].y=obj->world_pos.y + obj->vlist_local[j].y;
 			obj->vlist_trans[j].z=obj->world_pos.z + obj->vlist_local[j].z;
 		}			
-		if (strncmp(obj->name,"cube",4)==0)
+		if ( strncmp(obj->type.c_str(), "cube", 4) == 0)//(obj->name.substr(4) == "cube")
 		{
 			//front
 			glBegin(GL_POLYGON);
@@ -345,7 +391,7 @@ bTest=CloseHandle(hFile);
 				glTexCoord2f(0.0, 0.0);	glVertex3f(obj->vlist_trans[2].x, obj->vlist_trans[2].y,obj->vlist_trans[2].z);
 			glEnd();
 		}
-		else if (strncmp(obj->name,"object",6)==0)
+		else if (obj->type =="object") //(strncmp(obj->name,"object",6)==0)
 		{
 			int v1,v2,v3;
 			for (int j=0;j<obj->num_vertices;j++)
@@ -505,11 +551,11 @@ void CGfxOpenGL::Render()
 	cam->up.y = cam->pos.y+ radius*sin(angX+3.14/2);
 
 	gluLookAt(cam->pos.x,cam->pos.y,cam->pos.z,cam->target.x, cam->target.y, cam->target.z, cam->up.x,cam->up.y, cam->up.z);
-	Write_Error("ang: %f\n",angY);	
+	Write_Error(fp_error,"ang: %f\n",angY);	
 
 	// do it all again for the right polygon
 	glPushMatrix();		
 		glBindTexture(GL_TEXTURE_2D, m_textureObjectTwo);
-		DrawPlane();
+		DrawObjects();
 	glPopMatrix();
 }

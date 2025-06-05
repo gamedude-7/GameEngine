@@ -53,6 +53,8 @@ namespace GameEngine
             this.tsbCube = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.cameraButton = new System.Windows.Forms.ToolStripButton();
+            this.colorButton = new System.Windows.Forms.ToolStripButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,29 +68,41 @@ namespace GameEngine
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.treeView1 = new TreeViewMS.TreeViewMS();
+            this.frontLabel = new System.Windows.Forms.Label();
+            this.topLabel = new System.Windows.Forms.Label();
+            this.sideLabel = new System.Windows.Forms.Label();
+            this.perspectiveLabel = new System.Windows.Forms.Label();
+            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
+            this.propertyGroupBox = new System.Windows.Forms.GroupBox();
+            this.valueTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.ChangeButton = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.containerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
             this.mainSplitContainer.Panel1.SuspendLayout();
             this.mainSplitContainer.Panel2.SuspendLayout();
             this.mainSplitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            this.propertyGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // containerControl1
             // 
             this.containerControl1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.containerControl1.Controls.Add(this.mainSplitContainer);
-            this.containerControl1.Location = new System.Drawing.Point(294, 71);
+            this.containerControl1.Location = new System.Drawing.Point(275, 71);
             this.containerControl1.Name = "containerControl1";
-            this.containerControl1.Size = new System.Drawing.Size(803, 801);
+            this.containerControl1.Size = new System.Drawing.Size(965, 801);
             this.containerControl1.TabIndex = 5;
             this.containerControl1.Text = "containerControl1";
             this.containerControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.containerControl1_Paint);
@@ -107,8 +121,8 @@ namespace GameEngine
             // mainSplitContainer.Panel2
             // 
             this.mainSplitContainer.Panel2.Controls.Add(this.splitContainer2);
-            this.mainSplitContainer.Size = new System.Drawing.Size(803, 801);
-            this.mainSplitContainer.SplitterDistance = 397;
+            this.mainSplitContainer.Size = new System.Drawing.Size(965, 801);
+            this.mainSplitContainer.SplitterDistance = 476;
             this.mainSplitContainer.TabIndex = 0;
             // 
             // splitContainer1
@@ -138,7 +152,7 @@ namespace GameEngine
             this.splitContainer1.Panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_Panel2_MouseMove);
             this.splitContainer1.Panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_Panel2_MouseUp);
             this.splitContainer1.Panel2.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_Panel2_MouseWheel);
-            this.splitContainer1.Size = new System.Drawing.Size(397, 801);
+            this.splitContainer1.Size = new System.Drawing.Size(476, 801);
             this.splitContainer1.SplitterDistance = 400;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -185,7 +199,7 @@ namespace GameEngine
             this.splitContainer2.Panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.splitContainer2_Panel2_MouseMove);
             this.splitContainer2.Panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.splitContainer2_Panel2_MouseUp);
             this.splitContainer2.Panel2.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.splitContainer2_Panel2_MouseWheel);
-            this.splitContainer2.Size = new System.Drawing.Size(402, 801);
+            this.splitContainer2.Size = new System.Drawing.Size(485, 801);
             this.splitContainer2.SplitterDistance = 400;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -199,10 +213,12 @@ namespace GameEngine
             this.toolStripSeparator1,
             this.tsbCube,
             this.toolStripSeparator2,
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.cameraButton,
+            this.colorButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1220, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1605, 25);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -277,6 +293,26 @@ namespace GameEngine
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // cameraButton
+            // 
+            this.cameraButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.cameraButton.Image = ((System.Drawing.Image)(resources.GetObject("cameraButton.Image")));
+            this.cameraButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.cameraButton.Name = "cameraButton";
+            this.cameraButton.Size = new System.Drawing.Size(23, 22);
+            this.cameraButton.Text = "toolStripButton2";
+            this.cameraButton.Click += new System.EventHandler(this.cameraButton_Click);
+            // 
+            // colorButton
+            // 
+            this.colorButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.colorButton.Image = ((System.Drawing.Image)(resources.GetObject("colorButton.Image")));
+            this.colorButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.colorButton.Name = "colorButton";
+            this.colorButton.Size = new System.Drawing.Size(23, 22);
+            this.colorButton.Text = "toolStripButton2";
+            this.colorButton.Click += new System.EventHandler(this.colorButton_Click);
+            // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
@@ -289,7 +325,7 @@ namespace GameEngine
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1220, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1605, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -306,21 +342,21 @@ namespace GameEngine
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "&Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -336,7 +372,7 @@ namespace GameEngine
             this.toolStripStatusLabel3});
             this.statusStrip.Location = new System.Drawing.Point(0, 904);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1220, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1605, 22);
             this.statusStrip.TabIndex = 9;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -362,58 +398,129 @@ namespace GameEngine
             // 
             this.treeView1.ImageIndex = 0;
             this.treeView1.ImageList = this.imageList1;
-            this.treeView1.Location = new System.Drawing.Point(22, 71);
+            this.treeView1.Location = new System.Drawing.Point(12, 71);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.SelectedNodes = ((System.Collections.ArrayList)(resources.GetObject("treeView1.SelectedNodes")));
-            this.treeView1.Size = new System.Drawing.Size(216, 801);
+            this.treeView1.Size = new System.Drawing.Size(241, 801);
             this.treeView1.TabIndex = 11;
+            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+            // 
+            // frontLabel
+            // 
+            this.frontLabel.AutoSize = true;
+            this.frontLabel.Location = new System.Drawing.Point(272, 53);
+            this.frontLabel.Name = "frontLabel";
+            this.frontLabel.Size = new System.Drawing.Size(31, 13);
+            this.frontLabel.TabIndex = 12;
+            this.frontLabel.Text = "Front";
+            // 
+            // topLabel
+            // 
+            this.topLabel.AutoSize = true;
+            this.topLabel.Location = new System.Drawing.Point(752, 53);
+            this.topLabel.Name = "topLabel";
+            this.topLabel.Size = new System.Drawing.Size(26, 13);
+            this.topLabel.TabIndex = 13;
+            this.topLabel.Text = "Top";
+            // 
+            // sideLabel
+            // 
+            this.sideLabel.AutoSize = true;
+            this.sideLabel.Location = new System.Drawing.Point(137, 875);
+            this.sideLabel.Name = "sideLabel";
+            this.sideLabel.Size = new System.Drawing.Size(28, 13);
+            this.sideLabel.TabIndex = 14;
+            this.sideLabel.Text = "Side";
+            // 
+            // perspectiveLabel
+            // 
+            this.perspectiveLabel.AutoSize = true;
+            this.perspectiveLabel.Location = new System.Drawing.Point(614, 875);
+            this.perspectiveLabel.Name = "perspectiveLabel";
+            this.perspectiveLabel.Size = new System.Drawing.Size(63, 13);
+            this.perspectiveLabel.TabIndex = 15;
+            this.perspectiveLabel.Text = "Perspective";
+            // 
+            // propertyGrid1
+            // 
+            this.propertyGrid1.Location = new System.Drawing.Point(1262, 71);
+            this.propertyGrid1.Name = "propertyGrid1";
+            this.propertyGrid1.Size = new System.Drawing.Size(318, 712);
+            this.propertyGrid1.TabIndex = 16;
+            this.propertyGrid1.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propertyGrid1_PropertyValueChanged);
+            this.propertyGrid1.SelectedGridItemChanged += new System.Windows.Forms.SelectedGridItemChangedEventHandler(this.propertyGrid1_SelectedGridItemChanged);
+            this.propertyGrid1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.propertyGrid1_MouseClick);
+            // 
+            // propertyGroupBox
+            // 
+            this.propertyGroupBox.Controls.Add(this.valueTextBox);
+            this.propertyGroupBox.Controls.Add(this.label1);
+            this.propertyGroupBox.Controls.Add(this.nameTextBox);
+            this.propertyGroupBox.Controls.Add(this.NameLabel);
+            this.propertyGroupBox.Controls.Add(this.ChangeButton);
+            this.propertyGroupBox.Location = new System.Drawing.Point(1262, 789);
+            this.propertyGroupBox.Name = "propertyGroupBox";
+            this.propertyGroupBox.Size = new System.Drawing.Size(316, 112);
+            this.propertyGroupBox.TabIndex = 17;
+            this.propertyGroupBox.TabStop = false;
+            this.propertyGroupBox.Text = "Property";
+            // 
+            // valueTextBox
+            // 
+            this.valueTextBox.Location = new System.Drawing.Point(48, 53);
+            this.valueTextBox.Name = "valueTextBox";
+            this.valueTextBox.Size = new System.Drawing.Size(149, 20);
+            this.valueTextBox.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(294, 53);
+            this.label1.Location = new System.Drawing.Point(7, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Front";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Value";
             // 
-            // label2
+            // nameTextBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(692, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Top";
+            this.nameTextBox.Enabled = false;
+            this.nameTextBox.Location = new System.Drawing.Point(48, 17);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(149, 20);
+            this.nameTextBox.TabIndex = 2;
             // 
-            // label3
+            // NameLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(294, 875);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Side";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(7, 20);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(35, 13);
+            this.NameLabel.TabIndex = 1;
+            this.NameLabel.Text = "Name";
             // 
-            // label4
+            // ChangeButton
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(692, 875);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Perspective";
+            this.ChangeButton.Location = new System.Drawing.Point(6, 83);
+            this.ChangeButton.Name = "ChangeButton";
+            this.ChangeButton.Size = new System.Drawing.Size(75, 23);
+            this.ChangeButton.TabIndex = 0;
+            this.ChangeButton.Text = "Change";
+            this.ChangeButton.UseVisualStyleBackColor = true;
+            this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 926);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1605, 926);
+            this.Controls.Add(this.propertyGroupBox);
+            this.Controls.Add(this.propertyGrid1);
+            this.Controls.Add(this.perspectiveLabel);
+            this.Controls.Add(this.sideLabel);
+            this.Controls.Add(this.topLabel);
+            this.Controls.Add(this.frontLabel);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip1);
@@ -422,12 +529,17 @@ namespace GameEngine
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
             this.containerControl1.ResumeLayout(false);
             this.mainSplitContainer.Panel1.ResumeLayout(false);
             this.mainSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
             this.mainSplitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -435,6 +547,8 @@ namespace GameEngine
             this.menuStrip1.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.propertyGroupBox.ResumeLayout(false);
+            this.propertyGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,12 +584,20 @@ namespace GameEngine
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem loadModelToolStripMenuItem;
         private TreeViewMS.TreeViewMS treeView1;
+        private System.Windows.Forms.Label frontLabel;
+        private System.Windows.Forms.Label topLabel;
+        private System.Windows.Forms.Label sideLabel;
+        private System.Windows.Forms.Label perspectiveLabel;
+        private System.Windows.Forms.ToolStripButton cameraButton;
+        private System.Windows.Forms.PropertyGrid propertyGrid1;
+        private System.Windows.Forms.GroupBox propertyGroupBox;
+        private System.Windows.Forms.Button ChangeButton;
+        private System.Windows.Forms.TextBox valueTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-
-        
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.ToolStripButton colorButton;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 
     

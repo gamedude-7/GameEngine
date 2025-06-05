@@ -1,18 +1,317 @@
-﻿Build started 3/5/2016 1:44:41 PM.
-     1>Project "C:\Users\Iron man\Documents\Visual Studio 2010\Projects\game_engineGL\TextureBasics2\TextureBasics\TextureBasics.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
-         Touching "Debug\TextureBasics.unsuccessfulbuild".
-       ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt CGfxOpenGL.cpp t3dlib3.cpp winmain.cpp
-         winmain.cpp
-     1>c:\users\iron man\documents\visual studio 2010\projects\game_enginegl\texturebasics2\texturebasics\winmain.cpp(36): fatal error C1083: Cannot open include file: 'dmusici.h': No such file or directory
-         t3dlib3.cpp
-     1>c:\users\iron man\documents\visual studio 2010\projects\game_enginegl\texturebasics2\texturebasics\t3dlib3.cpp(28): fatal error C1083: Cannot open include file: 'dmusici.h': No such file or directory
-         CGfxOpenGL.cpp
-     1>c:\users\iron man\documents\visual studio 2010\projects\game_enginegl\texturebasics2\texturebasics\cgfxopengl.cpp(33): fatal error C1083: Cannot open include file: 'dmusici.h': No such file or directory
-         Generating Code...
-     1>Done Building Project "C:\Users\Iron man\Documents\Visual Studio 2010\Projects\game_engineGL\TextureBasics2\TextureBasics\TextureBasics.vcxproj" (build target(s)) -- FAILED.
-
-Build FAILED.
-
-Time Elapsed 00:00:03.97
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  winmain.cpp
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(104,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'winmain.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(111,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'winmain.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(112,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'winmain.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\winmain.cpp(51,1): warning C4005: 'WINDOW_WIDTH': macro redefinition
+      C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.h(19,1):
+      see previous definition of 'WINDOW_WIDTH'
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\winmain.cpp(52,1): warning C4005: 'WINDOW_HEIGHT': macro redefinition
+      C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.h(20,1):
+      see previous definition of 'WINDOW_HEIGHT'
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\winmain.cpp(361,18): warning C4316: 'Camera': object allocated on the heap may not be aligned 16
+  Vector.cpp
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(69,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Vector.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(87,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Vector.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(104,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Vector.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(111,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Vector.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(112,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Vector.cpp')
+  
+  Poly.cpp
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(69,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Poly.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(87,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Poly.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(104,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Poly.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(111,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Poly.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(112,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Poly.cpp')
+  
+  Object.cpp
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(69,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Object.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(87,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Object.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(104,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Object.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(111,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Object.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(112,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Object.cpp')
+  
+  Level.cpp
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(69,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Level.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(87,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Level.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(104,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Level.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(111,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Level.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(112,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Level.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(44,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(44,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(44,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(48,47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(48,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(48,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(52,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(52,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(52,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(56,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(56,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(56,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(60,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(60,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(60,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(64,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(64,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(64,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(68,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(68,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(68,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(72,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(72,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(72,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(128,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(128,16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(128,14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(137,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(137,16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(137,14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(140,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(141,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(142,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(15,8): warning C4101: 'color': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(174,13): warning C4302: 'type cast': truncation from 'char *' to 'unsigned char'
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(175,13): warning C4302: 'type cast': truncation from 'char *' to 'unsigned char'
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(176,13): warning C4302: 'type cast': truncation from 'char *' to 'unsigned char'
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(177,13): warning C4302: 'type cast': truncation from 'char *' to 'unsigned char'
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(174,29): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(175,29): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(176,29): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Level.cpp(177,29): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  GameEngineLib.cpp
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(104,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'GameEngineLib.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(111,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'GameEngineLib.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(112,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'GameEngineLib.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(62,14): warning C4101: 'height': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(63,12): warning C4101: 'a': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(62,8): warning C4101: 'width': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(63,10): warning C4101: 'b': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(56,7): warning C4101: 'tmp_string': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(60,8): warning C4101: 'filename': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(62,21): warning C4101: 'length': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(63,8): warning C4101: 'g': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(59,6): warning C4101: 'numOfObjects': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(63,6): warning C4101: 'r': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(55,7): warning C4101: 'buffer': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(260,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(265,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(271,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(277,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(285,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(292,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(301,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(308,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(317,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(323,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(332,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(338,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(381,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(388,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(397,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(404,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(413,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(419,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(428,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(434,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(799,19): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(808,2): warning C4996: '_ftime64': This function or variable may be unsafe. Consider using _ftime64_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(809,13): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(811,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(821,19): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\GameEngineLib.cpp(871,2): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Game.cpp
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(69,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(87,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(104,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(111,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(112,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Game.cpp(191,10): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Game.cpp(193,10): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Game.cpp(213,10): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Game.cpp(214,10): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Game.cpp(215,10): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Game.cpp(225,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Game.cpp(227,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Game.cpp(228,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Game.cpp(232,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Game.cpp(256,11): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\camera.txt(27,22): warning C4305: '-=': truncation from 'double' to 'float'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\camera.txt(29,22): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\camera.txt(32,24): warning C4305: '-=': truncation from 'double' to 'float'
+  (compiling source file 'Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\camera.txt(34,24): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Game.cpp')
+  
+  Cube.cpp
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(69,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Cube.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(87,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Cube.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(104,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Cube.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(111,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Cube.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(112,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Cube.cpp')
+  
+  CTargaImage.cpp
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CTargaImage.cpp(49,16): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  CGfxOpenGL.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(104,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'CGfxOpenGL.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(111,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'CGfxOpenGL.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(112,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'CGfxOpenGL.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(116,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(122,22): warning C4316: 'Object': object allocated on the heap may not be aligned 16
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(185,22): warning C4316: 'Object': object allocated on the heap may not be aligned 16
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(240,29): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(131,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(133,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(135,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(138,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(140,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(142,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(145,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(147,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(149,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(152,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(194,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(196,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(198,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(207,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(209,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(211,14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(224,21): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(232,15): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(234,15): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(236,15): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(245,15): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(247,15): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(249,15): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(105,14): warning C4101: 'z': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(106,9): warning C4101: 'vertex': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(105,11): warning C4101: 'y': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(109,10): warning C4101: 'pt': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(105,8): warning C4101: 'x': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(107,11): warning C4101: 'vertices': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(107,6): warning C4101: 'num': unreferenced local variable
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(442,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(443,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(447,13): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(449,13): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(452,13): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(454,13): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\CGfxOpenGL.cpp(551,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Camera.cpp
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(69,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Camera.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(87,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Camera.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(104,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Camera.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(111,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Camera.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(112,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Camera.cpp')
+  
+  C3DModel.cpp
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(69,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'C3DModel.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(87,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'C3DModel.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(104,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'C3DModel.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(111,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'C3DModel.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\Vector.h(112,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'C3DModel.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\C3DModel.cpp(82,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jason\Desktop\GameEngine\game_engineGL\TextureBasics2\TextureBasics\C3DModel.cpp(83,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'd3dx10.lib'

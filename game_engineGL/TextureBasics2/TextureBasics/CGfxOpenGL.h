@@ -1,5 +1,6 @@
 
 #include <list>
+#include "Camera.h"
 using namespace std;
 #ifndef __GL_COMPONENT
 #define __GL_COMPONENT
@@ -27,13 +28,14 @@ private:
 	unsigned int m_textureObjectTwo;
 	
 	bool  m_zMoveNegative;
-	CAM4DV1_PTR cam;     // the single camera
-	OBJECT4DV1_PTR obj;     // used to hold our cube mesh                   
+	Camera *cam;     // the single camera
+	Object *obj;     // used to hold our cube mesh      
+	FILE* fp_error;
 public:
 	CGfxOpenGL();
 	virtual ~CGfxOpenGL();
 
-	bool Init(CAM4DV1 *camera);
+	bool Init(Camera *camera, FILE *fp_override);
 	bool Shutdown();
 
 	void SetupProjection(int width, int height);
@@ -41,9 +43,9 @@ public:
 	void Prepare(float dt);
 	void Render();
 
-	void DrawPlane();
-	void setCam(CAM4DV1 *camera) { cam = camera;  }
-	list<OBJECT4DV1> linked_list;
+	void DrawObjects();
+	void setCam(Camera *camera) { cam = camera;  }
+	list<Object> linked_list;
 };
 
 #endif
