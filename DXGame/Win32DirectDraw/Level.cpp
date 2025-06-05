@@ -19,7 +19,7 @@ Level::Level(string filename)
 	// Step 2: open the file for reading
 	fileStream.open(filename, ios_base::in);
 	//vector< Cube > listOfObjects;
-	
+	numOfObjects = 0;
 	if (fileStream.is_open() && fileStream.good())
 	{
 		
@@ -30,7 +30,9 @@ Level::Level(string filename)
 			fileStream >> type;
 			if (type == "cube")
 			{
-				Cube cube;
+				Cube cube;				
+				fileStream >> cube.name;
+				fileStream >> cube.scriptName;
 				fileStream >> cube.world_pos.x >> cube.world_pos.y >> cube.world_pos.z;
 				fileStream >> cube.width >> cube.height >> cube.length;
 				fileStream >> cube.dir.x >> cube.dir.y >> cube.dir.z;
@@ -112,11 +114,14 @@ Level::Level(string filename)
 			{
 				Object object;			
 				D3DXMATRIX matrix;
+				fileStream >> object.name;
+				fileStream >> object.scriptName;
 				fileStream >> object.world_pos.x >> object.world_pos.y >> object.world_pos.z;
 				fileStream >> object.dir.x >> object.dir.y >> object.dir.z;
 				fileStream >> object.scale.x >> object.scale.y >> object.scale.z;
 				fileStream >> object.num_vertices;
 				double x, y, z;
+				
 				
 				for (int i = 0; i < object.num_vertices; i++)
 				{					
@@ -149,12 +154,17 @@ Level::Level(string filename)
 	
 }
 
+Level::Level()
+{
+	numOfObjects = 0;
+}
+
 Level::Level(Vector *scale, vector< Object > *obj_list, Color *c)
 {
 	ifstream fileStream;
 	Color color;
 	string buffer;
-
+	numOfObjects = 0;
 	// Step 2: open the file for reading
 	fileStream.open("compiled.lvl", ios_base::in);
 

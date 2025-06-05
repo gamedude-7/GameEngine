@@ -172,7 +172,7 @@ typedef struct BOB_TYP
         int anim_count_max; // number of cycles before animation
         int *animations[MAX_BOB_ANIMATIONS]; // animation sequences
 
-        LPDIRECTDRAWSURFACE7 images[MAX_BOB_FRAMES]; // the bitmap images DD surfaces
+        //LPDIRECTDRAWSURFACE7 images[MAX_BOB_FRAMES]; // the bitmap images DD surfaces
  
         } BOB, *BOB_PTR;
 
@@ -305,14 +305,14 @@ typedef struct MATRIX1X2_TYP
 // DirectDraw functions
 int DDraw_Init(int width, int height, int bpp, int windowed=0);
 int DDraw_Shutdown(void);
-LPDIRECTDRAWCLIPPER DDraw_Attach_Clipper(LPDIRECTDRAWSURFACE7 lpdds, int num_rects, LPRECT clip_list);
-LPDIRECTDRAWSURFACE7 DDraw_Create_Surface(int width, int height, int mem_flags=0, USHORT color_key_value=0);
+//LPDIRECTDRAWCLIPPER DDraw_Attach_Clipper(LPDIRECTDRAWSURFACE7 lpdds, int num_rects, LPRECT clip_list);
+//LPDIRECTDRAWSURFACE7 DDraw_Create_Surface(int width, int height, int mem_flags=0, USHORT color_key_value=0);
 
 int DDraw_Flip(void);
 int DDraw_Wait_For_Vsync(void);
-int DDraw_Fill_Surface(LPDIRECTDRAWSURFACE7 lpdds, USHORT color, RECT *client=NULL);
-UCHAR *DDraw_Lock_Surface(LPDIRECTDRAWSURFACE7 lpdds,int *lpitch);
-int DDraw_Unlock_Surface(LPDIRECTDRAWSURFACE7 lpdds);
+//int DDraw_Fill_Surface(LPDIRECTDRAWSURFACE7 lpdds, USHORT color, RECT *client=NULL);
+//UCHAR *DDraw_Lock_Surface(LPDIRECTDRAWSURFACE7 lpdds,int *lpitch);
+//int DDraw_Unlock_Surface(LPDIRECTDRAWSURFACE7 lpdds);
 UCHAR *DDraw_Lock_Primary_Surface(void);
 int DDraw_Unlock_Primary_Surface(void);
 UCHAR *DDraw_Lock_Back_Surface(void);
@@ -323,10 +323,10 @@ int Create_BOB(BOB_PTR bob,int x, int y,int width, int height,int num_frames,int
                int mem_flags=0, USHORT color_key_value=0, int bpp=8);              
 int Clone_BOB(BOB_PTR source, BOB_PTR dest);
 int Destroy_BOB(BOB_PTR bob);
-int Draw_BOB(BOB_PTR bob, LPDIRECTDRAWSURFACE7 dest);
-int Draw_Scaled_BOB(BOB_PTR bob, int swidth, int sheight,LPDIRECTDRAWSURFACE7 dest);
-int Draw_BOB16(BOB_PTR bob, LPDIRECTDRAWSURFACE7 dest);
-int Draw_Scaled_BOB16(BOB_PTR bob, int swidth, int sheight,LPDIRECTDRAWSURFACE7 dest);
+//int Draw_BOB(BOB_PTR bob, LPDIRECTDRAWSURFACE7 dest);
+//int Draw_Scaled_BOB(BOB_PTR bob, int swidth, int sheight,LPDIRECTDRAWSURFACE7 dest);
+//int Draw_BOB16(BOB_PTR bob, LPDIRECTDRAWSURFACE7 dest);
+//int Draw_Scaled_BOB16(BOB_PTR bob, int swidth, int sheight,LPDIRECTDRAWSURFACE7 dest);
 
 int Load_Frame_BOB(BOB_PTR bob, BITMAP_FILE_PTR bitmap, int frame, int cx,int cy,int mode);              
 int Load_Frame_BOB16(BOB_PTR bob, BITMAP_FILE_PTR bitmap, int frame, int cx,int cy,int mode);  
@@ -365,7 +365,7 @@ int Clip_Line(int &x1,int &y1,int &x2, int &y2);
 int Draw_Line(int xo, int yo, int x1,int y1, int color,UCHAR *vb_start,int lpitch);
 int Draw_Line16(int xo, int yo, int x1,int y1, int color,UCHAR *vb_start,int lpitch);
 int Draw_Pixel(int x, int y,int color,UCHAR *video_buffer, int lpitch);
-int Draw_Rectangle(int x1, int y1, int x2, int y2, int color,LPDIRECTDRAWSURFACE7 lpdds);
+//int Draw_Rectangle(int x1, int y1, int x2, int y2, int color,LPDIRECTDRAWSURFACE7 lpdds);
 
 void HLine(int x1,int x2,int y,int color, UCHAR *vbuffer, int lpitch);
 void VLine(int y1,int y2,int x,int color, UCHAR *vbuffer, int lpitch);
@@ -405,8 +405,8 @@ int Load_Bitmap_File(BITMAP_FILE_PTR bitmap, char *filename);
 int Unload_Bitmap_File(BITMAP_FILE_PTR bitmap);
 
 // gdi functions
-int Draw_Text_GDI(char *text, int x,int y,COLORREF color, LPDIRECTDRAWSURFACE7 lpdds);
-int Draw_Text_GDI(char *text, int x,int y,int color, LPDIRECTDRAWSURFACE7 lpdds);
+//int Draw_Text_GDI(char *text, int x,int y,COLORREF color, LPDIRECTDRAWSURFACE7 lpdds);
+//int Draw_Text_GDI(char *text, int x,int y,int color, LPDIRECTDRAWSURFACE7 lpdds);
 
 // error functions
 int Open_Error_File(char *filename, FILE *fp_override=NULL);
@@ -563,17 +563,17 @@ extern FILE *fp_error;                           // general error file
 extern char error_filename[80];                  // error file name
 
 // notice that interface 4.0 is used on a number of interfaces
-extern LPDIRECTDRAW7        lpdd;                 // dd object
-extern LPDIRECTDRAWSURFACE7 lpddsprimary;         // dd primary surface
-extern LPDIRECTDRAWSURFACE7 lpddsback;            // dd back surface
-extern LPDIRECTDRAWPALETTE  lpddpal;              // a pointer to the created dd palette
-extern LPDIRECTDRAWCLIPPER  lpddclipper;          // dd clipper for back surface
-extern LPDIRECTDRAWCLIPPER  lpddclipperwin;       // dd clipper for window
+//extern LPDIRECTDRAW7        lpdd;                 // dd object
+//extern LPDIRECTDRAWSURFACE7 lpddsprimary;         // dd primary surface
+//extern LPDIRECTDRAWSURFACE7 lpddsback;            // dd back surface
+//extern LPDIRECTDRAWPALETTE  lpddpal;              // a pointer to the created dd palette
+//extern LPDIRECTDRAWCLIPPER  lpddclipper;          // dd clipper for back surface
+//extern LPDIRECTDRAWCLIPPER  lpddclipperwin;       // dd clipper for window
 extern PALETTEENTRY         palette[256];         // color palette
 extern PALETTEENTRY         save_palette[256];    // used to save palettes
-extern DDSURFACEDESC2       ddsd;                 // a direct draw surface description struct
-extern DDBLTFX              ddbltfx;              // used to fill
-extern DDSCAPS2             ddscaps;              // a direct draw surface capabilities struct
+//extern DDSURFACEDESC2       ddsd;                 // a direct draw surface description struct
+//extern DDBLTFX              ddbltfx;              // used to fill
+//extern DDSCAPS2             ddscaps;              // a direct draw surface capabilities struct
 extern HRESULT              ddrval;               // result back from dd calls
 extern UCHAR                *primary_buffer;      // primary video buffer
 extern UCHAR                *back_buffer;         // secondary back buffer

@@ -30,19 +30,21 @@
 #include <io.h>
 #include <fcntl.h>
 
-#include <ddraw.h>  // directX includes
+//#include <ddraw.h>  // directX includes
 /*#include <dsound.h>
 #include <dmksctrl.h>
 #include <dmusici.h>
 #include <dmusicc.h>
 #include <dmusicf.h>*/
-#include <dinput.h>
-#include "T3DLIB1.h" // game library includes
-#include "T3DLIB2.h"
+//#include <dinput.h>
+//#include "T3DLIB1.h" // game library includes
+//#include "T3DLIB2.h"
 //#include "T3DLIB3.h"
-#include "T3DLIB4.h"
-#include "T3DLIB5.h"
-
+//#include "T3DLIB4.h"
+//#include "T3DLIB5.h"
+#include "Object.h"
+#include "Camera.h"
+#include "Game.h"
 #include "CGfxOpenGL.h"
 #include "timer.h"
 
@@ -50,29 +52,31 @@
 #define WINDOW_HEIGHT     400
 #define MOUSE_SENSITIVITY	10
 bool exiting = false;
-long windowWidth = 1024;
-long windowHeight = 768;
+long windowWidth = 1680;// 1024;
+long windowHeight = 1050; //768;
 long windowBits = 24;
 bool fullscreen = false;
 HDC hDC;
+Game game;
 
 CGfxOpenGL *g_glRender = NULL;
 CHiResTimer *g_hiResTimer = NULL;
 
 HWND main_window_handle           = NULL; // save the window handle
-HINSTANCE main_instance           = NULL; // save the instance
-OBJECT4DV1 obj;     // used to hold our mesh                   
-CAM4DV1    cam;     // the single camera
+//HINSTANCE main_instance           = NULL; // save the instance
+Object obj;     // used to hold our mesh                   
+Camera    *cam;     // the single camera
 
 // initialize camera position and direction
-POINT4D  cam_pos = {0,0,-100,1};
-VECTOR4D cam_dir = {0,90,0,1};
+Vector  cam_pos = {0,0,0,1};
+Vector cam_dir = {0,0,0,1};
 
 // all your initialization code goes here...
 VECTOR4D vscale={5.0,5.0,5.0,1},  // scale of object
          vpos = {0,0,0,1},        // position of object
          vrot = {0,0,0,1};        // initial orientation of object
 
+FILE* fp_error;
 
 void SetupPixelFormat(HDC hDC)
 {
@@ -160,19 +164,21 @@ LRESULT CALLBACK MainWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 	case WM_MOUSEMOVE:			// mouse movement
 		xPos=GET_X_LPARAM(lParam)-prevX; 
 		prevX = GET_X_LPARAM(lParam);				
-		cam.dir.y = cam.dir.y+xPos;
-		while (cam.dir.y<0)
-			cam.dir.y+=360;
-		while (cam.dir.y>360)
-			cam.dir.y-=360;
-		Write_Error("cam.dir.y: %f\n",cam.dir.y);
+		cam->dir.y = cam->dir.y+xPos;		
+		while (cam->dir.y<0)
+			cam->dir.y+=360;
+		while (cam->dir.y>360)
+			cam->dir.y-=360;
+		Write_Error(fp_error,"cam.dir.y: %f\n",cam->dir.y);
 		yPos = GET_Y_LPARAM(lParam)-prevY; 	
 		prevY =GET_Y_LPARAM(lParam);
-		while (cam.dir.x<0)
-			cam.dir.x+=360;
-		while (cam.dir.y>360)
-			cam.dir.x-=360;
-		cam.dir.x = cam.dir.x+yPos;
+		while (cam->dir.x<0)
+			cam->dir.x+=360;
+		while (cam->dir.y>360)
+			cam->dir.x-=360;
+		cam->dir.x = cam->dir.x-yPos;
+		game.mousestate.lX = xPos;
+		game.mousestate.lY = yPos;
 		break;
 
 	case WM_LBUTTONUP:			// left button release
@@ -190,16 +196,16 @@ LRESULT CALLBACK MainWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 		fwKeys = (int)wParam;    // virtual-key code 
 		keyData = lParam;          // key data 
 
-		while (cam.dir.y<0)
-			cam.dir.y+=360;
-		while (cam.dir.y>360)
-			cam.dir.y-=360;
-		while (cam.dir.x<0)
-			cam.dir.x+=360;
-		while (cam.dir.x>360)
-			cam.dir.x-=360;
-		angY = cam.dir.y*3.14f/180.0f;
-		angX = cam.dir.x*3.14f/180.0f;
+		while (cam->dir.y<0)
+			cam->dir.y+=360;
+		while (cam->dir.y>360)
+			cam->dir.y-=360;
+		while (cam->dir.x<0)
+			cam->dir.x+=360;
+		while (cam->dir.x>360)
+			cam->dir.x-=360;
+		angY = cam->dir.y*3.14f/180.0f;
+		angX = cam->dir.x*3.14f/180.0f;
 		
 		switch(fwKeys)
 		{
@@ -207,29 +213,29 @@ LRESULT CALLBACK MainWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 			PostQuitMessage(0);
 			break;			
 		case VK_UP:				
-			cam.pos.y += moveDist*sin(angX);
-			cam.pos.x += moveDist*cos(angX)*cos(angY); 			
-			cam.pos.z += moveDist*cos(angX)*sin(angY); 			
+			cam->pos.y += moveDist*sin(angX);
+			cam->pos.x += moveDist*cos(angX)*cos(angY); 			
+			cam->pos.z += moveDist*cos(angX)*sin(angY); 			
 			break;
 		case VK_DOWN:
-			cam.pos.y += -moveDist*sin(angX);
-			cam.pos.x += -moveDist*cos(angX)*cos(angY); 			
-			cam.pos.z += -moveDist*cos(angX)*sin(angY); 			
+			cam->pos.y += -moveDist*sin(angX);
+			cam->pos.x += -moveDist*cos(angX)*cos(angY); 			
+			cam->pos.z += -moveDist*cos(angX)*sin(angY); 			
 			break;			
 		case VK_LEFT:
-			angY=angY+3.14f/2.0f;
-			cam.pos.x += moveDist*cos(angY);
-			cam.pos.z += moveDist*sin(angY); 						
+			angY=angY-3.14f/2.0f;
+			cam->pos.x += moveDist*cos(angY);
+			cam->pos.z += moveDist*sin(angY); 						
 			break;
 		case VK_RIGHT:
-			angY=angY-3.14f/2.0f;
-			cam.pos.x += moveDist*cos(angY);
-			cam.pos.z += moveDist*sin(angY); 						
+			angY=angY+3.14f/2.0f;
+			cam->pos.x += moveDist*cos(angY);
+			cam->pos.z += moveDist*sin(angY); 						
 			break;		
 		default:
 			break;
 		}
-		g_glRender->setCam(&cam);
+		g_glRender->setCam(cam);
 		break;
 	default:
 		break;
@@ -282,12 +288,36 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		dmScreenSettings.dmBitsPerPel = windowBits;				// bits per pixel
 		dmScreenSettings.dmFields=DM_BITSPERPEL|DM_PELSWIDTH|DM_PELSHEIGHT;
 
-		// 
-		if (ChangeDisplaySettings(&dmScreenSettings, CDS_FULLSCREEN) != DISP_CHANGE_SUCCESSFUL)
+		int result = ChangeDisplaySettings(&dmScreenSettings, CDS_FULLSCREEN);
+		if (result != DISP_CHANGE_SUCCESSFUL)
 		{
 			// setting display mode failed, switch to windowed
 			MessageBox(NULL, "Display mode failed", NULL, MB_OK);
 			fullscreen = FALSE;	
+			switch (result)
+			{
+				case DISP_CHANGE_BADDUALVIEW:
+					cout << "The settings change was unsuccessful because the system is DualView capable.";
+					break;
+				case DISP_CHANGE_BADFLAGS:
+					cout << "An invalid set of flags was passed in.";
+					break;
+				case DISP_CHANGE_BADMODE:
+					cout << "The graphics mode is not supported.";
+					break;
+				case DISP_CHANGE_BADPARAM:
+					cout << "An invalid parameter was passed in. This can include an invalid flag or combination of flags.";
+					break;
+				case DISP_CHANGE_FAILED:
+					cout << "The display driver failed the specified graphics mode.";
+					break;
+				case DISP_CHANGE_NOTUPDATED:
+					cout << "Unable to write settings to the registry.";
+					break;
+				case DISP_CHANGE_RESTART:
+					cout << "The computer must be restarted for the graphics mode to work.";
+					break;
+			}
 		}
 	}
 
@@ -328,28 +358,42 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	ShowWindow(hwnd, SW_SHOW);			// display the window
 	UpdateWindow(hwnd);					// update the window
 
+	cam = new Camera(cam_pos, // initial camera position
+		cam_dir,  // initial camera angles
+		NULL,      // no target
+		50.0,      // near and far clipping planes
+		500.0,
+		90.0,      // field of view in degrees
+		WINDOW_WIDTH,   // size of final screen viewport
+		WINDOW_HEIGHT);
 	// initialize the camera with 90 FOV, normalized coordinates
-	Init_CAM4DV1(&cam,      // the camera object
-             CAM_MODEL_EULER, // the euler model
-             &cam_pos,  // initial camera position
-             &cam_dir,  // initial camera angles
-             NULL,      // no target
-             50.0,      // near and far clipping planes
-             500.0,
-             90.0,      // field of view in degrees
-             WINDOW_WIDTH,   // size of final screen viewport
-             WINDOW_HEIGHT);
-	
-	if (!g_glRender->Init(&cam))
+	//Init_CAM4DV1(&cam,      // the camera object
+ //            CAM_MODEL_EULER, // the euler model
+ //            &cam_pos,  // initial camera position
+ //            &cam_dir,  // initial camera angles
+ //            NULL,      // no target
+ //            50.0,      // near and far clipping planes
+ //            500.0,
+ //            90.0,      // field of view in degrees
+ //            WINDOW_WIDTH,   // size of final screen viewport
+ //            WINDOW_HEIGHT);
+	fp_error = NULL;
+	if (!g_glRender->Init(cam,fp_error))
 	{
 		MessageBox(NULL, "CGfxOpenGL::Init() error!", "CGfxOpenGL class failed to initialize!", MB_OK);
 		return -1;
 	}
 
 	g_hiResTimer->Init();
-	Open_Error_File("errors.log");
+	                       // general error file
+	Open_Error_File("errors.log",fp_error);
+
+	game.cam = cam;
 	while (!exiting)
 	{
+		
+		game.Game_Main();
+		
 		g_glRender->Prepare(g_hiResTimer->GetElapsedSeconds(1));
 		g_glRender->Render();
 		SwapBuffers(hDC);
@@ -366,7 +410,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			DispatchMessage (&msg);
 		}
 	}
-	Close_Error_File();
+	Close_Error_File(fp_error);
 	delete g_hiResTimer;
 	delete g_glRender;
 

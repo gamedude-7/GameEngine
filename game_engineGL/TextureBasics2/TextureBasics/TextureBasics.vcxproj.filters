@@ -21,22 +21,34 @@
     <ClCompile Include="CTargaImage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="t3dlib1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="t3dlib2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="t3dlib4.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="t3dlib5.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="t3dlib6.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="winmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngineLib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Poly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C3DModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,23 +65,67 @@
     <ClInclude Include="glut.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="t3dlib1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="t3dlib2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="t3dlib4.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="t3dlib5.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="t3dlib6.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngineLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Poly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C3DModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptTrans.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="allScripts.txt">
+      <Filter>Header Files</Filter>
+    </Text>
+    <Text Include="tower1.txt">
+      <Filter>Header Files</Filter>
+    </Text>
+    <Text Include="tower2.txt">
+      <Filter>Header Files</Filter>
+    </Text>
+    <Text Include="vehicle.txt">
+      <Filter>Header Files</Filter>
+    </Text>
+    <Text Include="wall1.txt">
+      <Filter>Header Files</Filter>
+    </Text>
+    <Text Include="wall2.txt">
+      <Filter>Header Files</Filter>
+    </Text>
+    <Text Include="camera.txt">
+      <Filter>Header Files</Filter>
+    </Text>
+    <Text Include="plane.txt">
+      <Filter>Header Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

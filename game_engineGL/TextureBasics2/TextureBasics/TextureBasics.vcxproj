@@ -19,10 +19,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -77,10 +79,10 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;winmm.lib;dxguid.lib;d3d10.lib;d3dx10.lib;dinput8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)TextureBasics.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -90,26 +92,46 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="C3DModel.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CGfxOpenGL.cpp" />
     <ClCompile Include="CTargaImage.cpp" />
-    <ClCompile Include="t3dlib1.cpp" />
-    <ClCompile Include="t3dlib2.cpp" />
-    <ClCompile Include="t3dlib4.cpp" />
-    <ClCompile Include="t3dlib5.cpp" />
-    <ClCompile Include="t3dlib6.cpp" />
+    <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameEngineLib.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Poly.cpp" />
+    <ClCompile Include="Vector.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="C3DModel.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="CGfxOpenGL.h" />
+    <ClInclude Include="Color.h" />
     <ClInclude Include="CTargaImage.h" />
+    <ClInclude Include="Cube.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameEngineLib.h" />
     <ClInclude Include="glext.h" />
     <ClInclude Include="glut.h" />
-    <ClInclude Include="t3dlib1.h" />
-    <ClInclude Include="t3dlib2.h" />
-    <ClInclude Include="t3dlib4.h" />
-    <ClInclude Include="t3dlib5.h" />
-    <ClInclude Include="t3dlib6.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Poly.h" />
+    <ClInclude Include="ScriptTrans.h" />
     <ClInclude Include="timer.h" />
+    <ClInclude Include="Vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="allScripts.txt" />
+    <Text Include="camera.txt" />
+    <Text Include="plane.txt" />
+    <Text Include="tower1.txt" />
+    <Text Include="tower2.txt" />
+    <Text Include="vehicle.txt" />
+    <Text Include="wall1.txt" />
+    <Text Include="wall2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -18,7 +18,7 @@ public:
     Vector dir;         // rotation angles of object in world
                                 // cords or unit direction vector user defined ???
 	Vector scale;
-
+	string name;
 	int num_vertices;    // number of verticesof this object
 	//Poly plist[OBJECT_MAX_POLYS];  // array of polygons  
 	vector< Poly > plist;
@@ -28,14 +28,14 @@ public:
 	void AddLocalVertex(Point);
 	void AddTransformedVertex(Point);
 	float max_radius;//maximum radius of object
-
+	string scriptName;
 	void setMaxRadius(float);
 protected:
 
 	
 private:
 	int id;
-	string name;
+	
 	int poly_num_verts;
 	int state;           //state of object
     int attr;              // attributes of object

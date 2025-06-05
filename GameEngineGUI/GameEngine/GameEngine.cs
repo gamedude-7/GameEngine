@@ -5,11 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
-using Microsoft.DirectX;
-using Microsoft.DirectX.Direct3D;
+//using Microsoft.DirectX;
+//using Microsoft.DirectX.Direct3D;
+using System.Windows;
 using System.IO;
 using System.Diagnostics;
-
+//using PlyReader;
+using GameEngine.Classes;
 
 namespace GameEngine
 {
@@ -96,7 +98,10 @@ namespace GameEngine
         public float Y { get { return y; } set { y = value; } }
         public float Z { get { return z; } set { z = value; } }
         public float W { get { return w; } set { w = value; } }
-    };    
+    };
+
+    
+   
 
     // a polygon based on a vertex list
     class POLY4DV1
@@ -107,7 +112,7 @@ namespace GameEngine
         public Color color;
 
         //Point4D* vlist; // the vertex list itself                   
-
+        public int poly_num_verts = 3; // number of vertices for current poly ( 3 by default)
         public unsafe void setVertexList(Point4D[] p)
         {
             fixed (Point4D* vlist = p)
@@ -115,7 +120,7 @@ namespace GameEngine
                 
             }
         }
-        
+
         public int[] vert = new int[3];      // the indices into the vertex list
         
     }
@@ -150,11 +155,13 @@ namespace GameEngine
     class OBJECT4DV1
     {
         
-        private const int OBJECT4DV1_MAX_VERTICES    = 64;
-        private const int OBJECT4DV1_MAX_POLYS         = 128;
+        private const int OBJECT4DV1_MAX_VERTICES = 40256;//64;
+        private const int OBJECT4DV1_MAX_POLYS = 912;//128;
       
         public int id;                //numeric id of this object
         public string name; //ASCII name of object 
+        public string type;
+        public string scriptName;
         int state;           //state of object
         int attr;              // attributes of object
        
@@ -162,13 +169,13 @@ namespace GameEngine
         float max_radius;//maximum radius of object
 
         public Point4D world_pos;  // position of object in world
-        public Vector4 dir;         // rotation angles of object in world
+        public Vector dir = new Vector();         // rotation angles of object in world
                                   // cords or unit direction vector user defined ???
          
-        Vector4 ux,uy,uz;  //local axes to track full orientation
+        Vector ux,uy,uz;  //local axes to track full orientation
                                     //this is updated automatically during rotation calls
 
-        public Vector4 scale = new Vector4(1,1,1,1);
+        public Vector scale = new Vector(1,1,1,1);
 
         public int num_vertices;    // number of verticesof this object
 
@@ -177,7 +184,102 @@ namespace GameEngine
     
         public int num_polys;   // number of polygons in object mesh
         public POLY4DV1[] plist = new POLY4DV1[OBJECT4DV1_MAX_POLYS];  // array of polygons       
- 
+
+        public float X
+        {
+            get
+            {
+                return world_pos.X;
+            }
+            set
+            {
+                world_pos.X = value;
+            }
+        }
+
+        public float Y
+        {
+            get
+            {
+                return world_pos.Y;
+            }
+            set
+            {
+                world_pos.Y = value;
+            }
+        }
+
+        public float Z
+        {
+            get
+            {
+                return world_pos.Z;
+            }
+            set
+            {
+                world_pos.Z = value;
+            }
+        }
+
+        public float Pitch
+        {
+            get
+            {
+                return dir.X;
+            }
+            set
+            {
+                dir.X = value;
+            }
+        }
+
+        public float Yaw
+        {
+            get
+            {
+                return dir.Y;
+            }
+            set
+            {
+                dir.Y = value;
+            }
+        }
+
+        public float Roll
+        {
+            get
+            {
+                return dir.Z;
+            }
+            set
+            {
+                dir.Z = value;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+
+        public string Script
+        {
+            get
+            {
+                return scriptName;
+            }
+            set
+            {
+                scriptName = value;
+            }
+        }
         public void SET_BIT(int word,int bit_flag  )
         {
             word=word | bit_flag;
@@ -198,6 +300,12 @@ namespace GameEngine
         /**
          Updates this object to the properties of a triangle
          */
+
+        public OBJECT4DV1()
+        {
+            scale = new Vector(1, 1, 1, 1);
+        }
+
         public void setToTriangle(Point4D[] vertices)
         {
              vlist_trans = vertices;
@@ -285,7 +393,68 @@ namespace GameEngine
 
         } // end Compute_OBJECT4DV1_Radius
 
-        public int Load_PLG(ref string filename, Vector4 scale, Vector4 pos, Vector4 rot)
+        public int Load_PLY(ref string filename, Vector scale, Vector pos, Vector rot)
+        {
+            // this function loads a ply object in off disk, additionally it allows the caller to scale, position, and rotate the object to save extra calls later for 
+            // non-dynamic objects
+
+            FileStream fs; // file stream
+            string buffer = ""; // working buffer
+            string[] token;
+            string token_string; // pointer to actual token text, ready for parsing
+            StreamReader rdr;
+
+            if ((fs = File.Open(filename, FileMode.Open, FileAccess.Read)) == null)
+            {
+                Debug.WriteLine("Couldn't open PLY file " + filename);
+                return (0);
+            } // end if
+
+            Header header = new Header();
+            PlyReader plyReader = new PlyReader(fs);
+            header = plyReader.ReadHeader();
+
+            // Access the elements (e.g., vertices and faces)
+            
+            List<Vertex> vertices = (List<Vertex>)header.Elements["vertex"];            
+            //List<Face> faces = (List<Face>)header.Elements["face"];
+
+            num_vertices = header.vertexCount;
+            // Read and process vertices
+            for (int i = 0; i < header.vertexCount; i++)
+            {
+                Vertex vertex = plyReader.ReadVertices(i);
+
+                //Console.WriteLine($"Vertex {i + 1}: X={vertex.X}, Y={vertex.Y}, Z={vertex.Z}");
+                vertices.Add(vertex);
+                vlist_local[i] = new Point4D();
+                vlist_local[i].X = vertex.X;
+                vlist_local[i].Y = vertex.Y;
+                vlist_local[i].Z = vertex.Z;
+            }
+
+            int poly_num_verts = 0; // number of vertices for current poly (always 3)
+            // Read and process faces
+            num_polys = header.faceCount;
+           
+            for (int poly = 0; poly < num_polys; poly++)
+            {
+                Face face = plyReader.ReadFaces(poly);
+                poly_num_verts = face.VertexCount;                
+                plist[poly] = new POLY4DV1();
+                plist[poly].poly_num_verts = poly_num_verts;                
+                plist[poly].vert = new int[poly_num_verts];
+                for (int i = 0; i < face.VertexCount; i++)
+                {                    
+                    plist[poly].vert[i] = Convert.ToInt32(face.VertexIndices[i]);                  
+                }              
+            }
+            fs.Close();
+            // return success
+            return (1);
+        }
+
+        public int Load_PLG(ref string filename, Vector scale, Vector pos, Vector rot)
         {
             // this function loads a plg object in off disk, additionally it allows the caller to scale, position, and rotate the object to save extra calls later for 
             // non-dynamic objects
@@ -327,10 +496,10 @@ namespace GameEngine
             state = (int)(OBJECT4DV1_STATE.ACTIVE | OBJECT4DV1_STATE.VISIBLE);
             
             // set position of object
-            world_pos.X = pos.X;
-            world_pos.Y = pos.Y;
-            world_pos.Z = pos.Z;
-            world_pos.W = pos.W;
+            world_pos.X = pos.x;
+            world_pos.Y = pos.y;
+            world_pos.Z = pos.z;
+            world_pos.W = pos.w;
 
             // Step 2: open the file for reading
             
@@ -374,9 +543,9 @@ namespace GameEngine
                       vlist_local[vertex].W = 1;                  
 
                 // scale vertices
-                vlist_local[vertex].X*=scale.X;
-                vlist_local[vertex].Y*=scale.Y;
-                vlist_local[vertex].Z*=scale.Z;
+                vlist_local[vertex].X*=scale.x;
+                vlist_local[vertex].Y*=scale.y;
+                vlist_local[vertex].Z*=scale.z;
 
                 Debug.WriteLine("\nVertex " + vertex + "= " + 
                                                   vlist_local[vertex].X + " " +
@@ -415,8 +584,9 @@ namespace GameEngine
                 // read in surface descriptor, number of vertices, and vertex list
                 token = token_string.Split(new Char[] { ' ' },StringSplitOptions.RemoveEmptyEntries);
                 tmp_string = token[0]; // surface descriptor
-                poly_num_verts = int.Parse(token[1]);
+                
                 plist[poly] = new POLY4DV1();
+                plist[poly].poly_num_verts = int.Parse(token[1]);
                 plist[poly].vert[0] = int.Parse(token[2]);
                 plist[poly].vert[1] = int.Parse(token[3]);
                 plist[poly].vert[2] = int.Parse(token[4]);
@@ -556,11 +726,11 @@ namespace GameEngine
 
         public Point4D pos;     // world position of camera used by both camera models
 
-        public Vector4 dir;   // euler agles or look at direction of camera for UVN
+        public Vector dir;   // euler agles or look at direction of camera for UVN
 
-        Vector4 u;     // extra vectors to track the camera orientation
-        Vector4 v;      // for more complex UVN camera model
-        Vector4 n;
+        Vector u;     // extra vectors to track the camera orientation
+        Vector v;      // for more complex UVN camera model
+        Vector n;
         Point4D target;  // target or "look at" position for UVN model
 
         float view_dist_h;    // horizontal and vertical viewing distances
@@ -574,10 +744,10 @@ namespace GameEngine
         float near_clip_z;        // near z=constant clipping plane
         float far_clip_z;          // far z=constant clipping plane
 
-        UnsafeNativeMethods.Plane rt_clip_plane;   // the right clipping plane
-        UnsafeNativeMethods.Plane lt_clip_plane;    // the left clipping plane
-        UnsafeNativeMethods.Plane tp_clip_plane;   // top clipping plane
-        UnsafeNativeMethods.Plane bt_clip_plane;   // the bottom clipping plane
+        //UnsafeNativeMethods.Plane rt_clip_plane;   // the right clipping plane
+        //UnsafeNativeMethods.Plane lt_clip_plane;    // the left clipping plane
+        //UnsafeNativeMethods.Plane tp_clip_plane;   // top clipping plane
+        //UnsafeNativeMethods.Plane bt_clip_plane;   // the bottom clipping plane
 
         float viewplane_width;     // width and height of view plane to project onto
         float viewplane_height;    // usually 2x2 for normalized projection or the exact
@@ -602,7 +772,7 @@ namespace GameEngine
         Matrix mscr;      // storage for the perspective to screen transform matrix
 
         public void Init_CAM4DV1(Point4D cam_pos,   // initial camera position
-                                            Vector4 cam_dir,       // initial camera angles
+                                            Vector cam_dir,       // initial camera angles
                                             float fov,                    // field of view
                                             float viewport_width,   // size of final screen viewport
                                             float viewport_height)
@@ -633,18 +803,18 @@ namespace GameEngine
     {
         public static int Intersect_Parametric_Line2D(Parametric_Line2D p1, Parametric_Line2D p2, ref Point p)
         {
-            float det_p1p2 = (p1.v.X*p2.v.Y - p1.v.Y * p2.v.X);
+            float det_p1p2 = (p1.v.x*p2.v.y - p1.v.y * p2.v.x);
             if (Math.Abs(det_p1p2)<=Math.Pow(10,-4))
             {
                 return((int)PARM_LINE.NO_INTERSECT);
             }
-            float t1 = (p2.v.X*(p1.p0.Y - p2.p0.Y) - p2.v.Y*(p1.p0.X - p2.p0.X)) / det_p1p2;
-            float t2 = (p1.v.X*(p1.p0.Y - p2.p0.Y) - p1.v.Y*(p1.p0.X - p2.p0.X))/ det_p1p2;
+            float t1 = (p2.v.x*(p1.p0.Y - p2.p0.Y) - p2.v.y*(p1.p0.X - p2.p0.X)) / det_p1p2;
+            float t2 = (p1.v.x*(p1.p0.Y - p2.p0.Y) - p1.v.y*(p1.p0.X - p2.p0.X))/ det_p1p2;
 
             if (t1>=0 && t1<=1 && t2>=0 && t2<=1)
             {
-                p.X =(int) (p1.p0.X + p1.v.X*t1);
-                p.Y =(int) ( p1.p0.Y +p1.v.Y*t1);
+                p.X =(int) (p1.p0.X + p1.v.x*t1);
+                p.Y =(int) ( p1.p0.Y +p1.v.y*t1);
                 return (int)PARM_LINE.LINE_INTERSECT_IN_SEGMENT;
             }
             else

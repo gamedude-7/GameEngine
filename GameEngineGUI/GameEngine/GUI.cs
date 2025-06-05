@@ -11,6 +11,7 @@ namespace GUI
         public Cube() : base()
         {
             base.num_vertices = 8;
+          //  base.num_polys = 6;
         }
 
         public override Triangle[] ConvertToTriangles()

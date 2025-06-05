@@ -130,20 +130,20 @@ union
 } VECTOR3D, POINT3D, *VECTOR3D_PTR, *POINT3D_PTR;
 
 // 4D homogenous vector, point with w ////////////////////
-typedef struct VECTOR4D_TYP
-{
-union
-    {
-    float M[4]; // array indexed storage
-
-    // explicit names
-    struct
-         {
-         float x,y,z,w;
-         }; // end struct
-    }; // end union
-
-} VECTOR4D, POINT4D, *VECTOR4D_PTR, *POINT4D_PTR;
+//typedef struct VECTOR4D_TYP
+//{
+//union
+//    {
+//    float M[4]; // array indexed storage
+//
+//    // explicit names
+//    struct
+//         {
+//         float x,y,z,w;
+//         }; // end struct
+//    }; // end union
+//
+//} VECTOR4D, POINT4D, *VECTOR4D_PTR, *POINT4D_PTR;
 
 // 2D parametric line /////////////////////////////////////////
 typedef struct PARMLINE2D_TYP
