@@ -510,6 +510,32 @@ namespace GameEngine
             this.ChangeButton.UseVisualStyleBackColor = true;
             this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
             // 
+            // label5
+            // 
+            //this.label5.AutoSize = true;
+            //this.label5.Location = new System.Drawing.Point(1103, 71);
+            //this.label5.Name = "label5";
+            //this.label5.Size = new System.Drawing.Size(35, 13);
+            //this.label5.TabIndex = 16;
+            //this.label5.Text = "Name";
+            // 
+            // OpenScriptButton
+            // 
+            //this.OpenScriptButton.Location = new System.Drawing.Point(1106, 113);
+            //this.OpenScriptButton.Name = "OpenScriptButton";
+            //this.OpenScriptButton.Size = new System.Drawing.Size(75, 23);
+            //this.OpenScriptButton.TabIndex = 17;
+            //this.OpenScriptButton.Text = "Open Script";
+            //this.OpenScriptButton.UseVisualStyleBackColor = true;
+            //this.OpenScriptButton.Click += new System.EventHandler(this.OpenScriptButton_Click);
+            // 
+            // NameTextBox
+            // 
+            //this.NameTextBox.Location = new System.Drawing.Point(1106, 87);
+            //this.NameTextBox.Name = "NameTextBox";
+            //this.NameTextBox.Size = new System.Drawing.Size(100, 20);
+            //this.NameTextBox.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
