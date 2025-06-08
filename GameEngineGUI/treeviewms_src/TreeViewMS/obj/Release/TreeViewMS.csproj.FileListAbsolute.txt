@@ -1,6 +1,0 @@
-C:\jly\GameEngine_v2.0\treeviewms_src\TreeViewMS\bin\Release\TreeViewMS.dll
-C:\jly\GameEngine_v2.0\treeviewms_src\TreeViewMS\obj\Release\ResolveAssemblyReference.cache
-C:\jly\GameEngine_v2.0\treeviewms_src\TreeViewMS\obj\Release\TreeViewMS.TreeViewMS.resources
-C:\jly\GameEngine_v2.0\treeviewms_src\TreeViewMS\obj\Release\ResGen.read.1.tlog
-C:\jly\GameEngine_v2.0\treeviewms_src\TreeViewMS\obj\Release\ResGen.write.1.tlog
-C:\jly\GameEngine_v2.0\treeviewms_src\TreeViewMS\obj\Release\TreeViewMS.dll

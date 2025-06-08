@@ -67,6 +67,10 @@ DIMOUSESTATE mousestate;
 
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bfa5e409f5f7288bc0c852707a66a6c4eac9b4f7
 
 
 Game game;
@@ -80,4 +84,15 @@ TCHAR szTitle[MAX_LOADSTRING];					// The title bar text
 TCHAR szWindowClass[MAX_LOADSTRING];			// the main window class name
 
 
+<<<<<<< HEAD
+=======
+=======
+static void MoveCamera(float d)
+{
+	eye.y += d*moveDist*sin(pitch);
+	eye.x += d*moveDist*cos(pitch)*cos(yaw);
+	eye.z += d*moveDist*cos(pitch)*sin(yaw);
+}
+>>>>>>> f2bb61289de15cc22f3cae01fb96254a5d78474d
+>>>>>>> bfa5e409f5f7288bc0c852707a66a6c4eac9b4f7
 

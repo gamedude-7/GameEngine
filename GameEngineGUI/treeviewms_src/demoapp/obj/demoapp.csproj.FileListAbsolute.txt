@@ -1,9 +1,0 @@
-C:\jly\GameEngine_v2.0\treeviewms_src\demoapp\bin\Debug\demoapp.exe
-C:\jly\GameEngine_v2.0\treeviewms_src\demoapp\bin\Debug\demoapp.pdb
-C:\jly\GameEngine_v2.0\treeviewms_src\demoapp\bin\Debug\TreeViewMS.dll
-C:\jly\GameEngine_v2.0\treeviewms_src\demoapp\bin\Debug\TreeViewMS.pdb
-C:\jly\GameEngine_v2.0\treeviewms_src\demoapp\obj\Debug\ResolveAssemblyReference.cache
-C:\jly\GameEngine_v2.0\treeviewms_src\demoapp\obj\Debug\demoapp.Form1.resources
-C:\jly\GameEngine_v2.0\treeviewms_src\demoapp\obj\Debug\demoapp.csproj.GenerateResource.Cache
-C:\jly\GameEngine_v2.0\treeviewms_src\demoapp\obj\Debug\demoapp.exe
-C:\jly\GameEngine_v2.0\treeviewms_src\demoapp\obj\Debug\demoapp.pdb

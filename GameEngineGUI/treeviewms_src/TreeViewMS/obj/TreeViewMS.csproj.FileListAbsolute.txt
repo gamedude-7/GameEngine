@@ -1,7 +1,0 @@
-C:\jly\GameEngine_v2.0\treeviewms_src\TreeViewMS\bin\Debug\TreeViewMS.dll
-C:\jly\GameEngine_v2.0\treeviewms_src\TreeViewMS\bin\Debug\TreeViewMS.pdb
-C:\jly\GameEngine_v2.0\treeviewms_src\TreeViewMS\obj\Debug\ResolveAssemblyReference.cache
-C:\jly\GameEngine_v2.0\treeviewms_src\TreeViewMS\obj\Debug\TreeViewMS.TreeViewMS.resources
-C:\jly\GameEngine_v2.0\treeviewms_src\TreeViewMS\obj\Debug\TreeViewMS.csproj.GenerateResource.Cache
-C:\jly\GameEngine_v2.0\treeviewms_src\TreeViewMS\obj\Debug\TreeViewMS.dll
-C:\jly\GameEngine_v2.0\treeviewms_src\TreeViewMS\obj\Debug\TreeViewMS.pdb

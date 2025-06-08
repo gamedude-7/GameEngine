@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bfa5e409f5f7288bc0c852707a66a6c4eac9b4f7
 c:\users\jason\desktop\gameengine\dxgame\win32directdraw\debug\win32directdraw.pch
 c:\users\jason\desktop\gameengine\dxgame\win32directdraw\debug\vc143.pdb
 c:\users\jason\desktop\gameengine\dxgame\win32directdraw\debug\vc143.idb
@@ -26,3 +30,44 @@ c:\users\jason\desktop\gameengine\dxgame\win32directdraw\debug\win32directdraw.t
 c:\users\jason\desktop\gameengine\dxgame\win32directdraw\debug\win32directdraw.tlog\rc.command.1.tlog
 c:\users\jason\desktop\gameengine\dxgame\win32directdraw\debug\win32directdraw.tlog\rc.read.1.tlog
 c:\users\jason\desktop\gameengine\dxgame\win32directdraw\debug\win32directdraw.tlog\rc.write.1.tlog
+<<<<<<< HEAD
+=======
+=======
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\DEBUG\WIN32DIRECTDRAW.EXE
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\DEBUG\WIN32DIRECTDRAW.ILK
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\DEBUG\WIN32DIRECTDRAW.PDB
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\C3DMODEL.OBJ
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\cl.command.1.tlog
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\CL.read.1.tlog
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\CL.write.1.tlog
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\CUBE.OBJ
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\INPUTCLASS.OBJ
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\LEVEL.OBJ
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\link.command.1.tlog
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\link.read.1.tlog
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\link.write.1.tlog
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\link-cvtres.read.1.tlog
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\link-cvtres.write.1.tlog
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\mt.command.1.tlog
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\mt.read.1.tlog
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\mt.write.1.tlog
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\OBJECT.OBJ
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\POLY.OBJ
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\rc.command.1.tlog
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\rc.read.1.tlog
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\rc.write.1.tlog
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\STDAFX.OBJ
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\vc100.idb
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\VC100.PDB
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\VECTOR.OBJ
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\WIN32DIRECTDRAW.EXE.EMBED.MANIFEST
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\WIN32DIRECTDRAW.EXE.EMBED.MANIFEST.RES
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\WIN32DIRECTDRAW.EXE.INTERMEDIATE.MANIFEST
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\WIN32DIRECTDRAW.OBJ
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\WIN32DIRECTDRAW.PCH
+C:\USERS\JASON\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\GAMEENGINE\DXGAME\WIN32DIRECTDRAW\DEBUG\WIN32DIRECTDRAW.RES
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\Win32DirectDraw.vcxprojResolveAssemblyReference.cache
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\Win32DirectDraw.write.1.tlog
+C:\Users\jason\Documents\Visual Studio 2010\Projects\GameEngine\DXGame\Win32DirectDraw\Debug\Win32DirectDraw_manifest.rc
+>>>>>>> f2bb61289de15cc22f3cae01fb96254a5d78474d
+>>>>>>> bfa5e409f5f7288bc0c852707a66a6c4eac9b4f7

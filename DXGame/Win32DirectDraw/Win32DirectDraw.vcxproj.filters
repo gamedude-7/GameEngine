@@ -22,6 +22,9 @@
     <None Include="Win32DirectDraw.ico">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="script1.scr">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -63,9 +66,18 @@
     <ClInclude Include="InputClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+<<<<<<< HEAD
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+=======
+>>>>>>> f2bb61289de15cc22f3cae01fb96254a5d78474d
+>>>>>>> bfa5e409f5f7288bc0c852707a66a6c4eac9b4f7
     <ClInclude Include="ScriptTrans.h">
       <Filter>Header Files</Filter>
     </ClInclude>
