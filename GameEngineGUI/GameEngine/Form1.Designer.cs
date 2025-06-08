@@ -509,7 +509,7 @@ namespace GameEngine
             this.ChangeButton.Text = "Change";
             this.ChangeButton.UseVisualStyleBackColor = true;
             this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
-//<<<<<<< HEAD
+
 //=======
             // 
             // label5

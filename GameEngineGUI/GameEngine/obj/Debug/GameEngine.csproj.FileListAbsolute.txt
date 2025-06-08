@@ -118,12 +118,11 @@ C:\Users\gamed\OneDrive\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\Ga
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\bin\Debug\GameEngine.exe.config
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\bin\Debug\GameEngine.exe
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\bin\Debug\GameEngine.pdb
-C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\bin\Debug\TreeViewMS.pdb
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.csproj.AssemblyReference.cache
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.Form1.resources
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.Properties.Resources.resources
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.csproj.GenerateResource.cache
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.csproj.CoreCompileInputs.cache
+C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.csproj.Up2Date
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.exe
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.pdb
-C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.csproj.Up2Date
