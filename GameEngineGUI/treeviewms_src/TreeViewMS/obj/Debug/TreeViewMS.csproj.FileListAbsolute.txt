@@ -41,11 +41,3 @@ C:\Users\User\Documents\Visual Studio 2010\Projects\GameEngine_v2.1\treeviewms_s
 C:\Users\User\Documents\Visual Studio 2010\Projects\GameEngine_v2.1\treeviewms_src\TreeViewMS\obj\Debug\TreeViewMS.csproj.GenerateResource.Cache
 C:\Users\User\Documents\Visual Studio 2010\Projects\GameEngine_v2.1\treeviewms_src\TreeViewMS\obj\Debug\TreeViewMS.dll
 C:\Users\User\Documents\Visual Studio 2010\Projects\GameEngine_v2.1\treeviewms_src\TreeViewMS\obj\Debug\TreeViewMS.pdb
-C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\treeviewms_src\TreeViewMS\bin\Debug\TreeViewMS.dll
-C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\treeviewms_src\TreeViewMS\bin\Debug\TreeViewMS.pdb
-C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\treeviewms_src\TreeViewMS\obj\Debug\TreeViewMS.csproj.AssemblyReference.cache
-C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\treeviewms_src\TreeViewMS\obj\Debug\TreeViewMS.TreeViewMS.resources
-C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\treeviewms_src\TreeViewMS\obj\Debug\TreeViewMS.csproj.GenerateResource.cache
-C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\treeviewms_src\TreeViewMS\obj\Debug\TreeViewMS.csproj.CoreCompileInputs.cache
-C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\treeviewms_src\TreeViewMS\obj\Debug\TreeViewMS.dll
-C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\treeviewms_src\TreeViewMS\obj\Debug\TreeViewMS.pdb
