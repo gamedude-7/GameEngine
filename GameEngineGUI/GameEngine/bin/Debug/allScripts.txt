@@ -1,0 +1,8 @@
+#include "ScriptTrans.h"
+#include "tower1.txt"
+#include "vehicle.txt"
+#include "camera.txt"
+#include "plane.txt"
+#include "wall1.txt"
+#include "wall2.txt"
+#include "tower2.txt"

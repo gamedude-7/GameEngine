@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="GameEngine">
+</Property><Property Name="Solution File" Value="C:\jly\GameEngine_v2.0\GameEngine.sln">
+</Property><Property Name="Date" Value="November-14-11">
+</Property><Property Name="Time" Value="20:13:11 PM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="3" Project="TextureBasics" Source="..\game_engineGL\TextureBasics2\TextureBasics\TextureBasics.vcproj" Description="No Conversion Required">
+</Event></UpgradeLog>
