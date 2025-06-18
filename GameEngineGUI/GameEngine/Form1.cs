@@ -512,7 +512,7 @@ namespace GameEngine
                 {
                     if (listObjects.Count > numOfObjects)
                     {
-                        listObjects.RemoveLast();
+                        //listObjects.RemoveLast();
                     }
                 }
                 if ((cube.length + (e.Delta >> 4)) > 0)
@@ -524,7 +524,7 @@ namespace GameEngine
                 {
                     if (listObjects.Count > numOfObjects)
                     {
-                        listObjects.RemoveLast();
+                       // listObjects.RemoveLast();
                     }
                     p.Color = Color.Black;
                     #region cube
@@ -579,7 +579,7 @@ namespace GameEngine
                     cube.vlist_local[7].Y = -cube.height / 2;
                     cube.vlist_local[7].Z = cube.length / 2;
                     #endregion
-                    listObjects.AddLast(cube);
+                  //  listObjects.AddLast(cube);
                 }
             }
             else
@@ -622,10 +622,10 @@ namespace GameEngine
                 containerControl1_Paint(null, null);
                 if (tsbCube.Checked)
                 {
-                    if (listObjects.Count > numOfObjects)
-                    {
-                        listObjects.RemoveLast();
-                    }
+                    //if (listObjects.Count > numOfObjects)
+                    //{
+                    //    listObjects.RemoveLast();
+                    //}
                     p.Color = Color.Black;
                     #region cube                    
                     //d = splitContainer1.Panel1.Width / 2f;
@@ -731,7 +731,7 @@ namespace GameEngine
                     cube.plist[5].vert[2] = 7;
                     cube.plist[5].vert[3] = 6;
 
-                    listObjects.AddLast(cube);
+                    //listObjects.AddLast(cube);
                 }
                 else if (tsbSelect.Checked)
                 {
@@ -890,10 +890,10 @@ namespace GameEngine
             {
                 if (tsbCube.Checked)
                 {
-                    if (listObjects.Count > numOfObjects)
-                    {
-                        listObjects.RemoveLast();
-                    }
+                    //if (listObjects.Count > numOfObjects)
+                    //{
+                    //    listObjects.RemoveLast();
+                    //}
                     p.Color = Color.Black;
                 }
                 if ((cube.width + (e.Delta >> 4)) > 0)
@@ -903,10 +903,10 @@ namespace GameEngine
 
                 if (tsbCube.Checked)
                 {
-                    if (listObjects.Count > numOfObjects)
-                    {
-                        listObjects.RemoveLast();
-                    }
+                    //if (listObjects.Count > numOfObjects)
+                    //{
+                    //    listObjects.RemoveLast();
+                    //}
                     p.Color = Color.Black;
                     #region cube
                     xper = (e.X - splitContainer1.Panel2.Width / 2f) / (splitContainer1.Panel2.Width / 2f);
@@ -960,7 +960,7 @@ namespace GameEngine
                     cube.vlist_local[7].Y = -cube.height / 2;
                     cube.vlist_local[7].Z = cube.length / 2;
                     #endregion
-                    listObjects.AddLast(cube);
+                    //listObjects.AddLast(cube);
                 }
             }
             else
@@ -980,7 +980,7 @@ namespace GameEngine
                 {
                     if (listObjects.Count > numOfObjects)
                     {
-                        listObjects.RemoveLast();
+                        //listObjects.RemoveLast();
                     }
                     p.Color = Color.Black;
                 }
@@ -993,7 +993,7 @@ namespace GameEngine
                 {
                     if (listObjects.Count > numOfObjects)
                     {
-                        listObjects.RemoveLast();
+                        //listObjects.RemoveLast();
                     }
                     p.Color = Color.Black;
                     #region cube
@@ -1048,7 +1048,7 @@ namespace GameEngine
                     cube.vlist_local[7].Y = -cube.height / 2;
                     cube.vlist_local[7].Z = cube.length / 2;
                     #endregion
-                    listObjects.AddLast(cube);
+                    //listObjects.AddLast(cube);
                 }
             }
             else
@@ -1064,17 +1064,19 @@ namespace GameEngine
             int h = splitContainer1.Panel1.Height;
             if (tsbCube.Checked)
             {
-                if (listObjects.Count > 0)
-                {
-                    if (listObjects.Last.Value is Cube)
+                //if (listObjects.Count > 0)
+                //{
+                    //if (listObjects.Last.Value is Cube)
+                    if (cube != null)
                     {
-                        listObjects.RemoveLast();
+                        //listObjects.RemoveLast();
                         cube.id = listObjects.Count;
                         listObjects.AddLast(cube);
                         //numOfObjects++;
+                        cube = null;
                         UpdateTree();
                     }
-                }
+                //}
                 treeView1.SelectedNodes.RemoveRange(0, treeView1.SelectedNodes.Count);
             }
             else if (tsbSelect.Checked)
@@ -1145,6 +1147,618 @@ namespace GameEngine
             isMouseDown = false;
         }
 
+        private void paintCubeInPerspectiveView(Graphics g)
+        {
+            Graphics mainScreen = splitContainer2.Panel2.CreateGraphics();
+            int h = splitContainer2.Panel2.Height;
+            int w = splitContainer2.Panel2.Width;
+            int x1, y1, x2, y2;
+            if (cube == null)
+                return;
+            mainScreen.Clear(splitContainer2.Panel2.BackColor);
+            
+            p.Color = Color.Black;
+            if (treeView1.SelectedNodes.Count > 0)
+            {
+                for (int i = 0; i < treeView1.SelectedNodes.Count; i++)
+                {
+                    TreeNode node = treeView1.SelectedNodes[i] as TreeNode;
+                    if (node.Index == cube.id)
+                        p.Color = Color.Red;
+                }
+            }
+            #region convert from world to camera coordinates
+            Matrix Tcam_inv = Matrix.Identity, Mtemp1, Mtemp2;
+            Tcam_inv.M41 = -camMain.pos.X;
+            Tcam_inv.M42 = -camMain.pos.Y;
+            Tcam_inv.M43 = -camMain.pos.Z;
+            Tcam_inv.M44 = 1;
+
+            Mtemp1 = Matrix.Multiply(Tcam_inv, Matrix.RotationY(camMain.dir.Y));
+            Mtemp2 = Matrix.Multiply(Matrix.RotationX(camMain.dir.X),
+                                                    Matrix.RotationZ(camMain.dir.Z));
+            Tcam_inv = Matrix.Multiply(Mtemp1, Mtemp2);
+
+            Matrix[] cube_camera = new Matrix[cube.num_vertices];
+            Matrix[] cube_world = new Matrix[cube.num_vertices];
+            Matrix[] cube_rotate = new Matrix[cube.num_vertices];
+            Matrix[] cube_rotation = new Matrix[cube.num_vertices];
+
+            Matrix Mrotation = new Matrix();
+            Mrotation = Matrix.RotationYawPitchRoll(cube.dir.Y, cube.dir.X, cube.dir.Z);
+            for (int i = 0; i < cube.num_vertices; i++)
+            {
+                cube_rotate[i] = Matrix.Zero;
+                cube_rotate[i].M11 = cube.vlist_local[i].X * cube.scale.X;
+                cube_rotate[i].M12 = cube.vlist_local[i].Y * cube.scale.Y;
+                cube_rotate[i].M13 = cube.vlist_local[i].Z * cube.scale.Z;
+                cube_rotate[i].M14 = cube.vlist_local[i].W;
+                cube_rotation[i] = Matrix.Multiply(cube_rotate[i], Mrotation);
+            }
+
+            for (int i = 0; i < cube.num_vertices; i++)
+            {
+                cube_world[i] = Matrix.Zero;
+                cube_world[i].M11 = cube.world_pos.X + cube_rotation[i].M11;
+                cube_world[i].M12 = cube.world_pos.Y + cube_rotation[i].M12;
+                cube_world[i].M13 = cube.world_pos.Z + cube_rotation[i].M13;
+                cube_world[i].M14 = 1;
+                cube_camera[i] = Matrix.Multiply(cube_world[i], Tcam_inv);
+
+            }
+            #endregion
+
+            #region perspective
+            int d = 1;
+            Point4D[] cube_per = new Point4D[cube.num_vertices];
+            for (int vertex = 0; vertex < cube.num_vertices; vertex++)
+            {
+                cube_per[vertex].X = d * cube_camera[vertex].M11 / cube_camera[vertex].M13;
+                cube_per[vertex].Y = d * cube_camera[vertex].M12 / cube_camera[vertex].M13;
+            }
+            #endregion
+
+            #region screen
+            float alpha = 0.5f * (float)splitContainer2.Panel2.Width - 0.5f;
+            float beta = 0.5f * (float)splitContainer2.Panel2.Height - 0.5f;
+
+            Point[] pt = new Point[cube.num_vertices];
+            for (int vertex = 0; vertex < cube.num_vertices; vertex++)
+            {
+                pt[vertex] = new Point();
+                pt[vertex].X = (int)(alpha + cube_per[vertex].X * alpha);
+                pt[vertex].Y = h - (int)(beta + cube_per[vertex].Y * beta);
+            }
+
+            for (int poly = 0; poly < cube.num_polys; poly++)
+            {
+                for (int i = 0; i < cube.plist[poly].vert.Length; i++)
+                {
+                    if (i == cube.plist[poly].vert.Length - 1)
+                    {
+                        x1 = pt[cube.plist[poly].vert[i]].X;
+                        y1 = pt[cube.plist[poly].vert[i]].Y;
+                        x2 = pt[cube.plist[poly].vert[0]].X;
+                        y2 = pt[cube.plist[poly].vert[0]].Y;
+
+                        if (x1 < 0)
+                            x1 = 0;
+                        else if (x1 > splitContainer2.Panel2.Width)
+                            x1 = splitContainer2.Panel2.Width;
+                        if (x2 < 0)
+                            x2 = 0;
+                        else if (x2 > splitContainer2.Panel2.Width)
+                            x2 = splitContainer2.Panel2.Width;
+
+                        if (y1 < 0)
+                            y1 = 0;
+                        else if (y1 > splitContainer2.Panel2.Height)
+                            y1 = splitContainer2.Panel2.Height;
+                        if (y2 < 0)
+                            y2 = 0;
+                        GUI.GUI.DrawLine(mainScreen, p, x1, y1, x2, y2, splitContainer2.Panel2.Width, splitContainer1.Panel2.Height);
+                    }
+                    else
+                    {
+                        x1 = pt[cube.plist[poly].vert[i]].X;
+                        y1 = pt[cube.plist[poly].vert[i]].Y;
+                        x2 = pt[cube.plist[poly].vert[i + 1]].X;
+                        y2 = pt[cube.plist[poly].vert[i + 1]].Y;
+
+                        if (x1 < 0)
+                            x1 = 0;
+                        else if (x1 > splitContainer1.Panel1.Width)
+                            x1 = splitContainer2.Panel2.Width;
+                        if (x2 < 0)
+                            x2 = 0;
+                        else if (x2 > splitContainer1.Panel1.Width)
+                            x2 = splitContainer2.Panel2.Width;
+
+                        if (y1 < 0)
+                            y1 = 0;
+                        else if (y1 > splitContainer2.Panel2.Height)
+                            y1 = splitContainer2.Panel2.Height;
+                        if (y2 < 0)
+                            y2 = 0;
+                        else if (y2 > splitContainer2.Panel2.Height)
+                            y2 = splitContainer2.Panel2.Height;
+                        GUI.GUI.DrawLine(mainScreen, p, x1, y1, x2, y2, splitContainer2.Panel2.Width, splitContainer1.Panel2.Height);
+                    }
+                }
+            }
+
+            #endregion
+            
+        }
+
+        private void paintCubeInTopView(Graphics g)
+        {
+            int h = splitContainer2.Panel1.Height;
+            int w = splitContainer2.Panel1.Width;
+            int x1, y1, x2, y2;
+           
+            if (cube == null)
+                return;
+
+            g.Clear(splitContainer2.Panel1.BackColor);
+           
+            p.Color = Color.Black;
+            if (treeView1.SelectedNodes.Count > 0)
+            {
+                for (int i = 0; i < treeView1.SelectedNodes.Count; i++)
+                {
+                    TreeNode node = treeView1.SelectedNodes[i] as TreeNode;
+                    if (node.Index == cube.id)
+                        p.Color = Color.Red;
+                }
+            }
+            #region convert from world to camera coordinates
+            Matrix Tcam_inv = Matrix.Identity, Mtemp1, Mtemp2;
+            Tcam_inv.M41 = -camTop.pos.X;
+            Tcam_inv.M42 = -camTop.pos.Y;
+            Tcam_inv.M43 = -camTop.pos.Z;
+            Tcam_inv.M44 = 1;
+
+            Mtemp1 = Matrix.Multiply(Tcam_inv, Matrix.RotationY(camTop.dir.Y));
+            Mtemp2 = Matrix.Multiply(Matrix.RotationX(camTop.dir.X),
+                                                    Matrix.RotationZ(camTop.dir.Z));
+            Tcam_inv = Matrix.Multiply(Mtemp1, Mtemp2);
+            Matrix[] cube_camera = new Matrix[cube.num_vertices];
+            Matrix[] cube_world = new Matrix[cube.num_vertices];
+            Matrix[] cube_rotate = new Matrix[cube.num_vertices];
+            Matrix[] cube_rotation = new Matrix[cube.num_vertices];
+
+            Matrix Mrotation;
+            Mrotation = Matrix.RotationYawPitchRoll(cube.dir.Y, cube.dir.X, cube.dir.Z);
+            for (int i = 0; i < cube.num_vertices; i++)
+            {
+                cube_rotate[i] = Matrix.Zero;
+                cube_rotate[i].M11 = cube.vlist_local[i].X * cube.scale.X;
+                cube_rotate[i].M12 = cube.vlist_local[i].Y * cube.scale.Y;
+                cube_rotate[i].M13 = cube.vlist_local[i].Z * cube.scale.Z;
+                cube_rotate[i].M14 = cube.vlist_local[i].W;
+                cube_rotation[i] = Matrix.Multiply(cube_rotate[i], Mrotation);
+            }
+
+            for (int i = 0; i < cube.num_vertices; i++)
+            {
+                cube_world[i] = Matrix.Zero;
+                cube_world[i].M11 = cube.world_pos.X + cube_rotation[i].M11;
+                cube_world[i].M12 = cube.world_pos.Y + cube_rotation[i].M12;
+                cube_world[i].M13 = cube.world_pos.Z + cube_rotation[i].M13;
+                cube_world[i].M14 = 1;
+                cube_camera[i] = Matrix.Multiply(cube_world[i], Tcam_inv);
+
+            }
+            #endregion
+
+            #region perspective
+            int d = 1;
+            Point4D[] cube_per = new Point4D[cube.num_vertices];
+            Single y_nearest = Single.MinValue, y_farthest = Single.MaxValue;
+            for (int vertex = 0; vertex < cube.num_vertices; vertex++)
+            {
+                cube_per[vertex].X = d * cube_camera[vertex].M11 / cube_camera[vertex].M12;
+                cube_per[vertex].Y = -d * cube_camera[vertex].M13 / cube_camera[vertex].M12;
+                if (cube_camera[vertex].M13 < y_farthest)
+                    y_nearest = cube_camera[vertex].M12;
+                if (cube_camera[vertex].M13 > y_nearest)
+                    y_farthest = cube_camera[vertex].M12;
+            }
+            #endregion                                                
+
+            #region image space clipping
+
+            //if (y_nearest > camTop.pos.Y + 50 || y_farthest < Single.MinValue)
+            //    continue;
+            #endregion
+
+            #region screen
+            float alpha = 0.5f * (float)splitContainer2.Panel1.Width - 0.5f;
+            float beta = 0.5f * (float)splitContainer2.Panel1.Height - 0.5f;
+
+            Point[] pt = new Point[cube.num_vertices];
+            for (int vertex = 0; vertex < cube.num_vertices; vertex++)
+            {
+                pt[vertex] = new Point();
+                pt[vertex].X = (int)(alpha + cube_per[vertex].X * alpha);
+                pt[vertex].Y = (int)(beta + cube_per[vertex].Y * beta);
+            }
+            for (int poly = 0; poly < cube.num_polys; poly++)
+            {
+                for (int i = 0; i < cube.plist[poly].vert.Length; i++)
+                {
+                    if (i == cube.plist[poly].vert.Length - 1)
+                    {
+                        x1 = pt[cube.plist[poly].vert[i]].X;
+                        y1 = pt[cube.plist[poly].vert[i]].Y;
+                        x2 = pt[cube.plist[poly].vert[0]].X;
+                        y2 = pt[cube.plist[poly].vert[0]].Y;
+
+                        if (x1 < 0)
+                            x1 = 0;
+                        else if (x1 > splitContainer2.Panel1.Width)
+                            x1 = splitContainer2.Panel1.Width;
+                        if (x2 < 0)
+                            x2 = 0;
+                        else if (x2 > splitContainer2.Panel1.Width)
+                            x2 = splitContainer2.Panel1.Width;
+
+                        if (y1 < 0)
+                            y1 = 0;
+                        else if (y1 > splitContainer2.Panel1.Height)
+                            y1 = splitContainer2.Panel1.Height;
+                        if (y2 < 0)
+                            y2 = 0;
+                        else if (y2 > splitContainer2.Panel1.Height)
+                            y2 = splitContainer2.Panel1.Height;
+                        GUI.GUI.DrawLine(g, p, x1, y1, x2, y2, splitContainer2.Panel1.Width, splitContainer2.Panel1.Height);
+                    }
+                    else
+                    {
+                        x1 = pt[cube.plist[poly].vert[i]].X;
+                        y1 = pt[cube.plist[poly].vert[i]].Y;
+                        x2 = pt[cube.plist[poly].vert[i + 1]].X;
+                        y2 = pt[cube.plist[poly].vert[i + 1]].Y;
+
+                        if (x1 < 0)
+                            x1 = 0;
+                        else if (x1 > splitContainer2.Panel1.Width)
+                            x1 = splitContainer2.Panel1.Width;
+                        if (x2 < 0)
+                            x2 = 0;
+                        else if (x2 > splitContainer2.Panel1.Width)
+                            x2 = splitContainer2.Panel1.Width;
+
+                        if (y1 < 0)
+                            y1 = 0;
+                        else if (y1 > splitContainer2.Panel1.Height)
+                            y1 = splitContainer2.Panel1.Height;
+                        if (y2 < 0)
+                            y2 = 0;
+                        else if (y2 > splitContainer2.Panel1.Height)
+                            y2 = splitContainer2.Panel1.Height;
+                        GUI.GUI.DrawLine(g, p, x1, y1, x2, y2, splitContainer2.Panel1.Width, splitContainer2.Panel1.Height);
+                    }
+                }
+            }
+
+
+            #endregion
+
+            
+        }
+
+        private void paintCubeInFrontView(Graphics g)
+        {
+            int x1, x2, y1, y2, h = splitContainer1.Panel1.Height;
+            if (cube == null)
+                return;
+            p.Color = Color.Black;
+            if (treeView1.SelectedNodes.Count > 0)
+            {
+                for (int i = 0; i < treeView1.SelectedNodes.Count; i++)
+                {
+                    TreeNode node = treeView1.SelectedNodes[i] as TreeNode;
+                    if (node.Index == cube.id)
+                        p.Color = Color.Red;
+                }
+            }
+            #region convert from world to camera coordinates
+            Matrix Tcam_inv = Matrix.Identity, Mtemp1, Mtemp2;
+            Tcam_inv.M41 = -camFront.pos.X;
+            Tcam_inv.M42 = -camFront.pos.Y;
+            Tcam_inv.M43 = -camFront.pos.Z;
+            Tcam_inv.M44 = 1;
+
+            Mtemp1 = Matrix.Multiply(Tcam_inv, Matrix.RotationY(camFront.dir.Y));
+            Mtemp2 = Matrix.Multiply(Matrix.RotationX(camFront.dir.X),
+                                                  Matrix.RotationZ(camFront.dir.Z));
+            Tcam_inv = Matrix.Multiply(Mtemp1, Mtemp2);
+            Matrix[] cube_camera = new Matrix[cube.num_vertices];
+            Matrix[] cube_world = new Matrix[cube.num_vertices];
+            Matrix[] cube_rotate = new Matrix[cube.num_vertices];
+            Matrix[] cube_rotation = new Matrix[cube.num_vertices];
+
+            Matrix Mrotation;
+            Mrotation = Matrix.RotationYawPitchRoll(cube.dir.Y, cube.dir.X, cube.dir.Z);
+
+            for (int i = 0; i < cube.num_vertices; i++)
+            {
+                cube_rotate[i] = Matrix.Zero;
+                cube_rotate[i].M11 = cube.vlist_local[i].X * cube.scale.X;
+                cube_rotate[i].M12 = cube.vlist_local[i].Y * cube.scale.Y;
+                cube_rotate[i].M13 = cube.vlist_local[i].Z * cube.scale.Z;
+                cube_rotate[i].M14 = cube.vlist_local[i].W;
+                cube_rotation[i] = Matrix.Multiply(cube_rotate[i], Mrotation);
+            }
+
+            for (int i = 0; i < cube.num_vertices; i++)
+            {
+                cube_world[i] = Matrix.Zero;
+                cube_world[i].M11 = cube.world_pos.X + cube_rotation[i].M11;
+                cube_world[i].M12 = cube.world_pos.Y + cube_rotation[i].M12;
+                cube_world[i].M13 = cube.world_pos.Z + cube_rotation[i].M13;
+                cube_world[i].M14 = 1;
+                cube_camera[i] = Matrix.Multiply(cube_world[i], Tcam_inv);
+            }
+            #endregion
+
+            #region perspective
+            int d = 1;// splitContainer1.Panel1.Width / 2;
+                      //float ar =(float) splitContainer1.Panel1.Width / (float)splitContainer1.Panel1.Height;
+            Point4D[] cube_per = new Point4D[cube.num_vertices];
+            Single z_nearest = Single.MaxValue, z_farthest = Single.MinValue;
+            for (int vertex = 0; vertex < cube.num_vertices; vertex++)
+            {
+                cube_per[vertex].X = d * cube_camera[vertex].M11 / cube_camera[vertex].M13;
+                cube_per[vertex].Y = d * cube_camera[vertex].M12 / cube_camera[vertex].M13;
+                if (cube_camera[vertex].M13 < z_nearest)
+                    z_nearest = cube_camera[vertex].M13;
+                if (cube_camera[vertex].M13 > z_farthest)
+                    z_farthest = cube_camera[vertex].M13;
+            }
+            #endregion
+
+            #region image space clipping
+
+            //if (z_nearest < camFront.pos.Z + 50 || z_farthest > Single.MaxValue)
+            //  continue;
+            #endregion
+
+            #region screen
+            float alpha = 0.5f * (float)splitContainer1.Panel1.Width - 0.5f;
+            float beta = 0.5f * (float)splitContainer1.Panel1.Height - 0.5f;
+
+            Point[] pt = new Point[cube.num_vertices];
+            for (int vertex = 0; vertex < cube.num_vertices; vertex++)
+            {
+                pt[vertex] = new Point();
+                pt[vertex].X = (int)(alpha + cube_per[vertex].X * alpha);
+                pt[vertex].Y = h - (int)(beta + cube_per[vertex].Y * beta);
+            }
+
+            for (int poly = 0; poly < cube.num_polys; poly++)
+            {
+                for (int i = 0; i < cube.plist[poly].vert.Length; i++)
+                {
+                    if (i == cube.plist[poly].vert.Length - 1)
+                    {
+                        x1 = pt[cube.plist[poly].vert[i]].X;
+                        y1 = pt[cube.plist[poly].vert[i]].Y;
+                        x2 = pt[cube.plist[poly].vert[0]].X;
+                        y2 = pt[cube.plist[poly].vert[0]].Y;
+
+                        if (x1 < 0)
+                            x1 = 0;
+                        else if (x1 > splitContainer1.Panel1.Width)
+                            x1 = splitContainer1.Panel1.Width;
+                        if (x2 < 0)
+                            x2 = 0;
+                        else if (x2 > splitContainer1.Panel1.Width)
+                            x2 = splitContainer1.Panel1.Width;
+
+                        if (y1 < 0)
+                            y1 = 0;
+                        else if (y1 > splitContainer1.Panel1.Height)
+                            y1 = splitContainer1.Panel1.Height;
+                        if (y2 < 0)
+                            y2 = 0;
+                        else if (y2 > splitContainer1.Panel1.Height)
+                            y2 = splitContainer1.Panel1.Height;
+                        GUI.GUI.DrawLine(g, p, x1, y1, x2, y2, splitContainer1.Panel1.Width, splitContainer1.Panel1.Height);
+                    }
+                    else
+                    {
+                        x1 = pt[cube.plist[poly].vert[i]].X;
+                        y1 = pt[cube.plist[poly].vert[i]].Y;
+                        x2 = pt[cube.plist[poly].vert[i + 1]].X;
+                        y2 = pt[cube.plist[poly].vert[i + 1]].Y;
+
+                        if (x1 < 0)
+                            x1 = 0;
+                        else if (x1 > splitContainer1.Panel1.Width)
+                            x1 = splitContainer1.Panel1.Width;
+                        if (x2 < 0)
+                            x2 = 0;
+                        else if (x2 > splitContainer1.Panel1.Width)
+                            x2 = splitContainer1.Panel1.Width;
+
+                        if (y1 < 0)
+                            y1 = 0;
+                        else if (y1 > splitContainer1.Panel1.Height)
+                            y1 = splitContainer1.Panel1.Height;
+                        if (y2 < 0)
+                            y2 = 0;
+                        else if (y2 > splitContainer1.Panel1.Height)
+                            y2 = splitContainer1.Panel1.Height;
+
+                        GUI.GUI.DrawLine(g, p, x1, y1, x2, y2, splitContainer1.Panel1.Width, splitContainer1.Panel1.Height);
+                    }
+                }
+            }
+            #endregion
+        }
+
+        private void paintCubeInSideView(Graphics g)
+        {
+            LinkedList<Point> vertices;
+            int h = splitContainer1.Panel2.Height;
+            int x1, y1, x2, y2;
+           
+            if (cube == null)
+                return;
+            //foreach (OBJECT4DV1 obj in listObjects)
+            //{
+                p.Color = Color.Black;
+                if (treeView1.SelectedNodes.Count > 0)
+                {
+                    for (int i = 0; i < treeView1.SelectedNodes.Count; i++)
+                    {
+                        TreeNode node = treeView1.SelectedNodes[i] as TreeNode;
+                        if (node.Index == cube.id)
+                            p.Color = Color.Red;
+                    }
+                }
+
+                #region convert from world to camera coordinates
+                Matrix Tcam_inv = Matrix.Identity, Mtemp1, Mtemp2;
+                Tcam_inv.M41 = -camLeft.pos.X;
+                Tcam_inv.M42 = -camLeft.pos.Y;
+                Tcam_inv.M43 = -camLeft.pos.Z;
+                Tcam_inv.M44 = 1;
+
+                Mtemp1 = Matrix.Multiply(Tcam_inv, Matrix.RotationY(camLeft.dir.Y));
+                Mtemp2 = Matrix.Multiply(Matrix.RotationX(camLeft.dir.X),
+                                                      Matrix.RotationZ(camLeft.dir.Z));
+                Tcam_inv = Matrix.Multiply(Mtemp1, Mtemp2);
+                Matrix[] cube_camera = new Matrix[cube.num_vertices];
+                Matrix[] cube_world = new Matrix[cube.num_vertices];
+                Matrix[] cube_rotate = new Matrix[cube.num_vertices];
+                Matrix[] cube_rotation = new Matrix[cube.num_vertices];
+
+                Matrix Mrotation;
+                Mrotation = Matrix.RotationYawPitchRoll(cube.dir.Y, cube.dir.X, cube.dir.Z);
+                for (int i = 0; i < cube.num_vertices; i++)
+                {
+                    cube_rotate[i] = Matrix.Zero;
+                    cube_rotate[i].M11 = cube.vlist_local[i].X * cube.scale.X;
+                    cube_rotate[i].M12 = cube.vlist_local[i].Y * cube.scale.Y;
+                    cube_rotate[i].M13 = cube.vlist_local[i].Z * cube.scale.Z;
+                    cube_rotate[i].M14 = cube.vlist_local[i].W;
+                    cube_rotation[i] = Matrix.Multiply(cube_rotate[i], Mrotation);
+                }
+
+                for (int i = 0; i < cube.num_vertices; i++)
+                {
+                    cube_world[i] = Matrix.Zero;
+                    cube_world[i].M11 = cube.world_pos.X + cube_rotation[i].M11;
+                    cube_world[i].M12 = cube.world_pos.Y + cube_rotation[i].M12;
+                    cube_world[i].M13 = cube.world_pos.Z + cube_rotation[i].M13;
+                    cube_world[i].M14 = 1;
+                    cube_camera[i] = Matrix.Multiply(cube_world[i], Tcam_inv);
+                }
+
+                #endregion
+
+                #region perspective
+                int d = 1;
+                Point4D[] cube_per = new Point4D[cube.num_vertices];
+                Single x_nearest = Single.MaxValue, x_farthest = Single.MinValue;
+                for (int vertex = 0; vertex < cube.num_vertices; vertex++)
+                {
+                    cube_per[vertex].X = -d * cube_camera[vertex].M13 / cube_camera[vertex].M11;
+                    cube_per[vertex].Y = -d * cube_camera[vertex].M12 / cube_camera[vertex].M11;
+                    if (cube_camera[vertex].M13 < x_nearest)
+                        x_nearest = cube_camera[vertex].M11;
+                    if (cube_camera[vertex].M13 > x_farthest)
+                        x_farthest = cube_camera[vertex].M11;
+                }
+                #endregion                
+
+                #region image space clipping
+
+                //if (x_nearest < camLeft.pos.X + 50 || x_farthest > Single.MaxValue)
+                //    continue;
+                #endregion
+
+                #region screen
+                float alpha = 0.5f * (float)splitContainer1.Panel2.Width - 0.5f;
+                float beta = 0.5f * (float)splitContainer1.Panel2.Height - 0.5f;
+
+                Point[] pt = new Point[cube.num_vertices];
+                for (int vertex = 0; vertex < cube.num_vertices; vertex++)
+                {
+                    pt[vertex] = new Point();
+                    pt[vertex].X = (int)(alpha + cube_per[vertex].X * alpha);
+                    pt[vertex].Y = (int)(beta + cube_per[vertex].Y * beta);
+                }
+                for (int poly = 0; poly < cube.num_polys; poly++)
+                {
+                    for (int i = 0; i < cube.plist[poly].vert.Length; i++)
+                    {
+                        if (i == cube.plist[poly].vert.Length - 1)
+                        {
+                            x1 = pt[cube.plist[poly].vert[i]].X;
+                            y1 = pt[cube.plist[poly].vert[i]].Y;
+                            x2 = pt[cube.plist[poly].vert[0]].X;
+                            y2 = pt[cube.plist[poly].vert[0]].Y;
+
+                            if (x1 < 0)
+                                x1 = 0;
+                            else if (x1 > splitContainer1.Panel1.Width)
+                                x1 = splitContainer1.Panel1.Width;
+                            if (x2 < 0)
+                                x2 = 0;
+                            else if (x2 > splitContainer1.Panel1.Width)
+                                x2 = splitContainer1.Panel1.Width;
+
+                            if (y1 < 0)
+                                y1 = 0;
+                            else if (y1 > splitContainer1.Panel1.Height)
+                                y1 = splitContainer1.Panel1.Height;
+                            if (y2 < 0)
+                                y2 = 0;
+                            else if (y2 > splitContainer1.Panel1.Height)
+                                y2 = splitContainer1.Panel1.Height;
+                            GUI.GUI.DrawLine(g, p, x1, y1, x2, y2, splitContainer1.Panel2.Width, splitContainer1.Panel2.Height);
+                        }
+                        else
+                        {
+                            x1 = pt[cube.plist[poly].vert[i]].X;
+                            y1 = pt[cube.plist[poly].vert[i]].Y;
+                            x2 = pt[cube.plist[poly].vert[i + 1]].X;
+                            y2 = pt[cube.plist[poly].vert[i + 1]].Y;
+
+                            if (x1 < 0)
+                                x1 = 0;
+                            else if (x1 > splitContainer1.Panel2.Width)
+                                x1 = splitContainer1.Panel1.Width;
+                            if (x2 < 0)
+                                x2 = 0;
+                            else if (x2 > splitContainer1.Panel2.Width)
+                                x2 = splitContainer1.Panel1.Width;
+
+                            if (y1 < 0)
+                                y1 = 0;
+                            else if (y1 > splitContainer1.Panel2.Height)
+                                y1 = splitContainer1.Panel2.Height;
+                            if (y2 < 0)
+                                y2 = 0;
+                            else if (y2 > splitContainer1.Panel2.Height)
+                                y2 = splitContainer1.Panel2.Height;
+                            GUI.GUI.DrawLine(g, p, x1, y1, x2, y2, splitContainer1.Panel2.Width, splitContainer1.Panel2.Height);
+                        }
+                    }
+
+                }
+
+
+                #endregion
+
+            //}
+        }
+
         // top left panel with front view
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -1153,6 +1767,7 @@ namespace GameEngine
             int w = splitContainer1.Panel1.Width;
             int x1, y1, x2, y2;
             g.Clear(splitContainer1.Panel1.BackColor);
+            paintCubeInFrontView(g);
             foreach (OBJECT4DV1 obj in listObjects)
             {
                 p.Color = Color.Black;
@@ -1323,6 +1938,7 @@ namespace GameEngine
             LinkedList<Point> vertices;
 
             g.Clear(splitContainer2.Panel1.BackColor);
+            paintCubeInTopView(g);
             foreach (OBJECT4DV1 obj in listObjects)
             {
                 p.Color = Color.Black;
@@ -1489,7 +2105,7 @@ namespace GameEngine
             LinkedList<Point> vertices;
 
             mainScreen.Clear(splitContainer2.Panel2.BackColor);
-
+            paintCubeInPerspectiveView(mainScreen);
             foreach (OBJECT4DV1 obj in listObjects)
             {
                 p.Color = Color.Black;
@@ -1673,7 +2289,7 @@ namespace GameEngine
             int h = splitContainer1.Panel2.Height;
             int x1, y1, x2, y2;
             g.Clear(splitContainer1.Panel2.BackColor);
-
+            paintCubeInSideView(g);
             foreach (OBJECT4DV1 obj in listObjects)
             {
                 p.Color = Color.Black;
@@ -1881,10 +2497,10 @@ namespace GameEngine
                 containerControl1_Paint(null, null);
                 if (tsbCube.Checked)
                 {
-                    if (listObjects.Count > numOfObjects)
-                    {
-                        listObjects.RemoveLast();
-                    }
+                    //if (listObjects.Count > numOfObjects)
+                    //{
+                    //    listObjects.RemoveLast();
+                    //}
                     p.Color = Color.Black;
 
                     #region cube
@@ -1991,7 +2607,7 @@ namespace GameEngine
                     cube.plist[5].vert[2] = 7;
                     cube.plist[5].vert[3] = 6;
 
-                    listObjects.AddLast(cube);
+                    //listObjects.AddLast(cube);
                 }
                 else if (tsbSelect.Checked)
                 {
@@ -2072,21 +2688,22 @@ namespace GameEngine
             int h = splitContainer2.Panel1.Height;
             if (tsbCube.Checked)
             {
-                if (listObjects.Count > 0)
+                //if (listObjects.Count > 0)
+                //{
+                //    if (listObjects.Last.Value is Cube)
+                if (cube != null)
                 {
-                    if (listObjects.Last.Value is Cube)
-                    {
-                        listObjects.RemoveLast();
-                        cube.id = listObjects.Count;
-                        //for (int i = 0; i <  listObjects.Count; i++)
-                        //{
-                        //    cube.plist[cube.id].vert[i] = cube.world_pos.X + cube.vlist_local[i].X; 
-                        //}
-                        listObjects.AddLast(cube);
-                        // numOfObjects++;
-                        UpdateTree();
-                    }
+                    //listObjects.RemoveLast();
+                    cube.id = listObjects.Count;
+                    //for (int i = 0; i <  listObjects.Count; i++)
+                    //{
+                    //    cube.plist[cube.id].vert[i] = cube.world_pos.X + cube.vlist_local[i].X; 
+                    //}
+                    listObjects.AddLast(cube);
+                    // numOfObjects++;
+                    UpdateTree();
                 }
+                //}
                 treeView1.SelectedNodes.RemoveRange(0, treeView1.SelectedNodes.Count);
             }
             else if (tsbSelect.Checked)
@@ -2174,17 +2791,19 @@ namespace GameEngine
             int h = splitContainer1.Panel2.Height;
             if (tsbCube.Checked)
             {
-                if (listObjects.Count > 0)
-                {
-                    if (listObjects.Last.Value is Cube)
+                //if (listObjects.Count > 0)
+                //{
+                    //if (listObjects.Last.Value is Cube)
+                    if (cube!=null)
                     {
-                        listObjects.RemoveLast();
+                      //  listObjects.RemoveLast();
                         cube.id = listObjects.Count;
                         listObjects.AddLast(cube);
                         //numOfObjects++;
+                        cube = null;
                         UpdateTree();
                     }
-                }
+               // }
                 treeView1.SelectedNodes.RemoveRange(0, treeView1.SelectedNodes.Count);
             }
             else if (tsbSelect.Checked)
@@ -2273,10 +2892,10 @@ namespace GameEngine
                 containerControl1_Paint(null, null);
                 if (tsbCube.Checked)
                 {
-                    if (listObjects.Count > numOfObjects)
-                    {
-                        listObjects.RemoveLast();
-                    }
+                    //if (listObjects.Count > numOfObjects)
+                    //{
+                    //    listObjects.RemoveLast();
+                    //}
                     p.Color = Color.Black;
 
                     #region cube
@@ -2381,7 +3000,7 @@ namespace GameEngine
                     cube.plist[5].vert[2] = 7;
                     cube.plist[5].vert[3] = 6;
 
-                    listObjects.AddLast(cube);
+                    //listObjects.AddLast(cube);
                 }
                 else if (tsbSelect.Checked)
                 {

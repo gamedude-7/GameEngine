@@ -10,3 +10,4 @@ C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\bin\Debug\TreeViewMS.
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.csproj.Up2Date
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.exe
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.pdb
+C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.exe.config
