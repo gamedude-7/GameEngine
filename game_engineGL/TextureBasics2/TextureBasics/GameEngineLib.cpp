@@ -811,7 +811,7 @@ int Open_Error_File(char* filename, FILE* fp_override)
 	sprintf(timestring, "%.19s.%hu, %s", timeline, timebuffer.millitm, &timeline[20]);
 
 	// write out error header with time
-	Write_Error(fp_error,"\nOpening Error Output File (%s) on %s\n", filename, timestring);
+	Write_Error(fp_error,"\nTest Opening Error Output File (%s) on %s\n", filename, timestring);
 
 	// now the file is created, re-open with append mode
 

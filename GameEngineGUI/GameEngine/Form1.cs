@@ -47,6 +47,8 @@ namespace GameEngine
 
         bool sendingMessage = false;
 
+        SettingsForm settingsForm;
+
         //        protected override void WndProc(
         //            ref Message m
         //            )
@@ -2455,8 +2457,10 @@ namespace GameEngine
         {
 
             SaveLevel("world.lvl");
-            game = Process.Start(@"Win32DirectDraw.exe");
-            //game = Process.Start(@"TextureBasics.exe");
+            if (settingsForm.SdkSelected == "DirectX")
+                game = Process.Start(@"Win32DirectDraw.exe");
+            else
+                game = Process.Start(@"TextureBasics.exe");
             //game = Process.Start(@"C:\\jly\\game_engineGL\\TextureBasics2\\TextureBasics\\Release\\TextureBasics.exe"); // runs texturebasics.exe in ./GameEngine/bin/Debug
         }
 
@@ -3193,6 +3197,31 @@ namespace GameEngine
             {
                 Color color = colorDialog1.Color;
                 
+            }
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //DialogResult dr;
+            //dr = settingsDialog.ShowDialog(this);
+            settingsForm = new SettingsForm();
+            settingsForm.ShowDialog(this);
+            if (settingsForm.DialogResult == DialogResult.OK)
+            {
+                // Apply settings
+                // For example, you can change the background color of the container control
+                //containerControl1.BackColor = Color.AliceBlue;//settingsForm.SelectedColor;
+                //if (settingsForm.SdkSelected != null)
+                //{
+                //    if (settingsForm.SdkSelected == "OpenGL")
+                //    {
+                //        containerControl1.BackColor = Color.AliceBlue;
+                //    }                   
+                //    else if (settingsForm.SdkSelected == "DirectX")
+                //    {
+                //        containerControl1.BackColor = Color.LightCoral;
+                //    }
+                //}
             }
         }
 

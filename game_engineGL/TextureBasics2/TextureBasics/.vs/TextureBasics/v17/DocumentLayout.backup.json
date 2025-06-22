@@ -3,8 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\CGfxOpenGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|solutionrelative:CGfxOpenGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jason\\Desktop\\GameEngine\\GameEngineGUI\\GameEngine\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Windows Kits\\10\\Source\\10.0.22621.0\\ucrt\\convert\\strtod.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\Level.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|solutionrelative:Level.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\winmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|solutionrelative:winmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\GameEngineLib.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|solutionrelative:GameEngineLib.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -13,10 +31,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\CTargaImage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|solutionrelative:CTargaImage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\CGfxOpenGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|solutionrelative:CGfxOpenGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D5B7D8C5-17E5-4C2E-8B26-7151EE040746}|TextureBasics.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\Level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -30,23 +44,51 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\GameEngineGUI\\GameEngine\\Form1.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\GameEngineGUI\\GameEngine\\Form1.cs",
+              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\GameEngineGUI\\GameEngine\\Form1.cs",
+              "RelativeToolTip": "..\\..\\..\\GameEngineGUI\\GameEngine\\Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T18:01:40.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "strtod.cpp",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Windows Kits\\10\\Source\\10.0.22621.0\\ucrt\\convert\\strtod.cpp",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Source\\10.0.22621.0\\ucrt\\convert\\strtod.cpp",
+              "ToolTip": "C:\\Program Files (x86)\\Windows Kits\\10\\Source\\10.0.22621.0\\ucrt\\convert\\strtod.cpp",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Source\\10.0.22621.0\\ucrt\\convert\\strtod.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAArwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-21T16:57:42.744Z"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "winmain.cpp",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\winmain.cpp",
-              "RelativeDocumentMoniker": "winmain.cpp",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\winmain.cpp",
-              "RelativeToolTip": "winmain.cpp",
-              "ViewState": "AgIAACwAAAAAAAAAAAAcwDcAAAAZAAAAAAAAAA==",
+              "Title": "CGfxOpenGL.cpp",
+              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\CGfxOpenGL.cpp",
+              "RelativeDocumentMoniker": "CGfxOpenGL.cpp",
+              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\CGfxOpenGL.cpp",
+              "RelativeToolTip": "CGfxOpenGL.cpp",
+              "ViewState": "AgIAANsAAAAAAAAAAAAAANsAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2023-12-25T00:33:05.765Z",
+              "WhenOpened": "2023-11-27T22:12:14.461Z",
               "EditorCaption": ""
             },
             {
@@ -55,7 +97,43 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Level.cpp",
+              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\Level.cpp",
+              "RelativeDocumentMoniker": "Level.cpp",
+              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\Level.cpp",
+              "RelativeToolTip": "Level.cpp",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAwwKcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-21T16:55:36.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameEngineLib.cpp",
+              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\GameEngineLib.cpp",
+              "RelativeDocumentMoniker": "GameEngineLib.cpp",
+              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\GameEngineLib.cpp",
+              "RelativeToolTip": "GameEngineLib.cpp",
+              "ViewState": "AgIAAAgDAAAAAAAAAAAwwBYDAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-21T15:31:44.961Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "winmain.cpp",
+              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\winmain.cpp",
+              "RelativeDocumentMoniker": "winmain.cpp",
+              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\winmain.cpp",
+              "RelativeToolTip": "winmain.cpp",
+              "ViewState": "AgIAAHYBAAAAAAAAAAAAAHwBAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2023-12-25T00:33:05.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Level.h",
               "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\Level.h",
               "RelativeDocumentMoniker": "Level.h",
@@ -67,7 +145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Game.cpp",
               "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\Game.cpp",
               "RelativeDocumentMoniker": "Game.cpp",
@@ -79,19 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CGfxOpenGL.cpp",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\CGfxOpenGL.cpp",
-              "RelativeDocumentMoniker": "CGfxOpenGL.cpp",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\CGfxOpenGL.cpp",
-              "RelativeToolTip": "CGfxOpenGL.cpp",
-              "ViewState": "AQIAADkBAAAAAAAAAAAhwE0BAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2023-11-27T22:12:14.461Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "CTargaImage.cpp",
               "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\CTargaImage.cpp",
               "RelativeDocumentMoniker": "CTargaImage.cpp",

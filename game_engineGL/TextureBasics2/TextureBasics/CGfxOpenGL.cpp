@@ -333,13 +333,14 @@ void CGfxOpenGL::DrawObjects()
 bTest=CloseHandle(hFile);
 /* bTest will be TRUE if the read is successful.
  If false, take a look at GetLastError */
-
+	Write_Error(fp_error, "Drawing objects...\n");
   
 	 list<Object>::iterator it;
 	 for(it=linked_list.begin(); it != linked_list.end();it++)
 	 {
 		*obj = (Object)*it;
 		obj->vlist_trans.resize(obj->num_vertices);
+		Write_Error(fp_error, "# of vertices: %d\n", obj->num_vertices);
 		for (int j=0;j< obj->num_vertices;j++)
 		{
 			obj->vlist_trans[j].x=obj->world_pos.x + obj->vlist_local[j].x;
@@ -551,8 +552,8 @@ void CGfxOpenGL::Render()
 	cam->up.y = cam->pos.y+ radius*sin(angX+3.14/2);
 
 	gluLookAt(cam->pos.x,cam->pos.y,cam->pos.z,cam->target.x, cam->target.y, cam->target.z, cam->up.x,cam->up.y, cam->up.z);
-	Write_Error(fp_error,"ang: %f\n",angY);	
-
+	Write_Error(fp_error,"camera angle: %f\n",angY);	
+	
 	// do it all again for the right polygon
 	glPushMatrix();		
 		glBindTexture(GL_TEXTURE_2D, m_textureObjectTwo);

@@ -397,9 +397,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		g_glRender->Prepare(g_hiResTimer->GetElapsedSeconds(1));
 		g_glRender->Render();
 		SwapBuffers(hDC);
-
+		Write_Error(fp_error, "swapped buffer\n");
 		while (PeekMessage (&msg, NULL, 0, 0, PM_NOREMOVE))
 		{
+			Write_Error(fp_error, "message: %s\n", msg);
 			if (!GetMessage (&msg, NULL, 0, 0))
 			{
 				exiting = true;

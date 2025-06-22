@@ -4,5 +4,5 @@
 #include "camera.txt"
 #include "plane.txt"
 #include "wall1.txt"
-#include "wall2.txt"
 #include "tower2.txt"
+#include "wall2.txt"

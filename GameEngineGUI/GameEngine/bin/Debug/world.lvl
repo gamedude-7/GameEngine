@@ -131,13 +131,6 @@ wall1.txt
 53 131 96
 0 0 0
 1 1 1
-cube
-wall2
-wall2.txt
--73 34 48
-53 131 96
-0 0 0
-1 1 1
 object
 tower2
 tower2.txt
@@ -180,3 +173,10 @@ tower2.txt
 9 12 8
 13 14 15
 12 13 15
+cube
+wall2
+wall2.txt
+-82 2 48
+36 196 96
+0 0 0
+1 1 1

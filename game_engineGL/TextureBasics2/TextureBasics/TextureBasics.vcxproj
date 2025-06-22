@@ -64,7 +64,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;winmm.lib;dxguid.lib;d3d10.lib;d3dx10.lib;dinput8.lib;dsound.lib;ddraw.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;winmm.lib;dxguid.lib;d3d10.lib;dinput8.lib;dsound.lib;ddraw.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)TextureBasics.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(OutDir)TextureBasics.pdb</ProgramDatabaseFile>

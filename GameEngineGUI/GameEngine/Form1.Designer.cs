@@ -80,6 +80,8 @@ namespace GameEngine
             this.NameLabel = new System.Windows.Forms.Label();
             this.ChangeButton = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.containerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
             this.mainSplitContainer.Panel1.SuspendLayout();
@@ -334,6 +336,7 @@ namespace GameEngine
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.openToolStripMenuItem,
+            this.settingsToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -510,6 +513,13 @@ namespace GameEngine
             this.ChangeButton.UseVisualStyleBackColor = true;
             this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
             // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,6 +608,8 @@ namespace GameEngine
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.ToolStripButton colorButton;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.CommonDialog settingsDialog;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 
     

@@ -11,3 +11,4 @@ C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.exe
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.pdb
 C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.exe.config
+C:\Users\Jason\Desktop\GameEngine\GameEngineGUI\GameEngine\obj\Debug\GameEngine.SettingsForm.resources
