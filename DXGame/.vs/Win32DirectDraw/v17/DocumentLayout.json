@@ -3,107 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Win32DirectDraw.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Win32DirectDraw.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Win32DirectDraw.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Win32DirectDraw.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\COMMUNITY\\VC\\TOOLS\\MSVC\\14.44.35207\\INCLUDE\\FSTREAM||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\PROGRAM FILES (X86)\\WINDOWS KITS\\10\\INCLUDE\\10.0.26100.0\\SHARED\\WINERROR.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\COMMUNITY\\VC\\TOOLS\\MSVC\\14.44.35207\\INCLUDE\\__MSVC_FILEBUF.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\GameEngineLib.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\GameEngineLib.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Triangle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Triangle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Poly.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Poly.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\ScriptTrans.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\ScriptTrans.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\C3DModel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\C3DModel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\GameEngineLib.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\GameEngineLib.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Level.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Level.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\C3DModel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\C3DModel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\stdafx.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\stdafx.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Vector.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Vector.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Vector.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Vector.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Cube.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Cube.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Cube.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B53FD136-6472-4C4F-8372-938E70784A51}|Win32DirectDraw\\Win32DirectDraw.vcxproj|solutionrelative:Win32DirectDraw\\Cube.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gamed\\OneDrive\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\script1.scr||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\camera.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Win32DirectDraw\\camera.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\allScripts.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Win32DirectDraw\\allScripts.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\camera.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Win32DirectDraw\\camera.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -113,7 +24,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 24,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -124,87 +35,21 @@
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "winerror.h",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared\\winerror.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared\\winerror.h",
-              "ToolTip": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared\\winerror.h",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared\\winerror.h",
-              "ViewState": "AgIAAKh1AAAAAAAAAAAYwLp1AAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-23T15:49:22.221Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "fstream",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\fstream",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\fstream",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\fstream",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\fstream",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAuwBMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-23T15:45:10.025Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "__msvc_filebuf.hpp",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_filebuf.hpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_filebuf.hpp",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_filebuf.hpp",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_filebuf.hpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAQwBoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-23T15:44:36.939Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Triangle.h",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Triangle.h",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Triangle.h",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Triangle.h",
-              "RelativeToolTip": "Win32DirectDraw\\Triangle.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-23T15:42:39.178Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Poly.cpp",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Poly.cpp",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Poly.cpp",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Poly.cpp",
-              "RelativeToolTip": "Win32DirectDraw\\Poly.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-23T15:42:23.11Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 2,
               "Title": "allScripts.txt",
               "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\allScripts.txt",
               "RelativeDocumentMoniker": "Win32DirectDraw\\allScripts.txt",
               "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\allScripts.txt",
               "RelativeToolTip": "Win32DirectDraw\\allScripts.txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2023-11-28T20:06:56.272Z"
+              "WhenOpened": "2023-11-28T20:06:56.272Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 3,
               "Title": "camera.txt",
               "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\camera.txt",
               "RelativeDocumentMoniker": "Win32DirectDraw\\camera.txt",
@@ -212,251 +57,34 @@
               "RelativeToolTip": "Win32DirectDraw\\camera.txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2023-11-28T20:06:56.273Z"
+              "WhenOpened": "2023-11-28T20:06:56.273Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 0,
               "Title": "vector",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\include\\vector",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\include\\vector",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\include\\vector",
               "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\include\\vector",
-              "ViewState": "AQIAAD4BAAAAAAAAAAAEwFABAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2023-09-14T14:42:45.315Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 1,
               "Title": "script1.scr",
               "DocumentMoniker": "C:\\Users\\gamed\\OneDrive\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\script1.scr",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\gamed\\OneDrive\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\script1.scr",
               "ToolTip": "C:\\Users\\gamed\\OneDrive\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\script1.scr",
               "RelativeToolTip": "..\\..\\..\\..\\gamed\\OneDrive\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\script1.scr",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2023-11-06T13:22:27.652Z"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Game.cpp",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Game.cpp",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Game.cpp",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Game.cpp",
-              "RelativeToolTip": "Win32DirectDraw\\Game.cpp",
-              "ViewState": "AgIAAOoAAAAAAAAAAAAwwPEAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2023-11-28T20:06:56.266Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Win32DirectDraw.cpp",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Win32DirectDraw.cpp",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Win32DirectDraw.cpp",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Win32DirectDraw.cpp",
-              "RelativeToolTip": "Win32DirectDraw\\Win32DirectDraw.cpp",
-              "ViewState": "AgIAAJoBAAAAAAAAAAAowL0BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2023-11-28T20:06:56.178Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Level.cpp",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Level.cpp",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Level.cpp",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Level.cpp",
-              "RelativeToolTip": "Win32DirectDraw\\Level.cpp",
-              "ViewState": "AQIAAIsAAAAAAAAAAAAcwJ4AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2023-11-28T20:06:56.269Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "C3DModel.cpp",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\C3DModel.cpp",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\C3DModel.cpp",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\C3DModel.cpp",
-              "RelativeToolTip": "Win32DirectDraw\\C3DModel.cpp",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAABcAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2023-11-28T20:06:56.268Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "stdafx.cpp",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\stdafx.cpp",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\stdafx.cpp",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\stdafx.cpp",
-              "RelativeToolTip": "Win32DirectDraw\\stdafx.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-24T22:31:01.689Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Game.h",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Game.h",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Game.h",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Game.h",
-              "RelativeToolTip": "Win32DirectDraw\\Game.h",
-              "ViewState": "AgIAADsAAAAAAAAAAAAtwE0AAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2023-11-28T20:06:56.15Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Object.cpp",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Object.cpp",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Object.cpp",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Object.cpp",
-              "RelativeToolTip": "Win32DirectDraw\\Object.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAcwBYAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2023-11-28T20:06:56.289Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "GameEngineLib.h",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\GameEngineLib.h",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\GameEngineLib.h",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\GameEngineLib.h",
-              "RelativeToolTip": "Win32DirectDraw\\GameEngineLib.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2023-11-28T20:06:56.151Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GameEngineLib.cpp",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\GameEngineLib.cpp",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\GameEngineLib.cpp",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\GameEngineLib.cpp",
-              "RelativeToolTip": "Win32DirectDraw\\GameEngineLib.cpp",
-              "ViewState": "AgIAAFcCAAAAAAAAAAAcwGACAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2023-11-28T20:06:56.274Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "C3DModel.h",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\C3DModel.h",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\C3DModel.h",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\C3DModel.h",
-              "RelativeToolTip": "Win32DirectDraw\\C3DModel.h",
-              "ViewState": "AQIAABUAAAAAAAAAAAAcwB8AAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2023-11-28T20:06:56.268Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Object.h",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Object.h",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Object.h",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Object.h",
-              "RelativeToolTip": "Win32DirectDraw\\Object.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2023-11-28T20:06:56.273Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Level.h",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Level.h",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Level.h",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Level.h",
-              "RelativeToolTip": "Win32DirectDraw\\Level.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2023-11-28T20:06:56.267Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Win32DirectDraw.h",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Win32DirectDraw.h",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Win32DirectDraw.h",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Win32DirectDraw.h",
-              "RelativeToolTip": "Win32DirectDraw\\Win32DirectDraw.h",
-              "ViewState": "AgIAADUAAAAAAAAAAAAAAFMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2023-11-28T20:06:56.267Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Vector.h",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Vector.h",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Vector.h",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Vector.h",
-              "RelativeToolTip": "Win32DirectDraw\\Vector.h",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAawFIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2023-11-29T19:47:04.329Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Vector.cpp",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Vector.cpp",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Vector.cpp",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Vector.cpp",
-              "RelativeToolTip": "Win32DirectDraw\\Vector.cpp",
-              "ViewState": "AQIAAGoAAAAAAAAAAAAYwIUAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2023-11-28T20:06:56.292Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Cube.h",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Cube.h",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Cube.h",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Cube.h",
-              "RelativeToolTip": "Win32DirectDraw\\Cube.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2023-11-28T20:06:56.15Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ScriptTrans.h",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\ScriptTrans.h",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\ScriptTrans.h",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\ScriptTrans.h",
-              "RelativeToolTip": "Win32DirectDraw\\ScriptTrans.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2023-11-28T20:06:56.135Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Cube.cpp",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Cube.cpp",
-              "RelativeDocumentMoniker": "Win32DirectDraw\\Cube.cpp",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\DXGame\\Win32DirectDraw\\Cube.cpp",
-              "RelativeToolTip": "Win32DirectDraw\\Cube.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2023-11-28T20:06:56.269Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

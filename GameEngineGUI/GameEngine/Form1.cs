@@ -129,7 +129,7 @@ namespace GameEngine
             width = this.Width;
             height = this.Height;
             this.WindowState = FormWindowState.Maximized;
-
+            settingsForm = new SettingsForm();
 
             listObjects = new LinkedList<OBJECT4DV1>();
 
@@ -3204,7 +3204,7 @@ namespace GameEngine
         {
             //DialogResult dr;
             //dr = settingsDialog.ShowDialog(this);
-            settingsForm = new SettingsForm();
+           
             settingsForm.ShowDialog(this);
             if (settingsForm.DialogResult == DialogResult.OK)
             {
@@ -3419,6 +3419,8 @@ namespace GameEngine
                     Cube c = (Cube)o;
                     wtr.WriteLine("cube");
                     wtr.WriteLine(c.name);
+                    if(c.scriptName == null || c.scriptName == "")
+                        c.scriptName = "cubeScript" + c.id.ToString() + ".txt";
                     wtr.WriteLine(c.scriptName);
                     wtr.WriteLine(c.world_pos.X + " " + c.world_pos.Y + " " + c.world_pos.Z);
                     wtr.WriteLine(c.width + " " + c.height + " " + c.length);
@@ -3429,6 +3431,8 @@ namespace GameEngine
                 {
                     wtr.WriteLine("object");
                     wtr.WriteLine(o.name);
+                    if (o.scriptName == null || o.scriptName == "")
+                        o.scriptName = "objectScript" + o.id.ToString() + ".txt";
                     wtr.WriteLine(o.scriptName);
                     wtr.WriteLine(o.world_pos.X + " " + o.world_pos.Y + " " + o.world_pos.Z);
                     wtr.WriteLine(o.dir.X + " " + o.dir.Y + " " + o.dir.Z);

@@ -303,6 +303,7 @@ namespace GameEngine
 
         public OBJECT4DV1()
         {
+            scriptName = "";
             scale = new Vector(1, 1, 1, 1);
         }
 
