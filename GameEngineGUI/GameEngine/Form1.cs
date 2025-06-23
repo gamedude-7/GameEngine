@@ -737,7 +737,7 @@ namespace GameEngine
                 }
                 else if (tsbSelect.Checked)
                 {
-                    p.Color = Color.Yellow;
+                    p.Color = Color.Yellow;                    
                     g.DrawLine(p, x, y, e.X, y);
                     g.DrawLine(p, e.X, y, e.X, e.Y);
                     g.DrawLine(p, e.X, e.Y, x, e.Y);

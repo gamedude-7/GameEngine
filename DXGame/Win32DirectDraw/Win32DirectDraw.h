@@ -60,17 +60,13 @@
 //XMVECTOR eye = XMVectorSet(0.0f, 0.0f, -100.0f, 0.0f);
 /*Vector eye(0.0f, 0.0f, -100.0f);
 Vector at(0.0f,0.0f,100.0f,0.0f);
-Vector up(0.0f,1.0f,0.0f,0.0f);	
+Vector up(0.0f,1.0f,0.0f,0.0f);
 Vector eyeToVertex(0.0f,0.0f,0.0f);*/
 
 DIMOUSESTATE mousestate;
 
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa5e409f5f7288bc0c852707a66a6c4eac9b4f7
 
 
 Game game;
@@ -84,15 +80,4 @@ TCHAR szTitle[MAX_LOADSTRING];					// The title bar text
 TCHAR szWindowClass[MAX_LOADSTRING];			// the main window class name
 
 
-<<<<<<< HEAD
-=======
-=======
-static void MoveCamera(float d)
-{
-	eye.y += d*moveDist*sin(pitch);
-	eye.x += d*moveDist*cos(pitch)*cos(yaw);
-	eye.z += d*moveDist*cos(pitch)*sin(yaw);
-}
->>>>>>> f2bb61289de15cc22f3cae01fb96254a5d78474d
->>>>>>> bfa5e409f5f7288bc0c852707a66a6c4eac9b4f7
 

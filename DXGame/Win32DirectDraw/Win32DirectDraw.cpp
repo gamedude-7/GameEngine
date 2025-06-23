@@ -29,14 +29,14 @@ INT_PTR CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
 
 
 int APIENTRY _tWinMain(HINSTANCE hInstance,
-                     HINSTANCE hPrevInstance,
-                     LPTSTR    lpCmdLine,
-                     int       nCmdShow)
+	HINSTANCE hPrevInstance,
+	LPTSTR    lpCmdLine,
+	int       nCmdShow)
 {
 	UNREFERENCED_PARAMETER(hPrevInstance);
 	UNREFERENCED_PARAMETER(lpCmdLine);
 
- 	// TODO: Place code here.
+	// TODO: Place code here.
 	MSG msg;
 	HACCEL hAccelTable;
 
@@ -46,20 +46,20 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 	MyRegisterClass(hInstance);
 
 	// Perform application initialization:
-	if (!InitInstance (hInstance, nCmdShow))
+	if (!InitInstance(hInstance, nCmdShow))
 	{
 		return FALSE;
 	}
 
 	hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_WIN32DIRECTDRAW));
-	/*ofstream outfile;	
+	/*ofstream outfile;
 	outfile.open("allScripts.txt");*/
 	game.Game_Init(hInstance, main_window_handle);
 	// Main message loop:
 	while (GetMessage(&msg, NULL, 0, 0))
-	{		
-		
-		
+	{
+
+
 
 
 		if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
@@ -72,20 +72,16 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		double theta = 3.14 / 2;*/
 		game.SetMouseState(mousestate);
 		game.Game_Main();
-		
+
 		// TODO: Add any drawing code here...
 		/*SetTextColor(hdc, RGB(0,0,255));
 		SetBkMode(hdc, OPAQUE);
 		TextOut(hdc,10,10, L"test", GetTextSize(TextArray[0]));*/
-	
 
-		if (KEY_DOWN( VK_ESCAPE))
+
+		if (KEY_DOWN(VK_ESCAPE))
 			break;
-		
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa5e409f5f7288bc0c852707a66a6c4eac9b4f7
+
 		//if (KEY_DOWN( VK_UP ))
 		//	MoveCamera(1);
 		//	//eye.z+=1;
@@ -94,7 +90,6 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		//	//eye.z-=1;
 		//	//SlideCamera(-1,0);	
 		//
-<<<<<<< HEAD
 
 		//if (KEY_DOWN( VK_LEFT ))
 		//{
@@ -109,31 +104,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		//	//at.x += 1;
 		//}
 
-		HRESULT hr = game.input->lpdimouse->GetDeviceState(sizeof(DIMOUSESTATE),(LPVOID)&mousestate);
-=======
-
-		//if (KEY_DOWN( VK_LEFT ))
-		//{
-		//	SlideCamera(-1,0);
-		////	eye.x -= 1;
-		////	at.x -= 1;
-		//}
-		//else if (KEY_DOWN( VK_RIGHT))
-		//{
-		//	SlideCamera(1,0);			
-		//	//eye.x += 1;
-		//	//at.x += 1;
-		//}
-
-		HRESULT hr = game.input->lpdimouse->GetDeviceState(sizeof(DIMOUSESTATE),(LPVOID)&mousestate);
-=======
-
-		#include "camera.scr"
-		
-
-		HRESULT hr = input->lpdimouse->GetDeviceState(sizeof(DIMOUSESTATE),(LPVOID)&mousestate);
->>>>>>> f2bb61289de15cc22f3cae01fb96254a5d78474d
->>>>>>> bfa5e409f5f7288bc0c852707a66a6c4eac9b4f7
+		HRESULT hr = game.input->lpdimouse->GetDeviceState(sizeof(DIMOUSESTATE), (LPVOID)&mousestate);
 		if (FAILED(hr))
 		{
 			/* error */
@@ -141,7 +112,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 		//D3DVECTOR v;
 		//v = at - eye;
-		
+
 		//if (mousestate.lX > 0)
 		//	game.yaw -= (3.14/180.0);
 		//else if (mousestate.lX < 0)
@@ -152,80 +123,80 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		else if (mousestate.lY < 0)
 			game.pitch += (3.14/180.0);*/
 
-		/*while (game.yaw > (3.14*2))
-			game.yaw-=(2*3.14);
-		while (game.yaw < 0)
-			game.yaw+=(2*3.14);
+			/*while (game.yaw > (3.14*2))
+				game.yaw-=(2*3.14);
+			while (game.yaw < 0)
+				game.yaw+=(2*3.14);
 
-		while (game.pitch > (3.14*2))
-			game.pitch-=(2*3.14);
-		while (game.pitch < 0)
-			game.pitch+=(2*3.14);*/
+			while (game.pitch > (3.14*2))
+				game.pitch-=(2*3.14);
+			while (game.pitch < 0)
+				game.pitch+=(2*3.14);*/
 
-		
-	/*	if (yaw < (3.14/2)) // 1st quadrant
-		{
-			theta = yaw;
-			at.x = eye.x + (vec.Length() * cos(theta));
-			at.z = eye.z + (vec.Length() * sin(theta));
-		}
-		else if (yaw > (3.14/2) && yaw < 3.14) // 2nd quadrant
-		{
-			theta = yaw - 3.14/2;
-			at.x = eye.x -(vec.Length() * sin(theta));
-			at.z = eye.z + (vec.Length() * cos(theta));									
-		}		
-		else if (yaw > 3.14 && yaw < (3.14+3.14/2)) // 3rd quadrant
-		{
-			theta = yaw - 3.14;
-			at.x = eye.x - (vec.Length() * sin(theta));
-			at.z = eye.z - (vec.Length() * cos(theta));	
-		}
-		else if (yaw < 3.14*2 && yaw > (3.14+3.14/2)) // 4th quadrant
-		{
-			theta = yaw -(3.14+3.14/2);
-			at.x = eye.x + (vec.Length() * sin(theta));
-			at.z = eye.z -(vec.Length() * cos(theta));	
-		}
 
-		if (pitch < (3.14/2)) // 1st quadrant
-		{
-			theta = pitch;
-			at.y =  (vec.Length() * cos(theta));
-			at.z = (vec.Length() * sin(theta));
-		}
-		else if (pitch > (3.14/2) && pitch < 3.14) // 2nd quadrant
-		{
-			theta = pitch - 3.14/2;
-			at.y =  -(vec.Length() * sin(theta));
-			at.z = (vec.Length() * cos(theta));									
-		}		
-		else if (pitch > 3.14 && pitch < (3.14+3.14/2)) // 3rd quadrant
-		{
-			theta = pitch - 3.14;
-			at.y =  -(vec.Length() * sin(theta));
-			at.z = -(vec.Length() * cos(theta));	
-		}
-		else if (pitch < 3.14*2 && pitch > (3.14+3.14/2)) // 4th quadrant
-		{
-			theta = pitch -(3.14+3.14/2);
-			at.y = (vec.Length() * sin(theta));
-			at.z = -(vec.Length() * cos(theta));	
-		}*/
-		//double costheta = cos(theta);
-		//double sintheta = sin(theta);
-		//game.at.y = game.eye.y + radius * sin(game.pitch);
-		//newHradius = radius *cos(game.pitch);
-		//game.at.x = game.eye.x + newHradius * cos(game.yaw);
-		//game.at.z = game.eye.z + newHradius * sin(game.yaw);
+				/*	if (yaw < (3.14/2)) // 1st quadrant
+					{
+						theta = yaw;
+						at.x = eye.x + (vec.Length() * cos(theta));
+						at.z = eye.z + (vec.Length() * sin(theta));
+					}
+					else if (yaw > (3.14/2) && yaw < 3.14) // 2nd quadrant
+					{
+						theta = yaw - 3.14/2;
+						at.x = eye.x -(vec.Length() * sin(theta));
+						at.z = eye.z + (vec.Length() * cos(theta));
+					}
+					else if (yaw > 3.14 && yaw < (3.14+3.14/2)) // 3rd quadrant
+					{
+						theta = yaw - 3.14;
+						at.x = eye.x - (vec.Length() * sin(theta));
+						at.z = eye.z - (vec.Length() * cos(theta));
+					}
+					else if (yaw < 3.14*2 && yaw > (3.14+3.14/2)) // 4th quadrant
+					{
+						theta = yaw -(3.14+3.14/2);
+						at.x = eye.x + (vec.Length() * sin(theta));
+						at.z = eye.z -(vec.Length() * cos(theta));
+					}
 
-		//game.up.x = game.eye.x - game.at.x;
-		//game.up.z = game.eye.z - game.at.z;
-		//game.up.y = game.eye.y + radius * sin(game.pitch+ 3.14/2);
+					if (pitch < (3.14/2)) // 1st quadrant
+					{
+						theta = pitch;
+						at.y =  (vec.Length() * cos(theta));
+						at.z = (vec.Length() * sin(theta));
+					}
+					else if (pitch > (3.14/2) && pitch < 3.14) // 2nd quadrant
+					{
+						theta = pitch - 3.14/2;
+						at.y =  -(vec.Length() * sin(theta));
+						at.z = (vec.Length() * cos(theta));
+					}
+					else if (pitch > 3.14 && pitch < (3.14+3.14/2)) // 3rd quadrant
+					{
+						theta = pitch - 3.14;
+						at.y =  -(vec.Length() * sin(theta));
+						at.z = -(vec.Length() * cos(theta));
+					}
+					else if (pitch < 3.14*2 && pitch > (3.14+3.14/2)) // 4th quadrant
+					{
+						theta = pitch -(3.14+3.14/2);
+						at.y = (vec.Length() * sin(theta));
+						at.z = -(vec.Length() * cos(theta));
+					}*/
+					//double costheta = cos(theta);
+					//double sintheta = sin(theta);
+					//game.at.y = game.eye.y + radius * sin(game.pitch);
+					//newHradius = radius *cos(game.pitch);
+					//game.at.x = game.eye.x + newHradius * cos(game.yaw);
+					//game.at.z = game.eye.z + newHradius * sin(game.yaw);
+
+					//game.up.x = game.eye.x - game.at.x;
+					//game.up.z = game.eye.z - game.at.z;
+					//game.up.y = game.eye.y + radius * sin(game.pitch+ 3.14/2);
 	}
 	//outfile.close();
 	game.Game_Shutdown();
-	return (int) msg.wParam;
+	return (int)msg.wParam;
 }
 
 
@@ -236,7 +207,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	HDC hdc = GetDC(hWnd);
 
 	switch (message)
-	{	
+	{
 	case WM_COMMAND:
 		wmId = LOWORD(wParam);
 		wmEvent = HIWORD(wParam);
@@ -275,13 +246,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		swprintf(buf, L"obj_world 1: %f %f %f %f", XMVectorGetX(game.obj_vertices[0].r[0]), XMVectorGetY(game.obj_vertices[0].r[0]), XMVectorGetZ(game.obj_vertices[0].r[0]), XMVectorGetW(game.obj_vertices[0].r[0]));
 		TextOut(hdc, 10, 80, buf, wcslen(buf));
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa5e409f5f7288bc0c852707a66a6c4eac9b4f7
 		swprintf(buf, L"obj_world 2: %f %f %f %f", XMVectorGetX(game.obj_vertices[0].r[1]), XMVectorGetY(game.obj_vertices[0].r[1]), XMVectorGetZ(game.obj_vertices[0].r[1]), XMVectorGetW(game.obj_vertices[0].r[1]));
 		TextOut(hdc, 10, 100, buf, wcslen(buf));
-		
+
 		swprintf(buf, L"obj_world 3: %f %f %f %f", XMVectorGetX(game.obj_vertices[0].r[2]), XMVectorGetY(game.obj_vertices[0].r[2]), XMVectorGetZ(game.obj_vertices[0].r[2]), XMVectorGetW(game.obj_vertices[0].r[2]));
 		TextOut(hdc, 10, 120, buf, wcslen(buf));
 
@@ -324,56 +291,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		swprintf(buf, L"Tcam_inv 4: %f %f %f %f", XMVectorGetX(game.Tcam_inv.r[3]), XMVectorGetY(game.Tcam_inv.r[3]), XMVectorGetZ(game.Tcam_inv.r[3]), XMVectorGetW(game.Tcam_inv.r[3]));
 		TextOut(hdc, 10, 340, buf, wcslen(buf));*/
 		/*if (game.obj.size() > 0)
-<<<<<<< HEAD
-=======
-=======
-	////
-	//// create a DirectDrawSurface for this bitmap
-	////
-	//ZeroMemory(&ddsd, sizeof(ddsd));
-	//ddsd.dwSize = sizeof(ddsd);
-	//ddsd.dwFlags = DDSD_CAPS | DDSD_HEIGHT |DDSD_WIDTH;
-	//ddsd.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN;
-	//ddsd.dwWidth = WINDOW_WIDTH;
-	//ddsd.dwHeight = WINDOW_HEIGHT;
-
-	//if (pDDraw7->CreateSurface(&ddsd, &lpddsback, NULL) != DD_OK)
-	//{
-	//	return 0;
-	//} 
-	//
-	//
-	// clear the drawing surface
-	DDraw_Fill_Surface(lpddsback, RGB16Bit565(255,255,255));
-	//// lock the primary surface
-	DDRAW_INIT_STRUCT(ddsd);
-	lpddsback->Lock(NULL,&ddsd, DDLOCK_SURFACEMEMORYPTR | DDLOCK_WAIT,NULL);
-
-	//// get video pointer to primary surfce
-	UCHAR *back_buffer = (UCHAR *)ddsd.lpSurface;    
-
-	D3DXMATRIX out;
-
-	D3DXMATRIX *view = D3DXMatrixLookAtLH(&out, &eye, &at, &up);
-
-	//for (int i=0; i < level.objectList.size(); i++)
-	for (vector< Object >::iterator objIterator = level.objectList.begin(); objIterator !=  level.objectList.end(); objIterator++)
-	{
-
-		C3DModel model(&m_MatWorld, objIterator->world_pos, objIterator->dir);
-		D3DXMATRIX projectionMatrix = model.ProjectionMatrix( 100.00f, 10000.0f, 0.785f, 0.785f);	
-		D3DXMATRIX cameraCoordinates, screenCoordinates, projCoordinates; 
-		level.models.push_back(model);
-		D3DXMatrixMultiply(&cameraCoordinates,&m_MatWorld,view);
-		D3DXMatrixMultiply(&projCoordinates,&cameraCoordinates, &projectionMatrix);
-
-		vector<D3DXMATRIX> obj_world;
-			
-		vector<D3DXMATRIX> obj;
-	
-		for (int i = 0; i < objIterator->num_vertices; i++)
->>>>>>> f2bb61289de15cc22f3cae01fb96254a5d78474d
->>>>>>> bfa5e409f5f7288bc0c852707a66a6c4eac9b4f7
 		{
 			swprintf(buf, L"obj 1: %f %f %f %f", XMVectorGetX(game.obj[0].r[0]), XMVectorGetY(game.obj[0].r[0]), XMVectorGetZ(game.obj[0].r[0]), XMVectorGetW(game.obj[0].r[0]));
 			TextOut(hdc, 10, 280, buf, wcslen(buf));
@@ -390,10 +307,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		swprintf(buf, L"Eye: %f", level.objectList[0].plist[0].vert[0]);
 		TextOut(hdc,10,50, buf, wcslen(buf));*/
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa5e409f5f7288bc0c852707a66a6c4eac9b4f7
 		//EndPaint(hWnd, &ps);
 		break;
 	case WM_DESTROY:
@@ -401,103 +314,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		break;
 	default:
 		return DefWindowProc(hWnd, message, wParam, lParam);
-<<<<<<< HEAD
-=======
-=======
-		for (int i = 0; i < obj_world.size(); i++)
-		{
-				
-			D3DXMATRIX matrixObj;
-			D3DXMatrixMultiply(&matrixObj,&obj_world[i],&projCoordinates);
-			obj.push_back(matrixObj);				
-		}
-
-		float x =  cameraCoordinates.m[3][0];
-		float y = cameraCoordinates.m[3][1];
-		//float z = objIterator->world_pos.getZ() ;
-		float z =cameraCoordinates.m[3][2];// + objIterator->world_pos.getZ() * cameraCoordinates.m[3][2];
-		if ( z > (eye.z + 10000) || z < (eye.z + 100) )
-			continue;
-		
-
-		if (fabs(x) > z || fabs(y) > z )
-					continue;
-
-		vector<Point> pts;
-		vector<Point> vertices;
-		for (int i = 0; i < obj.size(); i++)
-		{
-			Point obj_per, pt, vertex;
-				
-			obj_per.x = obj[i]._11/obj[i]._13;
-			obj_per.y = obj[i]._12/obj[i]._13;
-
-			vertex.x = obj[i]._11;
-			vertex.y = obj[i]._12;
-			vertex.z = obj[i]._13;
-			vertices.push_back(vertex);
-				
-			pt.x = SCREEN_WIDTH/2 + obj_per.x * (SCREEN_WIDTH/2);
-			pt.y = SCREEN_HEIGHT - (SCREEN_HEIGHT/2 + obj_per.y * (SCREEN_HEIGHT/2));
-			if (pt.x > 0 && pt.x < SCREEN_WIDTH && pt.y > 0 && pt.y < SCREEN_HEIGHT && pt.z < 0)
-			{
-				if (back_buffer != NULL)
-					Draw_Pixel16(pt.x,pt.y, RGB16Bit565(255,255,255), back_buffer, ddsd.lPitch);
-			}
-			pts.push_back(pt);
-		}
-
-		/*while (angle > (3.14*2))
-			angle-=(2*3.14);
-		while (angle < 0)
-			angle+=(2*3.14);
-		Vector right(cos(angle-(3.14/2)), 0.0, sin(angle-(3.14/2)) );*/
-			
-		bool skip = false;
-		for (int poly = 0; poly < objIterator->num_polys; poly++)
-        {       
-			Vector v[3];
-			for (int i=0; i<3; i++)
-			{
-				//need to take cross product of 2 edges of the triangle
-				v[i] = Vector(vertices[objIterator->plist[poly].vert[i]].getX(),vertices[objIterator->plist[poly].vert[i]].getY(),vertices[objIterator->plist[poly].vert[i]].getZ());
-			/*	Vector normal = vertices[objIterator->plist[poly].vert[i]]
-				Vector vec(vertices[objIterator->plist[poly].vert[i]].getX() - eye.x, vertices[objIterator->plist[poly].vert[i]].getY() - eye.y,  vertices[objIterator->plist[poly].vert[i]].getZ() - eye.z  );
-				Vector lookat(at.x,at.y,at.z);
-				eyeToVertex = vec;
-				vec.Normalize();
-				dot = vec.dot(lookat);
-				
-				if (dot < 0 )
-					skip = true;*/
-
-			//	if ( vec.z < 0)
-				//	skip = true;
-			}
-			Vector v01 = v[0] - v[1];
-			Vector v02 = v[2] - v[1];
-			Vector norm = v01.cross(v02);
-			Vector lookat(at.x,at.y,at.z);
-			Vector view = lookat - v[0];
-			dot = norm.dot(view);
-			
-			
-
-			/*if (dot < 0 )
-			{
-			//	skip = false;
-				continue;
-			}*/
-
-			if (back_buffer!=NULL && dot > 0 ) {
-				Draw_Clip_Line( pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), RGB16Bit565(255,0,0), back_buffer, ddsd.lPitch);				
-				Draw_Clip_Line( pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), RGB16Bit565(0,255,0), back_buffer, ddsd.lPitch);
-				Draw_Clip_Line( pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), RGB16Bit565(0,0,255), back_buffer, ddsd.lPitch);
-				//skip = false;
-			}
-        }
->>>>>>> f2bb61289de15cc22f3cae01fb96254a5d78474d
->>>>>>> bfa5e409f5f7288bc0c852707a66a6c4eac9b4f7
 	}
 	return 0;
 }
@@ -549,8 +365,8 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 
 
 
-LPSTR TextArray [] = {
-    "Test"
+LPSTR TextArray[] = {
+	"Test"
 };
 
 
