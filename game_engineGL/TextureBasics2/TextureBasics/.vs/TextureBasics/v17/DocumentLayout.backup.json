@@ -44,7 +44,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -53,10 +53,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -90,10 +86,14 @@
               "RelativeDocumentMoniker": "CGfxOpenGL.cpp",
               "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\CGfxOpenGL.cpp",
               "RelativeToolTip": "CGfxOpenGL.cpp",
-              "ViewState": "AgIAANsAAAAAAAAAAAAAANsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAIwOsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2023-11-27T22:12:14.461Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -105,8 +105,7 @@
               "RelativeToolTip": "Level.cpp",
               "ViewState": "AgIAAJQAAAAAAAAAAAAwwKcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-21T16:55:36.891Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-21T16:55:36.891Z"
             },
             {
               "$type": "Document",
