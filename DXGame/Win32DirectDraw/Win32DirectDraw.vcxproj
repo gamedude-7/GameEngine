@@ -86,7 +86,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
-    <None Include="script1.scr" />
     <None Include="small.ico" />
     <None Include="Win32DirectDraw.ico" />
   </ItemGroup>
