@@ -2,6 +2,7 @@
 #include <vector>
 #include "Vector.h"
 #include "Poly.h"
+#include "Color.h"
 
 #ifndef OBJECT_H
 #define OBJECT_H
@@ -29,6 +30,8 @@ public:
 	void AddTransformedVertex(Point);
 	float max_radius;//maximum radius of object
 	string scriptName;
+	//Color color; // color of object	
+	int R, G, B, A; // RGB color values
 	void setMaxRadius(float);
 protected:
 

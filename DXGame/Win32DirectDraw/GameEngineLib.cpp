@@ -47,6 +47,25 @@ max_clip_x = (SCREEN_WIDTH - 1),
 min_clip_y = 0,
 max_clip_y = (SCREEN_HEIGHT - 1);
 
+inline void Mem_Set_WORD(void* dest, USHORT data, int count)
+{
+	// this function fills or sets unsigned 16-bit aligned memory
+	// count is number of words
+
+	//Write_Error("{");
+
+	_asm
+	{
+		mov edi, dest; edi points to destination memory
+		mov ecx, count; number of 16 - bit words to move
+		mov ax, data; 16 - bit data
+		rep stosw; move data
+	} // end asm
+
+//Write_Error("}");
+
+} // end Mem_Set_WORD
+
 int LoadLevel_LVL(VECTOR4D_PTR scale,OBJECTLIST4DV1_PTR obj_list,RGBAV1_PTR ambient_color)
 {
 	
@@ -458,6 +477,620 @@ int Clip_Line(int& x1, int& y1, int& x2, int& y2)
 	return(1);
 
 } // end Clip_Line
+
+void Draw_Top_Tri(int x1, int y1, int x2, int y2, int x3, int y3, int color, UCHAR* dest_buffer, int mempitch)
+{
+	// this function draws a triangle that has a flat top
+
+	float dx_right,    // the dx/dy ratio of the right edge of line
+		dx_left,     // the dx/dy ratio of the left edge of line
+		xs, xe,       // the starting and ending points of the edges
+		height;      // the height of the triangle
+
+	int temp_x,        // used during sorting as temps
+		temp_y,
+		right,         // used by clipping
+		left;
+
+	// destination address of next scanline
+	UCHAR* dest_addr = NULL;
+
+	// test order of x1 and x2
+	if (x2 < x1)
+	{
+		temp_x = x2;
+		x2 = x1;
+		x1 = temp_x;
+	} // end if swap
+
+ // compute delta's
+	height = y3 - y1;
+
+	dx_left = (x3 - x1) / height;
+	dx_right = (x3 - x2) / height;
+
+	// set starting points
+	xs = (float)x1;
+	xe = (float)x2 + (float)0.5;
+
+	// perform y clipping
+	if (y1 < min_clip_y)
+	{
+		// compute new xs and ys
+		xs = xs + dx_left * (float)(-y1 + min_clip_y);
+		xe = xe + dx_right * (float)(-y1 + min_clip_y);
+
+		// reset y1
+		y1 = min_clip_y;
+
+	} // end if top is off screen
+
+	if (y3 > max_clip_y)
+		y3 = max_clip_y;
+
+	// compute starting address in video memory
+	dest_addr = dest_buffer + y1 * mempitch;
+
+	// test if x clipping is needed
+	if (x1 >= min_clip_x && x1 <= max_clip_x &&
+		x2 >= min_clip_x && x2 <= max_clip_x &&
+		x3 >= min_clip_x && x3 <= max_clip_x)
+	{
+		// draw the triangle
+		for (temp_y = y1; temp_y <= y3; temp_y++, dest_addr += mempitch)
+		{
+			memset((UCHAR*)dest_addr + (unsigned int)xs, color, (unsigned int)((int)xe - (int)xs + 1));
+
+			// adjust starting point and ending point
+			xs += dx_left;
+			xe += dx_right;
+
+		} // end for
+
+	} // end if no x clipping needed
+	else
+	{
+		// clip x axis with slower version
+
+		// draw the triangle
+		for (temp_y = y1; temp_y <= y3; temp_y++, dest_addr += mempitch)
+		{
+			// do x clip
+			left = (int)xs;
+			right = (int)xe;
+
+			// adjust starting point and ending point
+			xs += dx_left;
+			xe += dx_right;
+
+			// clip line
+			if (left < min_clip_x)
+			{
+				left = min_clip_x;
+
+				if (right < min_clip_x)
+					continue;
+			}
+
+			if (right > max_clip_x)
+			{
+				right = max_clip_x;
+
+				if (left > max_clip_x)
+					continue;
+			}
+
+			memset((UCHAR*)dest_addr + (unsigned int)left, color, (unsigned int)(right - left + 1));
+
+		} // end for
+
+	} // end else x clipping needed
+}
+
+void Draw_Bottom_Tri(int x1, int y1, int x2, int y2, int x3, int y3, int color, UCHAR* dest_buffer, int mempitch)
+{
+	// this function draws a triangle that has a flat bottom
+
+	float dx_right,    // the dx/dy ratio of the right edge of line
+		dx_left,     // the dx/dy ratio of the left edge of line
+		xs, xe,       // the starting and ending points of the edges
+		height;      // the height of the triangle
+
+	int temp_x,        // used during sorting as temps
+		temp_y,
+		right,         // used by clipping
+		left;
+
+	// destination address of next scanline
+	UCHAR* dest_addr;
+
+	// test order of x1 and x2
+	if (x3 < x2)
+	{
+		temp_x = x2;
+		x2 = x3;
+		x3 = temp_x;
+	} // end if swap
+
+ // compute delta's
+	height = y3 - y1;
+
+	dx_left = (x2 - x1) / height;
+	dx_right = (x3 - x1) / height;
+
+	// set starting points
+	xs = (float)x1;
+	xe = (float)x1; // +(float)0.5;
+
+	// perform y clipping
+	if (y1 < min_clip_y)
+	{
+		// compute new xs and ys
+		xs = xs + dx_left * (float)(-y1 + min_clip_y);
+		xe = xe + dx_right * (float)(-y1 + min_clip_y);
+
+		// reset y1
+		y1 = min_clip_y;
+
+	} // end if top is off screen
+
+	if (y3 > max_clip_y)
+		y3 = max_clip_y;
+
+	// compute starting address in video memory
+	dest_addr = dest_buffer + y1 * mempitch;
+
+	// test if x clipping is needed
+	if (x1 >= min_clip_x && x1 <= max_clip_x &&
+		x2 >= min_clip_x && x2 <= max_clip_x &&
+		x3 >= min_clip_x && x3 <= max_clip_x)
+	{
+		// draw the triangle
+		for (temp_y = y1; temp_y <= y3; temp_y++, dest_addr += mempitch)
+		{
+			memset((UCHAR*)dest_addr + (unsigned int)xs, color, (unsigned int)((int)xe - (int)xs + 1));
+
+			// adjust starting point and ending point
+			xs += dx_left;
+			xe += dx_right;
+
+		} // end for
+
+	} // end if no x clipping needed
+	else
+	{
+		// clip x axis with slower version
+
+		// draw the triangle
+
+		for (temp_y = y1; temp_y <= y3; temp_y++, dest_addr += mempitch)
+		{
+			// do x clip
+			left = (int)xs;
+			right = (int)xe;
+
+			// adjust starting point and ending point
+			xs += dx_left;
+			xe += dx_right;
+
+			// clip line
+			if (left < min_clip_x)
+			{
+				left = min_clip_x;
+
+				if (right < min_clip_x)
+					continue;
+			}
+
+			if (right > max_clip_x)
+			{
+				right = max_clip_x;
+
+				if (left > max_clip_x)
+					continue;
+			}
+
+			memset((UCHAR*)dest_addr + (unsigned int)left, color, (unsigned int)(right - left + 1));
+
+		} // end for
+
+	} // end else x clipping needed
+}
+
+void Draw_Triangle_2D(int x1, int y1, int x2, int y2, int x3, int y3, int color, UCHAR* dest_buffer, int mempitch)
+{
+	// this function draws a triangle on the destination buffer
+// it decomposes all triangles into a pair of flat top, flat bottom
+
+	int temp_x, // used for sorting
+		temp_y,
+		new_x;
+
+#ifdef DEBUG_ON
+	// track rendering stats
+	debug_polys_rendered_per_frame++;
+#endif
+
+
+	// test for h lines and v lines
+	if ((x1 == x2 && x2 == x3) || (y1 == y2 && y2 == y3))
+		return;
+
+	// sort p1,p2,p3 in ascending y order
+	if (y2 < y1)
+	{
+		temp_x = x2;
+		temp_y = y2;
+		x2 = x1;
+		y2 = y1;
+		x1 = temp_x;
+		y1 = temp_y;
+	} // end if
+
+ // now we know that p1 and p2 are in order
+	if (y3 < y1)
+	{
+		temp_x = x3;
+		temp_y = y3;
+		x3 = x1;
+		y3 = y1;
+		x1 = temp_x;
+		y1 = temp_y;
+	} // end if
+
+ // finally test y3 against y2
+	if (y3 < y2)
+	{
+		temp_x = x3;
+		temp_y = y3;
+		x3 = x2;
+		y3 = y2;
+		x2 = temp_x;
+		y2 = temp_y;
+
+	} // end if
+
+ // do trivial rejection tests for clipping
+	if (y3<min_clip_y || y1>max_clip_y ||
+		(x1 < min_clip_x && x2 < min_clip_x && x3 < min_clip_x) ||
+		(x1 > max_clip_x && x2 > max_clip_x && x3 > max_clip_x))
+		return;
+
+	// test if top of triangle is flat
+	if (y1 == y2)
+	{
+		Draw_Top_Tri(x1, y1, x2, y2, x3, y3, color, dest_buffer, mempitch);
+	} // end if
+	else
+	if (y2 == y3)
+	{
+		Draw_Bottom_Tri(x1, y1, x2, y2, x3, y3, color, dest_buffer, mempitch);
+	} // end if bottom is flat
+	else
+	{
+		// general triangle that's needs to be broken up along long edge
+		new_x = x1 + (int)(0.5 + (float)(y2 - y1) * (float)(x3 - x1) / (float)(y3 - y1));
+
+		// draw each sub-triangle
+		Draw_Bottom_Tri(x1, y1, new_x, y2, x2, y2, color, dest_buffer, mempitch);
+		Draw_Top_Tri(x2, y2, new_x, y2, x3, y3, color, dest_buffer, mempitch);
+
+	} // end else
+}
+
+void Draw_Bottom_Tri16(int x1, int y1, int x2, int y2, int x3, int y3, int color, UCHAR* _dest_buffer, int mempitch)
+{
+	// this function draws a triangle that has a flat bottom
+
+	float dx_right,    // the dx/dy ratio of the right edge of line
+		dx_left,     // the dx/dy ratio of the left edge of line
+		xs, xe,       // the starting and ending points of the edges
+		height;      // the height of the triangle
+
+	int temp_x,        // used during sorting as temps
+		temp_y,
+		right,         // used by clipping
+		left;
+
+	// cast dest buffer to ushort
+	USHORT* dest_buffer = (USHORT*)_dest_buffer;
+
+	// destination address of next scanline
+	USHORT* dest_addr = NULL;
+
+	// recompute mempitch in 16-bit words
+	mempitch = (mempitch >> 1);
+
+	// test order of x1 and x2
+	if (x3 < x2)
+	{
+		temp_x = x2;
+		x2 = x3;
+		x3 = temp_x;
+	} // end if swap
+
+ // compute delta's
+	height = y3 - y1;
+
+	dx_left = (x2 - x1) / height;
+	dx_right = (x3 - x1) / height;
+
+	// set starting points
+	xs = (float)x1;
+	xe = (float)x1; // +(float)0.5;
+
+	// perform y clipping
+	if (y1 < min_clip_y)
+	{
+		// compute new xs and ys
+		xs = xs + dx_left * (float)(-y1 + min_clip_y);
+		xe = xe + dx_right * (float)(-y1 + min_clip_y);
+
+		// reset y1
+		y1 = min_clip_y;
+
+	} // end if top is off screen
+
+	if (y3 > max_clip_y)
+		y3 = max_clip_y;
+
+	// compute starting address in video memory
+	dest_addr = dest_buffer + y1 * mempitch;
+
+	// test if x clipping is needed
+	if (x1 >= min_clip_x && x1 <= max_clip_x &&
+		x2 >= min_clip_x && x2 <= max_clip_x &&
+		x3 >= min_clip_x && x3 <= max_clip_x)
+	{
+		// draw the triangle
+		for (temp_y = y1; temp_y <= y3; temp_y++, dest_addr += mempitch)
+		{
+			// draw the line
+			Mem_Set_WORD(dest_addr + (unsigned int)(xs), color, (unsigned int)((int)xe - (int)xs + 1));
+
+			// adjust starting point and ending point
+			xs += dx_left;
+			xe += dx_right;
+
+		} // end for
+
+	} // end if no x clipping needed
+	else
+	{
+		// clip x axis with slower version
+
+		// draw the triangle
+		for (temp_y = y1; temp_y <= y3; temp_y++, dest_addr += mempitch)
+		{
+			// do x clip
+			left = (int)xs;
+			right = (int)xe;
+
+			// adjust starting point and ending point
+			xs += dx_left;
+			xe += dx_right;
+
+			// clip line
+			if (left < min_clip_x)
+			{
+				left = min_clip_x;
+
+				if (right < min_clip_x)
+					continue;
+			}
+
+			if (right > max_clip_x)
+			{
+				right = max_clip_x;
+
+				if (left > max_clip_x)
+					continue;
+			}
+			// draw the line
+			Mem_Set_WORD(dest_addr + (unsigned int)(left), color, (unsigned int)(right - left + 1));
+
+		} // end for
+
+	} // end else x clipping needed
+}
+
+void Draw_Top_Tri16(int x1, int y1, int x2, int y2, int x3, int y3, int color, UCHAR* _dest_buffer, int mempitch)
+{
+	// this function draws a triangle that has a flat top
+
+	float dx_right,    // the dx/dy ratio of the right edge of line
+		dx_left,     // the dx/dy ratio of the left edge of line
+		xs, xe,       // the starting and ending points of the edges
+		height;      // the height of the triangle
+
+	int temp_x,        // used during sorting as temps
+		temp_y,
+		right,         // used by clipping
+		left;
+
+	// cast dest buffer to ushort
+	USHORT* dest_buffer = (USHORT*)_dest_buffer;
+
+	// destination address of next scanline
+	USHORT* dest_addr = NULL;
+
+	// recompute mempitch in 16-bit words
+	mempitch = (mempitch >> 1);
+
+	// test order of x1 and x2
+	if (x2 < x1)
+	{
+		temp_x = x2;
+		x2 = x1;
+		x1 = temp_x;
+	} // end if swap
+
+ // compute delta's
+	height = y3 - y1;
+
+	dx_left = (x3 - x1) / height;
+	dx_right = (x3 - x2) / height;
+
+	// set starting points
+	xs = (float)x1;
+	xe = (float)x2; // +(float)0.5;
+
+	// perform y clipping
+	if (y1 < min_clip_y)
+	{
+		// compute new xs and ys
+		xs = xs + dx_left * (float)(-y1 + min_clip_y);
+		xe = xe + dx_right * (float)(-y1 + min_clip_y);
+
+		// reset y1
+		y1 = min_clip_y;
+
+	} // end if top is off screen
+
+	if (y3 > max_clip_y)
+		y3 = max_clip_y;
+
+	// compute starting address in video memory
+	dest_addr = dest_buffer + y1 * mempitch;
+
+	// test if x clipping is needed
+	if (x1 >= min_clip_x && x1 <= max_clip_x &&
+		x2 >= min_clip_x && x2 <= max_clip_x &&
+		x3 >= min_clip_x && x3 <= max_clip_x)
+	{
+		// draw the triangle
+		for (temp_y = y1; temp_y <= y3; temp_y++, dest_addr += mempitch)
+		{
+			// draw the line
+			Mem_Set_WORD(dest_addr + (unsigned int)(xs), color, (unsigned int)((int)xe - (int)xs + 1));
+
+			// adjust starting point and ending point
+			xs += dx_left;
+			xe += dx_right;
+
+		} // end for
+
+	} // end if no x clipping needed
+	else
+	{
+		// clip x axis with slower version
+
+		// draw the triangle
+		for (temp_y = y1; temp_y <= y3; temp_y++, dest_addr += mempitch)
+		{
+			// do x clip
+			left = (int)xs;
+			right = (int)xe;
+
+			// adjust starting point and ending point
+			xs += dx_left;
+			xe += dx_right;
+
+			// clip line
+			if (left < min_clip_x)
+			{
+				left = min_clip_x;
+
+				if (right < min_clip_x)
+					continue;
+			}
+
+			if (right > max_clip_x)
+			{
+				right = max_clip_x;
+
+				if (left > max_clip_x)
+					continue;
+			}
+
+			// draw the line
+			Mem_Set_WORD(dest_addr + (unsigned int)(left), color, (unsigned int)(right - left + 1));
+
+		} // end for
+
+	} // end else x clipping needed
+}
+
+void Draw_Triangle_2D16(int x1, int y1, int x2, int y2, int x3, int y3, int color, UCHAR* dest_buffer, int mempitch)
+{
+	// this function draws a triangle on the destination buffer
+// it decomposes all triangles into a pair of flat top, flat bottom
+
+	int temp_x, // used for sorting
+		temp_y,
+		new_x;
+
+#ifdef DEBUG_ON
+	// track rendering stats
+	debug_polys_rendered_per_frame++;
+#endif
+
+
+	// test for h lines and v lines
+	if ((x1 == x2 && x2 == x3) || (y1 == y2 && y2 == y3))
+		return;
+
+	// sort p1,p2,p3 in ascending y order
+	if (y2 < y1)
+	{
+		temp_x = x2;
+		temp_y = y2;
+		x2 = x1;
+		y2 = y1;
+		x1 = temp_x;
+		y1 = temp_y;
+	} // end if
+
+ // now we know that p1 and p2 are in order
+	if (y3 < y1)
+	{
+		temp_x = x3;
+		temp_y = y3;
+		x3 = x1;
+		y3 = y1;
+		x1 = temp_x;
+		y1 = temp_y;
+	} // end if
+
+ // finally test y3 against y2
+	if (y3 < y2)
+	{
+		temp_x = x3;
+		temp_y = y3;
+		x3 = x2;
+		y3 = y2;
+		x2 = temp_x;
+		y2 = temp_y;
+
+	} // end if
+
+ // do trivial rejection tests for clipping
+	if (y3<min_clip_y || y1>max_clip_y ||
+		(x1 < min_clip_x && x2 < min_clip_x && x3 < min_clip_x) ||
+		(x1 > max_clip_x && x2 > max_clip_x && x3 > max_clip_x))
+		return;
+
+	// test if top of triangle is flat
+	if (y1 == y2)
+	{
+		Draw_Top_Tri16(x1, y1, x2, y2, x3, y3, color, dest_buffer, mempitch);
+	} // end if
+	else
+	if (y2 == y3)
+	{
+		Draw_Bottom_Tri16(x1, y1, x2, y2, x3, y3, color, dest_buffer, mempitch);
+	} // end if bottom is flat
+	else
+	{
+		// general triangle that's needs to be broken up along long edge
+		new_x = x1 + (int)(0.5 + (float)(y2 - y1) * (float)(x3 - x1) / (float)(y3 - y1));
+
+		// draw each sub-triangle
+		Draw_Bottom_Tri16(x1, y1, new_x, y2, x2, y2, color, dest_buffer, mempitch);
+		Draw_Top_Tri16(x2, y2, new_x, y2, x3, y3, color, dest_buffer, mempitch);
+
+	} // end else
+}
 
 unsigned short ConvertRGB888toRGB565(unsigned int nSourceColor)
 {

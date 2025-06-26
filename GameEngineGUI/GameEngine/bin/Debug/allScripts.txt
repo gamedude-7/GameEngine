@@ -1,5 +1,3 @@
 #include "ScriptTrans.h"
 #include "cubeScript0.txt"
-#include "cubeScript1.txt"
-#include "objectScript2.txt"
-#include "objectScript3.txt"
+#include "objectScript1.txt"

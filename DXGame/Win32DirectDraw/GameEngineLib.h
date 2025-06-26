@@ -113,7 +113,22 @@ int Draw_Line16(int xo, int yo, int x1, int y1, int color, UCHAR* vb_start, int 
 int Draw_Clip_Line(int x0, int y0, int x1, int y1, int color,
     UCHAR* dest_buffer, int lpitch);
 int Clip_Line(int& x1, int& y1, int& x2, int& y2);
-
+void Draw_Top_Tri(int x1, int y1, int x2, int y2, int x3, int y3, int color, UCHAR* dest_buffer, int mempitch);
+void Draw_Bottom_Tri(int x1, int y1, int x2, int y2, int x3, int y3, int color, UCHAR* dest_buffer, int mempitch);
+void Draw_Triangle_2D(int x1, int y1, int x2, int y2, int x3, int y3,
+    int color, UCHAR* dest_buffer, int mempitch);
+void Draw_Bottom_Tri16(int x1, int y1,
+    int x2, int y2,
+    int x3, int y3,
+    int color,
+    UCHAR* _dest_buffer, int mempitch);
+void Draw_Top_Tri16(int x1, int y1,
+    int x2, int y2,
+    int x3, int y3,
+    int color,
+    UCHAR* _dest_buffer, int mempitch);
+void Draw_Triangle_2D16(int x1, int y1, int x2, int y2, int x3, int y3,
+    int color, UCHAR* dest_buffer, int mempitch);
 int Load_Bitmap_File(BITMAP_FILE_PTR bitmap, char* filename);
 int Flip_Bitmap(unsigned int* image, int bytes_per_line, int height);
 #endif

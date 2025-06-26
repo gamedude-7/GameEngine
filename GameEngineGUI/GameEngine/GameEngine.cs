@@ -184,6 +184,7 @@ namespace GameEngine
     
         public int num_polys;   // number of polygons in object mesh
         public POLY4DV1[] plist = new POLY4DV1[OBJECT4DV1_MAX_POLYS];  // array of polygons       
+        private Color color; // color of object
 
         public float X
         {
@@ -280,6 +281,9 @@ namespace GameEngine
                 scriptName = value;
             }
         }
+
+        public Color Color { get => color; set => color = value; }
+
         public void SET_BIT(int word,int bit_flag  )
         {
             word=word | bit_flag;

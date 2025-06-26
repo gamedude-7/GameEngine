@@ -466,6 +466,11 @@ int Game::Game_Main()
 
 			if (back_buffer != NULL)// && dot < 0)
 			{	
+				//if (objIterator->color != nullptr)
+					Draw_Triangle_2D16(pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(),
+						pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(),
+						pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(),
+						RGB16Bit565(objIterator->R, objIterator->G, objIterator->B), back_buffer, ddsd.lPitch);
 				Draw_Clip_Line(pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), RGB16Bit565(255, 0, 0), back_buffer, ddsd.lPitch);				
 				Draw_Clip_Line(pts[objIterator->plist[poly].vert[1]].getX(), pts[objIterator->plist[poly].vert[1]].getY(), pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), RGB16Bit565(0, 255, 0), back_buffer, ddsd.lPitch);
 				Draw_Clip_Line(pts[objIterator->plist[poly].vert[2]].getX(), pts[objIterator->plist[poly].vert[2]].getY(), pts[objIterator->plist[poly].vert[0]].getX(), pts[objIterator->plist[poly].vert[0]].getY(), RGB16Bit565(0, 0, 255), back_buffer, ddsd.lPitch);

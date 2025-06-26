@@ -30,13 +30,15 @@ Level::Level(string filename)
 			fileStream >> type;
 			if (type == "cube")
 			{
-				Cube cube;				
+				Cube cube;	
+				
 				fileStream >> cube.name;
 				fileStream >> cube.scriptName;
 				fileStream >> cube.world_pos.x >> cube.world_pos.y >> cube.world_pos.z;
 				fileStream >> cube.width >> cube.height >> cube.length;
 				fileStream >> cube.dir.x >> cube.dir.y >> cube.dir.z;
 				fileStream >> cube.scale.x >> cube.scale.y >> cube.scale.z;
+				fileStream >> cube.R>> cube.G >> cube.B >> cube.A;
 				cube.vlist_local = vector<Point>();
 				double x = -cube.width / 2;
                 double y = cube.height / 2;
@@ -72,6 +74,8 @@ Level::Level(string filename)
 				cube.AddLocalVertex(Point(x,y,z));//7
 				cube.num_vertices=8;
 				Poly poly;
+
+				//front face
 				poly.vert[0] = 0;
 				poly.vert[1] = 1;
 				poly.vert[2] = 2;				
@@ -80,6 +84,8 @@ Level::Level(string filename)
 				poly.vert[1] = 2;
 				poly.vert[2] = 3;
 				cube.plist.push_back(poly);
+
+				// back face				
 				poly.vert[0] = 4;
 				poly.vert[1] = 5;
 				poly.vert[2] = 6;
@@ -88,6 +94,8 @@ Level::Level(string filename)
 				poly.vert[1] = 6;
 				poly.vert[2] = 7;
 				cube.plist.push_back(poly);
+				
+				// top face				
 				poly.vert[0] = 0;
 				poly.vert[1] = 1;
 				poly.vert[2] = 5;
@@ -96,6 +104,8 @@ Level::Level(string filename)
 				poly.vert[1] = 4;
 				poly.vert[2] = 5;
 				cube.plist.push_back(poly);
+
+				// bottom face				
 				poly.vert[0] = 2;
 				poly.vert[1] = 3;
 				poly.vert[2] = 7;
@@ -104,7 +114,29 @@ Level::Level(string filename)
 				poly.vert[1] = 6;
 				poly.vert[2] = 7;
 				cube.plist.push_back(poly);
-				cube.num_polys = 8;
+
+				// left face
+				poly.vert[0] = 0;
+				poly.vert[1] = 4;
+				poly.vert[2] = 3;
+				cube.plist.push_back(poly);
+				poly.vert[0] = 4;
+				poly.vert[1] = 3;
+				poly.vert[2] = 7;
+				cube.plist.push_back(poly);
+
+				// right face
+				poly.vert[0] = 1;
+				poly.vert[1] = 5;
+				poly.vert[2] = 6;
+				cube.plist.push_back(poly);
+				poly.vert[0] = 1;
+				poly.vert[1] = 2;
+				poly.vert[2] = 6;
+				cube.plist.push_back(poly);
+				cube.num_polys = 12;
+
+				
 				objectList.push_back(cube);
 				
 				
@@ -120,6 +152,7 @@ Level::Level(string filename)
 				fileStream >> object.dir.x >> object.dir.y >> object.dir.z;
 				fileStream >> object.scale.x >> object.scale.y >> object.scale.z;
 				fileStream >> object.num_vertices;
+				
 				double x, y, z;
 				
 				
@@ -143,6 +176,7 @@ Level::Level(string filename)
 					poly.vert[2] = z;
 					object.plist.push_back(poly);					
 				}
+				fileStream >> object.R >> object.G >> object.B >> object.A;
 				objectList.push_back(object);
 				matrices.push_back(matrix);
 				

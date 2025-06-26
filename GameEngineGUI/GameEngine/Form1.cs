@@ -371,6 +371,9 @@ namespace GameEngine
                             cube.scale.X = float.Parse(token[0]);
                             cube.scale.Y = float.Parse(token[1]);
                             cube.scale.Z = float.Parse(token[2]);
+                            str = rdr.ReadLine();
+                            token = str.Split(new Char[] { ' ' });
+                            cube.Color = Color.FromArgb(int.Parse(token[0]), int.Parse(token[1]), int.Parse(token[2]));
                             cube.vlist_local[0].X = -cube.width / 2;
                             cube.vlist_local[0].Y = cube.height / 2;
                             cube.vlist_local[0].Z = -cube.length / 2;
@@ -470,7 +473,7 @@ namespace GameEngine
                             obj.scale.Y = float.Parse(token[1]);
                             obj.scale.Z = float.Parse(token[2]);
                             str = rdr.ReadLine();
-                            obj.num_vertices = int.Parse(str);
+                            obj.num_vertices = int.Parse(str);                           
                             for (int j = 0; j < obj.num_vertices; j++)
                             {
                                 str = rdr.ReadLine();
@@ -490,6 +493,9 @@ namespace GameEngine
                                 obj.plist[j].vert[1] = int.Parse(token[1]);
                                 obj.plist[j].vert[2] = int.Parse(token[2]);
                             }
+                            str = rdr.ReadLine();
+                            token = str.Split(new Char[] { ' ' });
+                            obj.Color = Color.FromArgb(int.Parse(token[0]), int.Parse(token[1]), int.Parse(token[2]));
                             obj.id = i;
                             listObjects.AddLast(obj);
                         }
@@ -3426,6 +3432,7 @@ namespace GameEngine
                     wtr.WriteLine(c.width + " " + c.height + " " + c.length);
                     wtr.WriteLine(c.dir.X + " " + c.dir.Y + " " + c.dir.Z);
                     wtr.WriteLine(c.scale.X + " " + c.scale.Y + " " + c.scale.Z);
+                    wtr.WriteLine(c.Color.R + " " + c.Color.G + " " + c.Color.B + " " + c.Color.A);
                 }
                 else
                 {
@@ -3447,6 +3454,7 @@ namespace GameEngine
                     {
                         wtr.WriteLine(o.plist[i].vert[0] + " " + o.plist[i].vert[1] + " " + o.plist[i].vert[2]);
                     }
+                    wtr.WriteLine(o.Color.R + " " + o.Color.G + " " + o.Color.B + " " + o.Color.A);
                 }
                 wtrScripts.WriteLine("#include \"" + o.scriptName + "\"");
             }
