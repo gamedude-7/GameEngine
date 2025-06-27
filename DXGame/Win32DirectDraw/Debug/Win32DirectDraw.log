@@ -1,1 +1,141 @@
-﻿  Win32DirectDraw.vcxproj -> C:\Users\Jason\Desktop\GameEngine\DXGame\Debug\Win32DirectDraw.exe
+﻿  Game.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Vector.h(69,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Vector.h(87,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Vector.h(104,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Vector.h(111,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Vector.h(112,28): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(122,15): warning C4101: 'm_MatWorld': unreferenced local variable
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(200,10): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(202,10): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(217,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(218,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(219,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(231,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(233,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(234,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(238,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(247,11): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\camera.txt(35,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\camera.txt(35,14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(315,51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(316,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(374,21): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(411,21): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(427,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(427,21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(472,95): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(472,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(471,95): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(471,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(470,113): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(470,67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(474,200): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(474,154): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(474,108): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(474,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(475,200): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(475,154): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(475,108): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(475,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(476,200): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(476,154): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(476,108): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(476,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(313,21): warning C4101: 'Mtemp2': unreferenced local variable
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(313,13): warning C4101: 'Mtemp1': unreferenced local variable
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(504,15): warning C4101: 'pixel': unreferenced local variable
+  (compiling source file '/Game.cpp')
+  
+C:\Users\Jason\Desktop\GameEngine\DXGame\Win32DirectDraw\Game.cpp(326,33): warning C4101: 'screenCoordinates': unreferenced local variable
+  (compiling source file '/Game.cpp')
+  
+  Win32DirectDraw.vcxproj -> C:\Users\Jason\Desktop\GameEngine\DXGame\Debug\Win32DirectDraw.exe
