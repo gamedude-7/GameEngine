@@ -28,11 +28,12 @@ public:
 	void AddLocalVertex(Point);
 	void AddTransformedVertex(Point);
 	float max_radius;//maximum radius of object
-
+	
 	void setMaxRadius(float);
 	string name;
 	string type;
 	string scriptName;
+	int red, green, blue, alpha; // color of object
 protected:
 
 	

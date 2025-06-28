@@ -150,6 +150,21 @@ bool CGfxOpenGL::Init(Camera *camera, FILE *fp_override)
 					obj->dir.z = ((float)strtod(token, &stopstring)) * scale;
 					fgets(line, 100, stream);	  // read scale
 					token = strtok(line, " ");
+					obj->scale.x = ((float)strtod(token, &stopstring));
+					token = strtok(NULL, " ");
+					obj->scale.y = ((float)strtod(token, &stopstring));
+					token = strtok(NULL, " ");
+					obj->scale.z = ((float)strtod(token, &stopstring));
+					token = strtok(NULL, " ");
+					fgets(line, 100, stream);	  // read color
+					token = strtok(line, " ");
+					obj->red = atoi(token);
+					token = strtok(NULL, " ");
+					obj->green = atoi(token);
+					token = strtok(NULL, " ");
+					obj->blue = atoi(token);
+					token = strtok(NULL, " ");
+					obj->alpha = atoi(token);					
 					obj->num_vertices = 8;
 					//obj->vlist_local = vector<Point>();
 					obj->vlist_local.resize(8);
@@ -249,6 +264,15 @@ bool CGfxOpenGL::Init(Camera *camera, FILE *fp_override)
 						token = strtok(NULL, " ");
 						obj->plist[w].vert[2] = atoi(token);
 					}
+					fgets(line, 100, stream);
+					token = strtok(line, seps);
+					obj->red = atoi(token);
+					token = strtok(NULL, " ");
+					obj->green = atoi(token);
+					token = strtok(NULL, " ");
+					obj->blue = atoi(token);
+					token = strtok(NULL, " ");
+					obj->alpha = atoi(token);
 				}// end if
 				if (obj->name!="camera")
 					linked_list.push_back(*obj);
@@ -334,7 +358,7 @@ bTest=CloseHandle(hFile);
 /* bTest will be TRUE if the read is successful.
  If false, take a look at GetLastError */
 	Write_Error(fp_error, "Drawing objects...\n");
-  
+	glColor3f(1, 1, 1);
 	 list<Object>::iterator it;
 	 for(it=linked_list.begin(); it != linked_list.end();it++)
 	 {
@@ -408,13 +432,13 @@ bTest=CloseHandle(hFile);
 					v1 = obj->plist[a].vert[0];
 					v2 = obj->plist[a].vert[1];
 					v3 = obj->plist[a].vert[2];
-					glColor3f(1.0,0.0,0.0);
+					glColor3f(obj->red, obj->green, obj->blue);	
 					glVertex3f(obj->vlist_trans[v1].x,obj->vlist_trans[v1].y,obj->vlist_trans[v1].z);
-					glColor3f(0.0,1.0,0.0);
+					glColor3f(obj->red, obj->green, obj->blue);
 					glVertex3f(obj->vlist_trans[v2].x,obj->vlist_trans[v2].y,obj->vlist_trans[v2].z);
-					glColor3f(0.0,0.0,1.0);
+					glColor3f(obj->red, obj->green, obj->blue);
 					glVertex3f(obj->vlist_trans[v3].x,obj->vlist_trans[v3].y,obj->vlist_trans[v3].z);
-					glColor3f(1.0,1.0,1.0);					
+					
 				glEnd();
 			}
 		}

@@ -4,6 +4,7 @@
 
 Object::Object()
 {
+	scriptName = "";
 	scale = Vector(1,1,1,1);
 	num_vertices = 0;
 	max_radius = 0;

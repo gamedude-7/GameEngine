@@ -39,6 +39,7 @@ int Game::DDraw_Fill_Surface(LPDIRECTDRAWSURFACE7 lpdds, USHORT color, RECT* cli
 
 int Game::Game_Init(HINSTANCE hInst, HWND windowHandle)
 {
+	level = Level("world.lvl");
 	////if (XMVerifySupport())
 	//	//XMMatrix matrix();
 	//LPDIRECTDRAW pDDraw = NULL;

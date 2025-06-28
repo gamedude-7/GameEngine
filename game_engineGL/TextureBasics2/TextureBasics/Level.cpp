@@ -37,6 +37,7 @@ Level::Level(string filename)
 				fileStream >> cube.width >> cube.height >> cube.length;
 				fileStream >> cube.dir.x >> cube.dir.y >> cube.dir.z;
 				fileStream >> cube.scale.x >> cube.scale.y >> cube.scale.z;
+				fileStream >> cube.red >> cube.green >> cube.blue >> cube.alpha;
 				cube.vlist_local = vector<Point>();
 				double x = -cube.width / 2;
                 double y = cube.height / 2;
@@ -105,6 +106,7 @@ Level::Level(string filename)
 				poly.vert[2] = 7;
 				cube.plist.push_back(poly);
 				cube.num_polys = 8;
+				
 				objectList.push_back(cube);
 				
 				
@@ -120,6 +122,7 @@ Level::Level(string filename)
 				fileStream >> object.dir.x >> object.dir.y >> object.dir.z;
 				fileStream >> object.scale.x >> object.scale.y >> object.scale.z;
 				fileStream >> object.num_vertices;
+				fileStream >> object.red >> object.green >> object.blue >> object.alpha;
 				double x, y, z;
 				
 				for (int i = 0; i < object.num_vertices; i++)
