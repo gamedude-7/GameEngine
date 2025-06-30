@@ -635,7 +635,7 @@ namespace GameEngine
                     //{
                     //    listObjects.RemoveLast();
                     //}
-                   // p.Color = Color.Black;
+                    p.Color = Color.Black;
                     #region cube                    
                     //d = splitContainer1.Panel1.Width / 2f;
 
@@ -1779,7 +1779,7 @@ namespace GameEngine
             paintCubeInFrontView(g);
             foreach (OBJECT4DV1 obj in listObjects)
             {
-                //p.Color = Color.Black;
+                p.Color = Color.Black;
                 if (treeView1.SelectedNodes.Count > 0)
                 {
                     for (int i = 0; i < treeView1.SelectedNodes.Count; i++)
