@@ -609,6 +609,7 @@ namespace GameEngine
                 z = camFront.pos.Z;
                 isMouseDown = true;
                 cube = new Cube();
+                cube.Color = p.Color;
             }
         }
 
@@ -634,7 +635,7 @@ namespace GameEngine
                     //{
                     //    listObjects.RemoveLast();
                     //}
-                    p.Color = Color.Black;
+                   // p.Color = Color.Black;
                     #region cube                    
                     //d = splitContainer1.Panel1.Width / 2f;
 
@@ -1778,7 +1779,7 @@ namespace GameEngine
             paintCubeInFrontView(g);
             foreach (OBJECT4DV1 obj in listObjects)
             {
-                p.Color = Color.Black;
+                //p.Color = Color.Black;
                 if (treeView1.SelectedNodes.Count > 0)
                 {
                     for (int i = 0; i < treeView1.SelectedNodes.Count; i++)
@@ -2190,60 +2191,87 @@ namespace GameEngine
                 }
 
                 for (int poly = 0; poly < obj.num_polys; poly++)
-                {
-                    for (int i = 0; i < obj.plist[poly].vert.Length; i++)
+                {                    
+                    if (obj.plist[poly].vert.Length == 3)
                     {
-                        if (i == obj.plist[poly].vert.Length - 1)
-                        {
-                            x1 = pt[obj.plist[poly].vert[i]].X;
-                            y1 = pt[obj.plist[poly].vert[i]].Y;
-                            x2 = pt[obj.plist[poly].vert[0]].X;
-                            y2 = pt[obj.plist[poly].vert[0]].Y;
-
-                            if (x1 < 0)
-                                x1 = 0;
-                            else if (x1 > splitContainer2.Panel2.Width)
-                                x1 = splitContainer2.Panel2.Width;
-                            if (x2 < 0)
-                                x2 = 0;
-                            else if (x2 > splitContainer2.Panel2.Width)
-                                x2 = splitContainer2.Panel2.Width;
-
-                            if (y1 < 0)
-                                y1 = 0;
-                            else if (y1 > splitContainer2.Panel2.Height)
-                                y1 = splitContainer2.Panel2.Height;
-                            if (y2 < 0)
-                                y2 = 0;
-                            GUI.GUI.DrawLine(mainScreen, p, x1, y1, x2, y2, splitContainer2.Panel2.Width, splitContainer1.Panel2.Height);
-                        }
-                        else
-                        {
-                            x1 = pt[obj.plist[poly].vert[i]].X;
-                            y1 = pt[obj.plist[poly].vert[i]].Y;
-                            x2 = pt[obj.plist[poly].vert[i + 1]].X;
-                            y2 = pt[obj.plist[poly].vert[i + 1]].Y;
-
-                            if (x1 < 0)
-                                x1 = 0;
-                            else if (x1 > splitContainer1.Panel1.Width)
-                                x1 = splitContainer2.Panel2.Width;
-                            if (x2 < 0)
-                                x2 = 0;
-                            else if (x2 > splitContainer1.Panel1.Width)
-                                x2 = splitContainer2.Panel2.Width;
-
-                            if (y1 < 0)
-                                y1 = 0;
-                            else if (y1 > splitContainer2.Panel2.Height)
-                                y1 = splitContainer2.Panel2.Height;
-                            if (y2 < 0)
-                                y2 = 0;
-                            else if (y2 > splitContainer2.Panel2.Height)
-                                y2 = splitContainer2.Panel2.Height;
-                            GUI.GUI.DrawLine(mainScreen, p, x1, y1, x2, y2, splitContainer2.Panel2.Width, splitContainer1.Panel2.Height);
-                        }
+                        //Draw triangle
+                        Point p1 = pt[obj.plist[poly].vert[0]];
+                        Point p2 = pt[obj.plist[poly].vert[1]];
+                        Point p3 = pt[obj.plist[poly].vert[2]];
+                        Brush brush = new SolidBrush(obj.Color);
+                        mainScreen.FillPolygon(brush, new PointF[] { p1, p2, p3 });
+                        p.Color = Color.Black;
+                        mainScreen.DrawPolygon(p, new Point[] { p1, p2, p3 });
+                        //GUI.GUI.DrawTriangle(mainScreen, p, p1, p2, p3, splitContainer2.Panel2.Width, splitContainer2.Panel2.Height);
                     }
+                    else if (obj.plist[poly].vert.Length == 4)
+                    {
+                        // Draw quadrilateral
+                        Point p1 = pt[obj.plist[poly].vert[0]];
+                        Point p2 = pt[obj.plist[poly].vert[1]];
+                        Point p3 = pt[obj.plist[poly].vert[2]];
+                        Point p4 = pt[obj.plist[poly].vert[3]];
+                        Brush brush = new SolidBrush(obj.Color);
+                        mainScreen.FillPolygon(brush, new PointF[] { p1, p2, p3, p4 });
+                       // p.Color = Color.Black;
+                        mainScreen.DrawPolygon(p, new Point[] { p1, p2, p3, p4 });
+                        // GUI.GUI.DrawQuadrilateral(mainScreen, p, p1, p2, p3, p4, splitContainer2.Panel2.Width, splitContainer2.Panel2.Height);
+                    }
+                    else if (obj.plist[poly].vert.Length < 3)
+                        continue;
+                    for (int i = 0; i < obj.plist[poly].vert.Length; i++)
+                        {
+                            if (i == obj.plist[poly].vert.Length - 1)
+                            {
+                                x1 = pt[obj.plist[poly].vert[i]].X;
+                                y1 = pt[obj.plist[poly].vert[i]].Y;
+                                x2 = pt[obj.plist[poly].vert[0]].X;
+                                y2 = pt[obj.plist[poly].vert[0]].Y;
+
+                                if (x1 < 0)
+                                    x1 = 0;
+                                else if (x1 > splitContainer2.Panel2.Width)
+                                    x1 = splitContainer2.Panel2.Width;
+                                if (x2 < 0)
+                                    x2 = 0;
+                                else if (x2 > splitContainer2.Panel2.Width)
+                                    x2 = splitContainer2.Panel2.Width;
+
+                                if (y1 < 0)
+                                    y1 = 0;
+                                else if (y1 > splitContainer2.Panel2.Height)
+                                    y1 = splitContainer2.Panel2.Height;
+                                if (y2 < 0)
+                                    y2 = 0;
+                                GUI.GUI.DrawLine(mainScreen, p, x1, y1, x2, y2, splitContainer2.Panel2.Width, splitContainer1.Panel2.Height);
+                            }
+                            else
+                            {
+                                x1 = pt[obj.plist[poly].vert[i]].X;
+                                y1 = pt[obj.plist[poly].vert[i]].Y;
+                                x2 = pt[obj.plist[poly].vert[i + 1]].X;
+                                y2 = pt[obj.plist[poly].vert[i + 1]].Y;
+
+                                if (x1 < 0)
+                                    x1 = 0;
+                                else if (x1 > splitContainer1.Panel1.Width)
+                                    x1 = splitContainer2.Panel2.Width;
+                                if (x2 < 0)
+                                    x2 = 0;
+                                else if (x2 > splitContainer1.Panel1.Width)
+                                    x2 = splitContainer2.Panel2.Width;
+
+                                if (y1 < 0)
+                                    y1 = 0;
+                                else if (y1 > splitContainer2.Panel2.Height)
+                                    y1 = splitContainer2.Panel2.Height;
+                                if (y2 < 0)
+                                    y2 = 0;
+                                else if (y2 > splitContainer2.Panel2.Height)
+                                    y2 = splitContainer2.Panel2.Height;
+                                GUI.GUI.DrawLine(mainScreen, p, x1, y1, x2, y2, splitContainer2.Panel2.Width, splitContainer1.Panel2.Height);
+                            }
+                        }
                 }
 
                 #endregion
@@ -3158,12 +3186,47 @@ namespace GameEngine
             {
                 objectInstance.scriptName = e.ChangedItem.Value.ToString();
             }
-            valueTextBox.Text = e.ChangedItem.Value.ToString();
+            else if (name == "Color")
+            {
+                for (int i = 0; i < treeView1.SelectedNodes.Count; i++)
+                {
+                    TreeNode node = treeView1.SelectedNodes[i] as TreeNode;
+
+                    foreach (OBJECT4DV1 obj in listObjects)
+                    {
+                        if (node.Index == obj.id)
+                        {
+                            obj.Color = (Color)e.ChangedItem.Value;
+                            updateProperties(obj.name);
+                            break;
+                        }
+                    }
+                }
+                refreshDisplay();
+            }
+            if (e.ChangedItem.Value != null)
+            { 
+                // Update the value text box with the new value
+                valueTextBox.Text = e.ChangedItem.Value.ToString();
+            }
         }
 
         private void propertyGrid1_MouseClick(object sender, MouseEventArgs e)
         {
+            //for (int i = 0; i < treeView1.SelectedNodes.Count; i++)
+            //{
+            //    TreeNode node = treeView1.SelectedNodes[i] as TreeNode;
 
+            //    foreach (OBJECT4DV1 obj in listObjects)
+            //    {
+            //        if (node.Index == obj.id)
+            //        {
+            //            obj.Color = (Color)sender.Value;
+            //            updateProperties(obj.name);
+            //        }
+            //    }
+            //}
+           // refreshDisplay();
         }
 
         private void propertyGrid1_SelectedGridItemChanged(object sender, SelectedGridItemChangedEventArgs e)
@@ -3172,9 +3235,38 @@ namespace GameEngine
             {
                 nameTextBox.Text = e.NewSelection.PropertyDescriptor.Name;
                 if (e.NewSelection.Value == null)
-                    valueTextBox.Text = "";
+                {
+                    valueTextBox.Text = "";                   
+                }
                 else
+                { 
                     valueTextBox.Text = e.NewSelection.Value.ToString();
+                    if (e.NewSelection.Value.GetType() == typeof(Color))
+                    {
+                        if (cube != null)
+                        {
+                            // Update cube color if cube is selected
+                            // Assuming cube is the currently selected object in the property grid
+                            // and it has a Color property  
+                            cube.Color = (Color)e.NewSelection.Value;
+                        }
+
+                        //for (int i = 0; i < treeView1.SelectedNodes.Count; i++)
+                        //{
+                        //    TreeNode node = treeView1.SelectedNodes[i] as TreeNode;
+
+                        //    foreach (OBJECT4DV1 obj in listObjects)
+                        //    {
+                        //        if (node.Index == obj.id)
+                        //        {
+                        //            obj.Color = (Color)e.NewSelection.Value;
+                        //            updateProperties(obj.name);
+                        //        }
+                        //    }
+                        //}
+                        //refreshDisplay();
+                    }
+                }
             }
         }
 
@@ -3202,7 +3294,11 @@ namespace GameEngine
             if (dr == DialogResult.OK)
             {
                 Color color = colorDialog1.Color;
-                
+                if (cube != null)
+                {
+                    cube.Color = color;                    
+                }
+                p.Color = color;
             }
         }
 

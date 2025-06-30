@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,7 +66,24 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CGfxOpenGL.cpp",
+              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\CGfxOpenGL.cpp",
+              "RelativeDocumentMoniker": "CGfxOpenGL.cpp",
+              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\CGfxOpenGL.cpp",
+              "RelativeToolTip": "CGfxOpenGL.cpp",
+              "ViewState": "AgIAAF8BAAAAAAAAAAAWwG4BAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2023-11-27T22:12:14.461Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -78,8 +95,7 @@
               "RelativeToolTip": "Game.h",
               "ViewState": "AgIAAEUAAAAAAAAAAAAkwF0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-27T23:24:29.762Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T23:24:29.762Z"
             },
             {
               "$type": "Document",
@@ -91,8 +107,7 @@
               "RelativeToolTip": "CGfxOpenGL.h",
               "ViewState": "AgIAABoAAAAAAAAAAAAkwCUAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-27T23:17:21.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T23:17:21.364Z"
             },
             {
               "$type": "Document",
@@ -104,8 +119,7 @@
               "RelativeToolTip": "Object.h",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-27T22:53:34.474Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T22:53:34.474Z"
             },
             {
               "$type": "Document",
@@ -117,21 +131,7 @@
               "RelativeToolTip": "Object.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-27T22:53:25.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CGfxOpenGL.cpp",
-              "DocumentMoniker": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\CGfxOpenGL.cpp",
-              "RelativeDocumentMoniker": "CGfxOpenGL.cpp",
-              "ToolTip": "C:\\Users\\Jason\\Desktop\\GameEngine\\game_engineGL\\TextureBasics2\\TextureBasics\\CGfxOpenGL.cpp",
-              "RelativeToolTip": "CGfxOpenGL.cpp",
-              "ViewState": "AgIAAF8BAAAAAAAAAAAWwGgBAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2023-11-27T22:12:14.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T22:53:25.106Z"
             },
             {
               "$type": "Document",
@@ -156,8 +156,7 @@
               "RelativeToolTip": "GameEngineLib.cpp",
               "ViewState": "AgIAACkDAAAAAAAAAAAwwBYDAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-21T15:31:44.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-21T15:31:44.961Z"
             },
             {
               "$type": "Document",
@@ -169,8 +168,7 @@
               "RelativeToolTip": "winmain.cpp",
               "ViewState": "AgIAAI4BAAAAAAAAAAD4v40BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2023-12-25T00:33:05.765Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-25T00:33:05.765Z"
             },
             {
               "$type": "Document",
@@ -182,8 +180,7 @@
               "RelativeToolTip": "Level.h",
               "ViewState": "AgIAAAEAAAAAAAAAAAAkwBAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2023-12-27T02:49:21.207Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-27T02:49:21.207Z"
             },
             {
               "$type": "Document",
@@ -195,8 +192,7 @@
               "RelativeToolTip": "Game.cpp",
               "ViewState": "AgIAABgAAAAAAAAAAAAWwCkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2023-12-19T19:33:35.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-19T19:33:35.298Z"
             },
             {
               "$type": "Document",

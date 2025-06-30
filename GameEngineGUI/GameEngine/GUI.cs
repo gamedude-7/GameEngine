@@ -2,6 +2,7 @@ using GameEngine;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System;
 namespace GUI
 {    
     class Cube : OBJECT4DV1
@@ -146,6 +147,66 @@ namespace GUI
                 g.DrawLine(pen, x1, y1, x2, y2);
             }
             
+        }
+
+        internal static void DrawTriangle(Graphics mainScreen, Pen p, Point p1, Point p2, Point p3, int width, int height)
+        {
+            int temp_x, // used for sorting
+                temp_y,
+                new_x,
+                min_clip_x = 0, min_clip_y = 0,
+                max_clip_x = width, max_clip_y =height;
+            
+            // do trivial rejection tests for clipping
+            if (p3.Y < min_clip_y || p1.Y > max_clip_y ||
+                (p1.X < min_clip_x && p2.X < min_clip_x && p3.X < min_clip_x) ||
+                (p1.X > max_clip_x && p2.X > max_clip_x && p3.X > max_clip_x))
+                return;
+
+            // test if top of triangle is flat
+            if (p1.Y == p2.Y)
+            {
+                DrawTopTriangle(mainScreen, p, p1, p2, p3, width, height);
+            } // end if
+            else
+            if (p2.Y == p3.Y)
+            {
+                DrawBottomTriangle(mainScreen, p, p1, p2, p3, width, height);   
+            } // end if bottom is flat
+            else
+            {
+                // general triangle that's needs to be broken up along long edge
+                new_x = p1.X + (int)(0.5 + (float)(p2.Y - p1.Y) * (float)(p3.X - p1.X) / (float)(p3.Y - p1.Y));
+                Point newPt = new Point(new_x, p2.Y);
+                
+                // draw each sub-triangle
+                DrawBottomTriangle(mainScreen, p, p1, newPt, p3, width, height);
+                DrawTopTriangle(mainScreen, p, p2, newPt, p3, width, height);
+
+            } // end else
+        }
+
+        internal static void DrawBottomTriangle(Graphics mainScreen, Pen p, Point p1, Point p2, Point p3, int width, int height)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static void DrawTopTriangle(Graphics mainScreen, Pen p, Point p1, Point p2, Point p3, int width, int height)
+        {
+            float dx_right,    // the dx/dy ratio of the right edge of line
+                    dx_left,     // the dx/dy ratio of the left edge of line
+                    xs, xe,       // the starting and ending points of the edges
+                    triHeight;      // the height of the triangle
+
+            int temp_x,        // used during sorting as temps
+                temp_y,
+                right,         // used by clipping
+                left;
+
+            // compute delta's
+            triHeight = p3.Y - p1.Y;
+
+
         }
     }
 }
